@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser</title>
+<style>
+</style>
+    <script src="./includeInIFrame.js"></script>
+<script>
+var messages = ["J'ai dit quoi ?", 
+                "Tu ne sais pas lire ?", 
+                "Arrête, je vais m'énerver !", 
+               "Tu joues avec ta vie...", 
+               "Sérieux, arrête, c'est pas drôle !"];
+var current = 0;
+function clic() {
+    if (current < messages.length) {
+        alert(messages[current]);   
+        current++;
+    }
+    else {
+        document.body.innerHTML = 
+            "<p>Vas-y maintenant, fais le malin !</p>";
+    }
+}
+</script>
+</head>
+
+<body>
+<p onclick="clic()">
+    Ne pas cliquer sur le texte !
+</p>    
+</body>
+
+</html>
+    

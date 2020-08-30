@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple 2 - Callback hell</title>
+<style>
+    img { display: block; margin: 5px; }
+</style>
+    <script src="./includeInIFrame.js"></script>
+    <script>
+function loadResources() {
+
+  var debut = Date.now();
+
+  function loadImage(src, callback) {
+    log("Loading image -- " + (Date.now() - debut));
+    var img = new Image(200, 300);
+    img.onload = () => callback(null, img);
+    img.onerror = () => callback("Error", null);
+    img.src = src;
+  }
+
+  loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg", function(error, img) {
+    if (error) {
+      log("Error loading image 1");
+    }
+    else {
+      log("Image 1 loaded -- " + (Date.now() - debut)); 
+      document.body.appendChild(img);
+      loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg", function(error, img) {
+        if (error) {
+          log("Error loading image 2");   
+        }
+        else {
+          log("Image 2 loaded -- " + (Date.now() - debut)); 
+          document.body.appendChild(img);
+          loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif", function(error, img) {
+            if (error) {
+              log("Error loading image 3");
+            }
+            else {
+              document.body.appendChild(img);
+              log("Loading complete -- " + (Date.now() - debut)); 
+            }
+          });
+        }
+      });
+    }
+  });
+  log("End of script -- " + (Date.now() - debut));    
+}
+function log(txt) {
+    document.body.innerHTML += txt + "<br>";   
+}
+</script>
+</head>
+
+<body>
+    Exemple de "callback hell" (2)
+    <input type="button" id="bouton" onclick="loadResources()" value="Executer">
+</body>
+
+</html>
+    

@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+<style>
+    body {
+        margin: 0; 
+        padding: 0;
+    }
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+var ctx, pacman;
+    
+document.addEventListener("DOMContentLoaded", function() {
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    ctx = cvs.getContext("2d");    
+    pacman = new Pacman(0.15, 0, 2);
+    animate();
+});
+    
+document.addEventListener("keydown", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    switch (e.keyCode) {
+        case 38: // up
+            pacman.rotation = 90;
+            break;
+        case 37: // left
+            pacman.rotation = 180;
+            break;
+        case 39: // right
+            pacman.rotation = 0;
+            break;
+        case 40: // bottom
+            pacman.rotation = -90;
+            break;
+    }
+}, true);
+
+function animate() {
+    reqAnimationFrame(animate);   
+    pacman.update();
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    pacman.render();
+}
+    
+function Pacman(max, start, vitesse) {
+    this.ouverture = start;
+    this.delta = 0.01;
+    this.x = 50;
+    this.y = 50;
+    this.rotation = 0;
+    this.size = 30;
+    this.update = function() {
+        // ouverture de la bouche de pacman
+        if (this.ouverture + this.delta > max || this.ouverture + this.delta < 0) {
+            this.delta = -this.delta;
+        }
+        this.ouverture += this.delta;
+        // déplacement 
+        switch (this.rotation) {
+            case 0: 
+                this.x += vitesse;
+                break;
+            case 90: 
+                this.y -= vitesse;
+                break;
+            case 180: 
+                this.x -= vitesse;
+                break;
+            case -90: 
+                this.y += vitesse;
+        }
+        if (this.x > cvs.width + this.size) {
+            this.x -= (cvs.width + 2*this.size);   
+        }
+        if (this.x < -this.size) {
+            this.x += (cvs.width + 2*this.size);   
+        }
+        if (this.y > cvs.height + this.size) {
+            this.y -= (cvs.height + 2*this.size);   
+        }
+        if (this.y < -this.size) {
+            this.y += (cvs.height + 2*this.size);   
+        }
+    }
+    this.render = function() {
+        ctx.save();
+        ctx.fillStyle = "yellow";
+        ctx.translate(this.x, this.y);
+        if (this.rotation == 180) {
+            ctx.scale(-1,1);   
+        }
+        else {
+            ctx.rotate(-this.rotation/180 * Math.PI);
+        }
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size, this.ouverture*Math.PI, (2-this.ouverture)*Math.PI);
+        ctx.lineTo(0,0);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = "black";
+        ctx.beginPath();
+        ctx.arc(this.size/4, -this.size/2, this.size/10, 0, 2*Math.PI);
+        ctx.fill();  
+        ctx.restore();
+    }
+}
+
+var reqAnimationFrame = 
+    window.requestAnimationFrame
+    || window.webkitRequestAnimationFrame
+    || window.mozRequestAnimationFrame
+    || window.msRequestAnimationFrame
+    || function(callback) { return setTimeout(callback, 1000 / 60); }; 
+</script>
+</head>
+
+<body>
+<canvas id="cvs"></canvas>
+</body>
+
+</html>
+    

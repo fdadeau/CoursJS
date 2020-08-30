@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser - cookies</title>
+<style>
+</style>
+    <script src="./includeInIFrame.js"></script>
+<script>
+function ajouter(duree) {
+    if (cle.value.trim().length > 0) {
+        var d = new Date();
+        d.setTime(d.getTime() + duree*1000);
+        document.cookie = cle.value + "=" + valeur.value + 
+            "; expires=" + d.toUTCString() + "; path=/";
+    }
+    afficherCookies();
+}
+function supprimer() {
+    if (cle.value.trim().length > 0) {
+        document.cookie = cle.value + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"    
+    }
+    afficherCookies();
+}
+function afficherCookies() {
+    cook.innerHTML = "Cookies existants : <br>" + 
+        document.cookie.split(";").join("<br>");   
+}
+</script>
+</head>
+
+<body>
+<p>
+    Clé : <input type="text" id="cle"> - 
+    Valeur : <input type="text" id="valeur"><br>
+    <input type="button" value="ajouter (durée 20 sec)" onclick="ajouter(20)">
+    <input type="button" value="supprimer la clé" onclick="supprimer()">
+</p>
+<p id="cook"></p>
+
+<script>afficherCookies();</script>    
+    
+</body>
+
+</html>
+    

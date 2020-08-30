@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple instanceof</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function Personne(p, n) {
+    this.nom = n;
+    this.prenom = p;
+}
+    
+Personne.prototype.getNom = function() {
+    return this.prenom + " " + this.nom;
+}
+
+Personne.quiEsTu = function() {
+    return "Je suis personne.";
+}
+
+console.log(Personne.quiEsTu());    
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+<style>
+    body {
+        margin: 0; 
+        padding: 0;
+    }
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+   
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    var ctx = cvs.getContext("2d");
+    ctx.textAlign = "center";
+    
+    var point1 = { x: 100, y: 60 };
+    var point2 = { x: 150, y: 200 };
+    var point3 = { x: 250, y: 200 };
+    var point4 = { x: 300, y: 60 };
+    
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(point1.x, point1.y, 5, 0, 2*Math.PI);
+    ctx.fillText("point1", point1.x, point1.y - 15);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(point2.x, point2.y, 5, 0, 2*Math.PI);
+    ctx.fill();
+    ctx.fillText("point2", point2.x, point2.y + 20);
+    ctx.beginPath();
+    ctx.arc(point3.x, point3.y, 5, 0, 2*Math.PI);
+    ctx.fill();
+    ctx.fillText("point3", point3.x, point3.y + 20);
+    ctx.beginPath();
+    ctx.arc(point4.x, point4.y, 5, 0, 2*Math.PI);
+    ctx.fill();
+    ctx.fillText("point4", point4.x, point4.y - 15);
+    
+    ctx.beginPath();
+    ctx.moveTo(point2.x, point2.y);
+    ctx.lineTo(point1.x, point1.y);
+    ctx.strokeStyle = "#888888";
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.moveTo(point1.x, point1.y);
+    ctx.strokeStyle = "#000000";
+    ctx.bezierCurveTo(point2.x, point2.y, point3.x, point3.y, point4.x, point4.y);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.moveTo(point4.x, point4.y);
+    ctx.strokeStyle = "#888888";
+    ctx.lineTo(point3.x, point3.y);
+    ctx.stroke();
+    
+    
+});
+    
+</script>
+</head>
+
+<body>
+<canvas id="cvs"></canvas>
+</body>
+
+</html>
+    

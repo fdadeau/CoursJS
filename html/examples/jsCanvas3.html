@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+<style>
+    body {
+        margin: 0; 
+        padding: 0;
+    }
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+   
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    var ctx = cvs.getContext("2d");
+    
+    var taille = 30;
+    
+    ctx.save();
+    
+    ctx.translate(100, 100);
+    ctx.rotate(0);
+    
+    ctx.fillStyle = "yellow";
+    ctx.arc(0, 0, taille, 0.2*Math.PI, 1.8*Math.PI);
+    ctx.lineTo(0,0);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(taille/4, -taille/2, taille/10, 0, 2*Math.PI);
+    ctx.fill();
+    
+    ctx.restore();
+    ctx.fillText("Pacman", 5, 12);
+    
+});
+    
+</script>
+</head>
+
+<body>
+<canvas id="cvs"></canvas>
+</body>
+
+</html>
+    

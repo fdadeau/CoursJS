@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser</title>
+    <script src="./includeInIFrame.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(_e) {
+    var workr;
+    if (typeof(Worker) !== undefined) {
+        workr = new Worker("monWorker.js");        
+        workr.onmessage = function(e) {
+            document.body.innerHTML = e.data;   
+        }
+    }
+    else {
+        document.body.innerHTML = "Le navigateur ne supporte pas les Web Workers";   
+    }
+});
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+    

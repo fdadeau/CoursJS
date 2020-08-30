@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function presenteToi() {
+    console.log(this);
+    return "Bonjour, je m'appelle " + 
+        this.prenom + " " + this.nom + "."; 
+}    
+
+var johnny = { 
+  nom: "Smet", 
+  prenom: "Jean-Philippe", 
+  disQuelqueChose: presenteToi 
+};
+
+console.log(presenteToi());
+console.log(johnny.disQuelqueChose());
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

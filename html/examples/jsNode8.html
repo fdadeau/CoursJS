@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+var http = require('http');
+var fs = require('fs');
+
+// Chargement du fichier index.html affiché au client
+var server = http.createServer(function(req, res) {
+    fs.readFile('./index.html', 'utf-8', function(error, content) {
+        res.writeHead(200, {"Content-Type": "text/html"});
+        res.end(content);
+    });
+});
+
+// Chargement de socket.io
+var io = require('socket.io').listen(server);
+
+// Quand un client se connecte, on le note dans la console
+io.sockets.on('connection', function (socket) {
+    // envoi à tous (y compris le client courant)
+    io.sockets.emit("info", "Un client vient de se connecter.");
+    
+    var isFred = false;
+    socket.on("login", function(msg) {
+        if (msg.id == "freddadeau" && msg.password == "1234") {
+            isFred = true;
+            // envoi à ce client
+            socket.emit("bienvenue", "Salut Fred ! Je t'attendais");
+            // envoi à tous sauf au client courant 
+            socket.broadcast.emit("info", "Fred Dadeau vient de s'identifier");
+        }
+    });
+    
+    socket.on("disconnect", function(reason) { 
+        socket.broadcast.emit("Un client est parti...");
+        if (isFred) {
+            socket.broadcast.emit("En plus, c'était Fred.");
+        }
+    });
+    // ... autres traitements/messages
+});
+    
+server.listen(8080);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+

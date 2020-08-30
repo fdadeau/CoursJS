@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Exemples avec AngularJS - 1.6.4</title>
+    <meta charset="UTF-8">
+    <style>
+        p { padding: 1vh; } 
+input[type=button] {
+    border-radius: 50%;
+    width: 6vh;
+    padding: 0;
+    margin: 0;
+    font-size: 6vh;
+    line-height: 5vh;
+    height: 6vh;
+    border: none;
+}
+    
+div p {
+    border-radius: 5vh;
+    line-height: 6vh;
+    height: 6vh;
+    padding: 2vh 4vh;
+    color: white;
+    background-color: forestgreen;
+}  
+div p input {
+    display: none;
+    float: right;
+}
+div p:hover {
+    background-color: lightcoral;
+}
+div p:hover input {
+    display: block;
+}
+    </style>
+    <script src="includeInIFrame.js"></script>
+    <script src="angular.min.js"></script>
+<script>
+var app = angular.module("listeApp", []);
+app.controller("listCtrl", function($scope) {
+  $scope.liste = [];
+  $scope.duplicata = false;
+  $scope.ajouter = function() {
+    $scope.duplicata = ($scope.liste.indexOf($scope.nouveau) > -1);
+    if (!$scope.duplicata) {
+        $scope.liste.push($scope.nouveau);   
+    }
+  };
+  $scope.supprimer = function(index) {
+    $scope.liste.splice(index, 1);   
+  }
+});
+</script>
+    
+</head>
+
+<body>    
+<h2>Ma liste au Père Noël</h2>
+<div ng-app="listeApp" ng-controller="listCtrl">
+    <div>
+        <input type="text" ng-model="nouveau"> 
+        <input type="button" value="+" ng-click="ajouter()">
+        <span ng-show="duplicata">Cet élément existe déjà.</span>
+    </div>
+    <p ng-repeat="x in liste">{{x}} 
+        <input type="button" value="-" ng-click="supprimer($index)">
+    </p>
+</div>
+
+</body>    
+
+</html>

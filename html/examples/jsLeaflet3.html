@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Start - Leaflet</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>	
+    <script src="includeInIFrame.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", async function(e) {
+    
+    var mymap = L.map('mapid', { 
+        center: [47.2364, 5.987499], 
+        zoom: 13 
+    });
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { 
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19
+    }).addTo(mymap);
+    
+    var response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=XXX&idLigne=9&idVariante=2-1");  
+
+    if (response.status == 200) {
+        var data = await response.json();
+        for (var i=0; i < data.objets.length; i++) {
+            var numero = (i+1);
+            var nom = data.objets[i].nom;
+            L.marker([data.objets[i].latitude, data.objets[i].longitude])
+                .addTo(mymap)
+                .bindPopup(numero + " - " + nom);
+        }
+    }
+});
+    </script>
+</head>
+<body>
+    <div id="mapid" style="width: 98vw; height: 98vh; padding: 0; margin: 0;"></div>
+</body>
+</html>

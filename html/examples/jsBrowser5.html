@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser</title>
+<style>
+select, div {
+    position: relative;
+    display: inline;
+    margin: 1vh;
+    width: 20vw;
+}
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+}
+</style>
+    <script src="./includeInIFrame.js"></script>
+<script>
+function valider(e) {
+    var enfantsSages = [];
+    for (var i=0; i < sages.options.length; i++) {
+        enfantsSages.push(sages.options[i].value);   
+    }
+    alert("C'est envoyé. Il y aura de beaux cadeaux à Noël pour : " 
+          + ((enfantsSages.length > 0) ? enfantsSages : "personne"));
+    e.preventDefault();
+}
+function ajouter() {
+    var ps = document.getElementById("pasSages");
+    var newOption = document.createElement("option");
+    if (nom.value.trim().length == 0) {
+        alert("Veuillez remplir le nom");
+        return;
+    }
+    if (valeur.value.trim().length == 0) {
+        alert("Veuillez remplir la valeur");
+        return;
+    }
+    newOption.textContent = nom.value;
+    newOption.value = valeur.value;
+    ps.add(newOption);
+}
+function supprimer() {
+    var aSupprimer = [];
+    for (var i=0; i < pasSages.options.length; i++) {
+        if (pasSages.options[i].selected) {
+            aSupprimer.push(i);
+        };   
+    }
+    while (aSupprimer.length > 0) {
+        pasSages.options.remove(aSupprimer.pop());   
+    }
+    for (i=0; i < sages.options.length; i++) {
+        if (sages.options[i].selected) {
+            aSupprimer.push(i);
+        };   
+    }
+    while (aSupprimer.length > 0) {
+        sages.options.remove(aSupprimer.pop());   
+    }
+}
+function deplace(source, dest) {
+    var aDeplacer = [];
+    for (var i=0; i < source.options.length; i++) {
+        if (source.options[i].selected) {
+            aDeplacer.push(i);
+        };   
+    }
+    while (aDeplacer.length > 0) {
+        i = aDeplacer.pop();
+        var opt = source.options[i];
+        source.options.remove(i);   
+        dest.options.add(opt);
+    }
+}
+</script>
+</head>
+
+<body>
+<p> Nom : <input type="text" id="nom"> 
+    Valeur : <input type="text" id="valeur"> 
+    <input type="button" value="+" onclick="ajouter()">
+</p>
+<form onsubmit="valider(event)">
+  <div>Sales gosses<br>
+    <select multiple id="pasSages" size="6">
+      <option value="fred">Fred Dadeau</option>
+      <option value="jube">Julien Bernard</option>
+    </select>
+  </div> 
+  <div>
+    <input type="button" value="&rarr;" onclick="deplace(pasSages,sages)">
+    <input type="button" value="&larr;" onclick="deplace(sages,pasSages)">
+    <input type="button" value="Suppr." onclick="supprimer()">
+  </div>
+  <div>Enfants sages<br>
+    <select multiple id="sages" size="6">
+      <option value="karla">Karla Breschi</option>
+      <option value="jp">Jean-Philippe Gros</option>
+      <option value="guillaume">Guillaume Voiron</option>
+    </select>
+  </div>
+  <input type="submit" value="Envoyer au Père Noël">
+</form>
+</body>
+
+</html>
+    

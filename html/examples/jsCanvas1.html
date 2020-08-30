@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+<style>
+    body {
+        margin: 0; 
+        padding: 0;
+    }
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+   
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    var ctx = cvs.getContext("2d");
+    ctx.textAlign = "center";
+    ctx.font = "30px arial";
+    ctx.strokeStyle = "#0000FF";
+    ctx.strokeText("Ready!", cvs.width/2, cvs.height/2);
+    
+    cvs.addEventListener("mousemove", function(e) {
+        ctx.clearRect(0, 0, cvs.width, cvs.height);
+        ctx.fillText("x = " + e.clientX + ", y = " + e.clientY, cvs.width/2, cvs.height/2);
+    });
+    
+});
+    
+</script>
+</head>
+
+<body>
+<canvas id="cvs"></canvas>
+</body>
+
+</html>
+    

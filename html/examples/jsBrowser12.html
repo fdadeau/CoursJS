@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser - cookies</title>
+<style>
+body {
+    font-family: sans-serif;
+}
+input[type=button] {
+    border-radius: 50%;
+    width: 6vh;
+    padding: 0;
+    margin: 0;
+    font-size: 6vh;
+    line-height: 5vh;
+    height: 6vh;
+}
+    
+div p {
+    border-radius: 5vh;
+    line-height: 6vh;
+    height: 6vh;
+    padding: 2vh 4vh;
+    color: white;
+    background-color: forestgreen;
+}  
+div p input {
+    display: none;
+    float: right;
+}
+div p:hover {
+    background-color: lightcoral;
+}
+div p:hover input {
+    display: block;
+}
+</style>
+    <script src="./includeInIFrame.js"></script>
+<script>
+function ajouter() {
+    if (item.value.trim().length > 0) {
+        var liste = localStorage.getItem("liste");
+        liste = (!liste) ? [] : JSON.parse(liste);
+        liste.push(item.value);
+        localStorage.setItem("liste", JSON.stringify(liste));
+        afficherListe();
+    }
+}
+function supprimer(i) {
+    var liste = JSON.parse(localStorage.getItem("liste"));
+    liste.splice(i, 1);
+    localStorage.setItem("liste", JSON.stringify(liste));
+    afficherListe();
+}
+function afficherListe() {
+    maListe.innerHTML = "";
+    var liste = localStorage.getItem("liste");
+    if (liste) {
+        liste = JSON.parse(liste);
+        liste.forEach(function(elem, index) {
+            maListe.innerHTML += "<p>" + elem + 
+                "<input type='button' value='-' onclick='supprimer(\"" + index + "\")'>" +
+            "</p>";
+        });
+    }
+}
+</script>
+</head>
+
+<body>
+<h2>Ma liste au Père Noël</h2>
+<p>
+    Nouvel item : <input type="text" id="item"> 
+    <input type="button" value="+" onclick="ajouter()">
+</p>
+    
+<div id="maListe"></div>
+
+<script>afficherListe();</script>    
+    
+</body>
+
+</html>
+    

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+var h2g2 = 42;
+
+function alea(min, max) {
+    return (Math.random() * (max-min) + min) | 0; 
+}
+
+var moi = "Fred";
+
+console.log("coucou");
+
+console.log(document.getElementById("monBouton").value);
+
+export { h2g2 as default, alea };
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+

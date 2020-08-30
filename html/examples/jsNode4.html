@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+var content = {};
+
+exports.read = function(key) {
+  return (key !== undefined) ? content[key] : content;
+}
+
+exports.update = function(key, value) {
+  content[key] = value;
+}
+
+exports.delete = function(key) {
+  if (content[key] === undefined) {
+    return false;
+  }
+  delete content[key];
+  return true;
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+

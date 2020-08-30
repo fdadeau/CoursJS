@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX avec JSON</title>
+<style>
+</style>
+    <script src="./includeInIFrame.js"></script>
+    <script>
+
+function sendRequest() {
+    var xhttp = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); 
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            for (var i in data) {
+                reponse.innerHTML += "<p>" + i + " - " + data[i] + "</p>";   
+            }
+        }
+    }
+    xhttp.open("get", "ajaxExample.json", true);
+    xhttp.send();
+    document.getElementById("bouton").value = "C'est parti";
+    document.getElementById("bouton").removeAttribute("onclick");
+}
+</script>
+</head>
+
+<body>
+    <input type="button" id="bouton" onclick="sendRequest()" value="envoyer la requête">
+    <div id="reponse"></div>
+    
+    
+</body>
+
+</html>
+    

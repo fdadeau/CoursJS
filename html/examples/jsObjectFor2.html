@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Object enumerable</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+var johnny = {
+    nom: "Smet",
+    presenteToi: function() { 
+        return "Bonjour, je m'appelle " + 
+            this.prenom + " " + 
+            this.nom + "."; 
+    }
+};
+Object.defineProperty(johnny, "prenom", {
+    configurable: false,
+    enumerable: false,
+    value: "Jean-Philippe",
+    writable: false
+});
+for (var i in johnny) {
+    console.log(i + " -> " + johnny[i]);
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

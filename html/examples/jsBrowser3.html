@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser</title>
+<style>
+</style>
+    <script src="./includeInIFrame.js"></script>
+<script>
+function clic() {
+    var p = document.getElementById("monParagraphe");
+    p.removeAttribute("onclick");
+    p.innerHTML = "Tu fais moins le malin maintenant !";
+}
+</script>
+</head>
+
+<body>
+<p id="monParagraphe" onclick="clic()">
+    Ne pas cliquer sur le texte !
+</p>    
+</body>
+
+</html>
+    

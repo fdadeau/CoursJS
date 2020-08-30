@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple 2 - Callback hell</title>
+<style>
+    img { display: block; margin: 5px; }
+</style>
+    <script src="./includeInIFrame.js"></script>
+    <script>
+function loadResources() {
+  var debut = Date.now();
+  var img1 = new Image(200, 300);
+  img1.onload = function(_e) { 
+    log("Image 1 loaded -- " + (Date.now() - debut)); 
+    document.body.appendChild(this); 
+    var img2 = new Image(200, 300);
+    img2.onload = function(_e) { 
+      log("Image 2 loaded -- " + (Date.now() - debut)); 
+      document.body.appendChild(this); 
+      var img3 = new Image(200, 300);
+      img3.onload = function(_e) {
+        log("Image 3 loaded -- " + (Date.now() - debut)); 
+        document.body.appendChild(this);
+      }
+      img3.onerror = function(_e) { log("Error on Image 2 -- " + (Date.now() - debut)); }
+      log("Loading image 3 -- " + (Date.now() - debut));
+      img3.src = "https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif";
+    }
+    img2.onerror = function(_e) { log("Error on Image 2 -- " + (Date.now() - debut)); }
+    console.log("Loading image 2 -- " + (Date.now() - debut));
+    img2.src = "https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg";
+  }
+  img1.onerror = function(_e) { log("Error on Image 1 -- " + (Date.now() - debut)); }
+  log("Loading image 1 -- " + (Date.now() - debut));
+  img1.src = "https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg";
+  log("End of script -- " + (Date.now() - debut));    
+}
+function log(txt) {
+    document.body.innerHTML += txt + "<br>";   
+}
+</script>
+</script>
+</head>
+
+<body>
+    Exemple de "callback hell"
+    <input type="button" id="bouton" onclick="loadResources()" value="Executer">
+</body>
+
+</html>
+    

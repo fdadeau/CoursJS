@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Exemples avec AngularJS - 1.6.4</title>
+    <meta charset="UTF-8">
+    <style>p { padding: 1vh; } </style>
+    <script src="includeInIFrame.js"></script>
+    <script src="angular.min.js"></script>
+<script>
+  var app = angular.module("bjrApp", []);
+  app.controller("bjrCtrl", function($scope) {
+    $scope.nom = "Fred";
+    $scope.couleur = "blue";
+  });
+</script>
+    
+</head>
+
+<body>
+    
+<div ng-app="bjrApp" ng-controller="bjrCtrl">
+    <p style="background-color: {{couleur}};">
+        Salut {{nom}} !
+    </p>
+</div>
+
+</body>    
+
+</html>

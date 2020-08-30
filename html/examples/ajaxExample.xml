@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module id="VT6WEBA">
+    <nom>Web avancé</nom>
+    <CM>9</CM>
+    <TD>0</TD>
+    <TP>27</TP>
+    <intervenants>
+        <intervenant>
+            <nom>Dadeau</nom>
+            <prenom>Fred</prenom>
+        </intervenant>
+        <intervenant>
+            <nom>Gros</nom>
+            <prenom>Jean-Philippe</prenom>
+        </intervenant>
+        <intervenant>
+            <nom>Voiron</nom>
+            <prenom>Guillaume</prenom>
+        </intervenant>
+    </intervenants>
+</module>

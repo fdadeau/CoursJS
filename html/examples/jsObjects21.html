@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Principe d'héritage par prototype</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function Personne(p, n) {
+    this.nom = n;
+    this.prenom = p;
+}
+    
+Personne.prototype.getNom = function() {
+    return this.prenom + " " + this.nom;
+}
+
+var moi = new Personne("Fred", "Dadeau");
+console.log(moi);
+var jube = new Personne("Julien", "Bernard");    
+console.log(jube);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Exemples avec AngularJS - 1.6.4</title>
+    <meta charset="UTF-8">
+    <style>p { padding: 1vh; } </style>
+    <script src="includeInIFrame.js"></script>
+    <script src="angular.min.js"></script>
+<script>
+</script>
+    
+</head>
+
+<body>
+    
+<div ng-app="" ng-init="rebels=['luke','leia','poe','rey']">
+    <p>
+        Votre rebelle préféré : 
+        <select ng-model="favori" ng-options="x for x in rebels">
+        </select>
+    </p>
+    <p>Votre rebelle préféré est {{favori}}</p>
+</div>
+
+</body>    
+
+</html>

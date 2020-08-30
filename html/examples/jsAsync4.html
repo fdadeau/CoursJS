@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple 4 - Plusieurs promesses</title>
+<style>
+    img { display: block; margin: 5px; }
+</style>
+    <script src="./includeInIFrame.js"></script>
+    <script>
+function loadResources() {
+  var debut = Date.now();
+    
+  function loadImage(src) {
+    return new Promise(function(resolve, reject) {
+      var img = new Image(200, 300);
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error("Can't find image " + img.src));
+      img.src = src;
+      log("Loading image");
+    });
+  }
+                           
+  promesse1 = loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg");
+    
+  log("Promise created -- " + (Date.now() - debut));
+        
+  promesse1.then(function(img) { 
+    log("Image 1 loaded -- " + (Date.now() - debut));
+    document.body.appendChild(img); 
+    return loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg");        
+  }, function(error) {
+    log("Error loading image 1 --> " + error);
+  })
+  .then (function(img) {
+    log("Image 2 loaded -- " + (Date.now() - debut));
+    document.body.appendChild(img); 
+    return loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif");
+  }, function(error) {
+    log("Error loading image 2 --> " + error);
+  })
+  .then (function(img) {
+    log("Image 3 loaded -- " + (Date.now() - debut));
+    document.body.appendChild(img); 
+  }, function(error) {
+    log("Error loading image 3 --> " + error);
+  });
+  log("End of script -- " + (Date.now() - debut));    
+}
+function log(txt) {
+  document.body.innerHTML += txt + "<br>";   
+}
+</script>
+</head>
+
+<body>
+    Promesses en chaînes 
+    <input type="button" id="bouton" onclick="loadResources()" value="Executer"><br>
+</body>
+
+</html>
+    

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Principe d'héritage avec class, extends, super</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+class Personne {
+    constructor(p, n) {
+        this.nom = n;
+        this.prenom = p;
+    }
+    
+    getNom() {
+        return this.prenom + " " + this.nom;
+    }
+}
+    
+var moi = new Personne("Fred", "Dadeau");
+console.log(moi.getNom());
+var jube = new Personne("Julien", "Bernard");    
+console.log(jube.getNom());
+    
+class MiniPersonne extends Personne {
+    constructor(p, n) {
+        super(p, n);
+    }
+    getNom() {
+        return super.getNom() + " (mini)";
+    }
+}
+        
+var raph = new MiniPersonne("Raph", "Dadeau");
+console.log(raph.getNom());
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

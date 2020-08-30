@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Every</title>
+<style>
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+var t = [4, 8, 15, 16, 23, 42];
+console.log(t.every(function(value, index, array) {
+    console.log("value = " + value + 
+                ", index = " + index + 
+                ", array = [" + array + "]");
+    return value > 0;
+}));
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

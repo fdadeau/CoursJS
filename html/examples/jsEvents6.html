@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+<style>
+</style>
+    <script src="./includeInIFrame.js"></script>
+<script>
+function afficher(type, event) {
+    document.body.innerHTML = "<p>Evenement " + type + 
+        "</p><p>event.touches = <br>";
+    for (var i=0; i < event.touches.length; i++) {
+        document.body.innerHTML += 
+            i + " -> " + afficherTouche(event.touches[i]);
+    }
+    document.body.innerHTML += "</p><p>event.changedTouches = <br>";
+    for (i=0; i < event.changedTouches.length; i++) {
+        document.body.innerHTML += 
+            i + " -> " + afficherTouche(event.changedTouches[i]);
+    }    
+}
+function afficherTouche(t) {
+    return "pageX = " + t.pageX + ", pageY = " + t.pageY + 
+        ", screenX = " + t.screenX + ", screenY = " + t.screenY;   
+}
+window.addEventListener("touchstart", function(e) {  
+    afficher("TouchStart", e);
+});
+window.addEventListener("touchend", function(e) {  
+    afficher("TouchEnd", e);
+});
+window.addEventListener("touchmove", function(e) {  
+    afficher("TouchMove", e);
+});
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

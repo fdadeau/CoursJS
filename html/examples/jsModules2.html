@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+</head>
+
+<body>
+<script type="module">
+    import { default as toto, alea} from "./export.js";
+    console.log(toto);
+    console.log(alea(10,2000));
+</script>
+
+<button id="monBouton">Bouton</button>
+
+<script>
+    console.log("pouet");
+</script>
+</body>
+
+</html>
+

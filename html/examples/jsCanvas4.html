@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+<style>
+    body, canvas {
+        margin: 0; 
+        padding: 0;
+        border: none;
+    }
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    
+    var ctx = cvs.getContext("2d");
+    
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(this, 
+                      0,        // sourceX 
+                      0,        // sourceY
+                      img.width,    // sourceW
+                      img.height,    // sourceH
+                      cvs.width / 2 - 100,        // x
+                      cvs.height / 2 - 100,        // y
+                      200,      // width
+                      200);     // height
+    }
+    img.onerror = function() {
+        ctx.fillText("Erreur de chargement de " + this.src, 10, 10); 
+    }
+    img.src = "../images/cadet.png";    
+});
+    
+</script>
+</head>
+
+<body>
+<canvas id="cvs"></canvas>
+</body>
+
+</html>
+    

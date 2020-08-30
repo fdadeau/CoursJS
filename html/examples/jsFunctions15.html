@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hoisting</title>
+<style>
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+var saySomething = function(what) {
+    return function(toWho) {
+        console.log(what + " " + toWho);
+    }
+}
+var sayHello = saySomething("Hello");
+sayHello("Fred");
+saySomething("Bye bye")("Scheme");
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

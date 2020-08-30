@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Principe d'héritage par prototype</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+var moi = {
+    prenom : "Fred",
+    nom: "Dadeau",
+    getNom: function() {
+        return this.prenom + " " + this.nom;
+    }
+}
+var minimoi = Object.create(moi);
+minimoi.prenom = "Raph";
+minimoi.getNom = function() {
+    // avec appel à la méthode du prototype
+    return moi.getNom.call(this) + " (a.k.a. mini-moi)";
+}
+    
+console.log(moi.getNom());
+console.log(minimoi.getNom());
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser - cookies</title>
+<style>
+</style>
+    <script src="./includeInIFrame.js"></script>
+<script>
+var i = 0;
+var inter = setInterval(function() {
+    document.body.innerHTML = "Je compte : " + (++i);
+}, 1000);
+setTimeout(function() {
+    clearInterval(inter);
+    document.body.innerHTML += "<br>et tu t'arrêtes là.";
+}, 10000);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

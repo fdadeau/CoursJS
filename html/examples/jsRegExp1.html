@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Expressions régulières</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function check() {
+    var reg = document.getElementById("reg").value;
+    var ch = document.getElementById("ch").value;
+    if (reg && ch) {
+        try {
+            var tab = ch.match(eval(reg));
+            result.innerHTML = "Sous-chaines reconnues : " + (tab ? tab.toString() : "aucune");
+        }
+        catch (err) {
+            result.innerHTML = "<span style='color: red;'>" + err + "</span>";   
+        }
+    }
+}
+</script>
+</head>
+
+<body>
+    <p><input type="text" size="40" id="reg" placeholder="Votre expression régulière"> vs. 
+    <input type="text" size="40" id="ch" placeholder="Votre chaîne à tester"> 
+    <input type="button" value="Go !" onclick="check()"></p>
+    <p id="result"></p>
+</body>
+
+</html>

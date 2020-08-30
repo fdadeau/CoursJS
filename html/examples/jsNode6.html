@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+var express = require('express');
+
+var app = express();
+
+app.get('/api', function(req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.end("READ");
+});
+
+app.post('/api', function(req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.end("UPDATE");
+});
+
+app.delete('/api', function(req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.end("DELETE");
+});
+
+app.listen(8080);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring</title>
+<style>
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+var johnny = { nom: "Smet", prenom: "Jean-Philippe", 
+              epouses: ["Nathalie", "Sylvie", "Laeticia"] };
+
+var { nom: leNom, prenom: lePrenom } = johnny;
+console.log("leNom = " + leNom);
+console.log("lePrenom = " + lePrenom);
+    
+var { nom, prenom } = johnny;
+console.log("nom = " + nom);
+console.log("prenom = " + prenom);
+    
+var [ep1, ep2] = johnny.epouses;
+console.log("ep1 = " + ep1);
+console.log("ep2 = " + ep2);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

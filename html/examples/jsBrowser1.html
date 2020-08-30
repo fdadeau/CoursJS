@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javscript dans le browser</title>
+<style>
+#bloc {
+  padding: 10px;
+  width: 200px;
+  color: white;
+  height: 100px; 
+  background-color: green;
+}
+</style>
+    <script src="./includeInIFrame.js"></script>
+    <script>
+function bestFunctionEver() {
+    document.getElementById("bloc").innerHTML = "42 !"  
+}        
+</script>
+</head>
+
+<body>
+<div id="bloc">
+    Combien ?<br>Clique pour le découvrir !
+</div>  
+    
+<script>
+    bloc.onclick = bestFunctionEver;
+</script>    
+</body>
+
+</html>
+    

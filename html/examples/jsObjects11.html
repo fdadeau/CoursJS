@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function Point2D(x, y) {
+    this.x = x;
+    this.y = y;
+    this.distanceOrigine = function() {
+        return Math.sqrt(x*x+y*y);
+    }
+}
+function Point2DColore(x, y, r, g, b) {
+    Point2D.call(this, x, y);
+    this.color = "#" + r + g + b;
+}
+function Point3DColore(x,y,z, r, g, b) {
+    Point2DColore.call(this, x, y, r, g, b);
+    this.z = z;
+    this.distanceOrigine = function() {
+        return Math.sqrt(x*x+y*y+z*z);
+    }
+}
+Point2DColore.prototype = Object.create(Point2D.prototype);
+Point2DColore.prototype.constructor = Point2DColore;    
+    
+Point3DColore.prototype = Object.create(Point2DColore.prototype);
+Point3DColore.prototype.constructor = Point3DColore;
+    
+var p1 = new Point2D(4, 4), 
+    p2 = new Point2DColore(5, 5, "FF", "00", "00"),
+    p3 = new Point3DColore(6, 6, 6, "00", "00", "FF");
+
+for (var i in p3) {
+    console.log(i + " -> " + p3[i]);
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

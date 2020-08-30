@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Let vs. const</title>
+<style>
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+const quaranteDeux = 42;
+    
+function func() {
+  let i = 0;
+  for (i=0; i < 5; i++) {
+      let j = quaranteDeux;
+      console.log(i);
+  }
+  console.log(j);
+}
+func();
+console.log(i);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    
