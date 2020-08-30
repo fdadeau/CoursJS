@@ -20,11 +20,11 @@ Le cours est divisé en 3 chapitres dont les liens sont accessibles ci-dessous :
 
 ### [Chapitre 1 - Javascript, le langage](./html/chap1-JS-langage.html)
 
-Ce chapitre a pour objectif de parcourir les principaux éléments de syntaxe et de sémantique du langage Javascript : les types de données, les instructions, les mécanismes internes au langage (par ex. hoisting, utilisation de modules, etc.). Après un rapide historique du langage et de ses évolutions, nous nous attardons sur des types de données particuliers : les chaînes de caractères, les tableaux, les fonctions, les objets. 
+Ce chapitre a pour objectif de parcourir les principaux éléments de syntaxe et de sémantique du langage Javascript : les types de données, les instructions, les mécanismes internes au langage (par ex. hoisting). Après un rapide historique du langage et de ses évolutions, nous nous attardons sur des types de données particuliers : les chaînes de caractères, les tableaux, les fonctions, les objets. 
 
 ### [Chapitre 2 - Javascript, côté client](./html/chap2-JS-client.html) 
 
-Ce chapitre a pour objectif de présenter le fonctionnement du langage Javascript lorsqu'il est interprété par un navigateur. Les principales fonctions d'interactions avec le navigateur sont abordées : manipulation du DOM, modification des styles, gestion des événements (clavier, souris, etc.), utilisation d'API natives du navigateur (géolocalisation, orientation, etc.), intégration d'API tierces (cartes, etc.). Ce chapitre est également l'occasion de revenir sur la gestion de l'asynchronisme en Javascript et d'introduire les promesses.
+Ce chapitre a pour objectif de présenter le fonctionnement du langage Javascript lorsqu'il est interprété par un navigateur. Les principales fonctions d'interactions avec le navigateur sont abordées : manipulation du DOM, modification des styles, gestion des événements (clavier, souris, etc.), utilisation d'API natives du navigateur (géolocalisation, orientation, canvas, etc.), intégration d'API tierces (cartes, etc.). Ce chapitre est également l'occasion de revenir sur la gestion de l'asynchronisme en Javascript et d'introduire les promesses.
 
 
 ### [Chapitre 3 - Javascript, côté serveur](./html/chap3-JS-serveur.html)
@@ -39,5 +39,5 @@ Nous présentons principalement la mise en place d'un serveur avec Express, le d
 Ce cours est principalement fait pour être projeté sur un écran au format paysage (largeur >= 1.4 * hauteur). 
 Dans ce cas, le format "diapositives" sera affiché. 
 
-En dessous de ce format, un affichage "portrait" pour une lecture "verticale" à l'écran est prévue. Ce format n'est qu'une remise en forme des diapositives, et ne présente pas de contenu nouveau, ou spécifique à ce format. 
+En dessous de ce format, un affichage "portrait" pour une lecture "verticale" à l'écran est prévue. Ce format n'est qu'une remise en forme des diapositives, et ne présente pas de contenu nouveau, ou spécifique à cet affichage. 
 

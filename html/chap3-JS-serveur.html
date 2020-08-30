@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="../css/slides.css" type="text/css">
     <script src="../js/slides.js"></script>
     
-    <script src="../lib/codemirror-5.31.0/lib/codemirror.js"></script>
-    <link rel="stylesheet" href="../lib/codemirror-5.31.0/lib/codemirror.css">
- 
-    <script src="../lib/codemirror-5.31.0/mode/javascript/javascript.js"></script>
-    <script src="../lib/codemirror-5.31.0/mode/css/css.js"></script>
-    <script src="../lib/codemirror-5.31.0/mode/xml/xml.js"></script>
-    <script src="../lib/codemirror-5.31.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../js/codemirror.js"></script>
+    <link rel="stylesheet" href="../css/codemirror.css">
+    <script src="../js/javascript.js"></script>
+    <script src="../js/css.js"></script>
+    <script src="../js/xml.js"></script>
+    <script src="../js/htmlmixed.js"></script>
     
     <script src="../js/playground.js"></script>
     <link rel="stylesheet" href="../css/playground.css">
@@ -32,11 +31,12 @@
     
 <body>
 
-    <mask>
-    <img src="../images/abeille.png" class="top right" style="height: 20vh;">
-    <img src="../images/logo_ufc.png" class="bottom left padding" style="height: 5vh;">
-    <img src="../images/logo-femto.png" class="top left padding" style="height: 7vh;">
+<mask>
+    <img src="../images/logo_ufc.png" class="top right padding" style="height: 7vh;">
+<!--    <img src="../images/abeille.png" class="top right" style="height: 20vh;">
+    <img src="../images/logo-femto.png" class="top left padding" style="height: 7vh;">-->
 </mask>    
+    
 
 <slideshow>
         
@@ -382,8 +382,8 @@
         <title>Modules http et fs</title>
         
         <block title="Un serveur déjà plus capable">
-           <div class="playground nohtml nocss nooutput h50" data-href="./examples/jsNode2.html" data-opened="js"></div>
-            <p>Par contre, si ma page a des paramètres ou une ancre, il faut être plus subtil.</p>
+            <p>Par contre, si ma page a des paramètres ou une ancre, il faut être plus subtil... mais bon.</p>
+            <div class="playground nohtml nocss nooutput h50" data-href="./examples/jsNode2.html" data-opened="js"></div>
         </block>
         
         <p>La référence du module File System : <url>https://www.w3schools.com/nodejs/ref_fs.asp</url>.</p>
@@ -443,8 +443,8 @@
         </block>
         
         <block title="Exemple de module <code>database.js</code>">
-           <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsNode4.html" data-opened="js"></div>
             <p>Ce module sera importé avec <code>var maBase = require("./database");</code></p>
+           <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsNode4.html" data-opened="js"></div>
         </block>
         
     </slide>
@@ -741,6 +741,7 @@
             <li><url>https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f</url></li>
             <li><url>https://medium.com/front-end-hacking/how-it-feels-to-learn-javascript-in-2017-a934b801fbe</url></li>
             <li><url>https://codeburst.io/how-it-feels-to-learn-javascript-in-2018-6b2cf7abb6aa</url></li>
+            <li><url>https://javascript-obfuscator.org/blog/how-it-feels-like-to-learn-javascript-in-2020/</url></li>
         </ul>
         
         <p>...accompagnée d'une bonne aspirine.</p>
@@ -800,6 +801,8 @@
             <li>Les sockets avec sockets.io : <url>https://socket.io/docs/#</url></li>
         </ul>
         </block>      
+        
+        <p>Et pour avoir une vision globale sur Javascript aujourd'hui : <url>https://stateofjs.com/</url></p>
                 
     </slide>    
         

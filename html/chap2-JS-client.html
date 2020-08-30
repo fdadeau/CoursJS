@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="../css/slides.css" type="text/css">
     <script src="../js/slides.js"></script>
     
-    <script src="../lib/codemirror-5.31.0/lib/codemirror.js"></script>
-    <link rel="stylesheet" href="../lib/codemirror-5.31.0/lib/codemirror.css">
- 
-    <script src="../lib/codemirror-5.31.0/mode/javascript/javascript.js"></script>
-    <script src="../lib/codemirror-5.31.0/mode/css/css.js"></script>
-    <script src="../lib/codemirror-5.31.0/mode/xml/xml.js"></script>
-    <script src="../lib/codemirror-5.31.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../js/codemirror.js"></script>
+    <link rel="stylesheet" href="../css/codemirror.css">
+    <script src="../js/javascript.js"></script>
+    <script src="../js/css.js"></script>
+    <script src="../js/xml.js"></script>
+    <script src="../js/htmlmixed.js"></script>
     
     <script src="../js/playground.js"></script>
     <link rel="stylesheet" href="../css/playground.css">
@@ -1551,14 +1550,14 @@ Javascript côté client (3)
     </slide>
             
     <slide>
-        <title>Chargement et exécution d'un script dans le navigateur</title>
+        <title>Chargement et exécution d'un script</title>
 
         <block title="Comportement de la balise <code>script</code>">
             
         <p>Par défaut, quand on charge un script avec la balise <code>&lt;script src="...">&lt;/script></code>, 
             le nagivateur s'interrompt dans la construction du rendu du document pour charger le script puis l'exécuter. </p>
         
-        <img src="./images/script.svg" style="width: 70%;">
+        <img src="./images/script.png" style="width: 70%;">
 
         </block>
         
@@ -1602,7 +1601,7 @@ Javascript côté client (3)
                 (juste avant le déclenchement de l'événement <code>DOMContentLoaded</code>). </p>
             <p>Si plusieurs scripts ont l'attribut <code>defer</code>, ils sont exécutés dans l'ordre dans lequel
             ils ont été déclarés. </p>
-            <img src="images/script-defer.svg" style="width: 70%;">
+            <img src="images/script-defer.png" style="width: 70%;">
         </block>
 </slide>
 
@@ -1616,7 +1615,7 @@ Javascript côté client (3)
                 de la page (et la construction du DOM). </p>
             <p>Si plusieurs scripts ont l'attribut <code>async</code>, ils sont chargés en parallèle et exécutés dans 
                 l'ordre où ils ont fini de charger (premier chargé, premier exécuté). </p>
-            <img src="images/script-async.svg" style="width: 70%;">
+            <img src="images/script-async.png" style="width: 70%;">
         </block>
         
     </slide>
@@ -1932,14 +1931,14 @@ Javascript côté client (3)
 
 
     <section>Quelques API utiles du navigateur</section>
-    
-    <slide outline class="no-navigation section currentSection">
+        
+
+    <slide outline class="no-navigation section currentSection currentSubsection">
         <title>Plan du chapitre</title>
     </slide>
 
-    
     <subsection>Géolocalisation &amp; Lealfet/OpenStreetMap</subsection>        
-            
+
     <slide>
         <title>Géolocalisation</title>
         
@@ -2058,7 +2057,7 @@ Javascript côté client (3)
     </slide>
 
     <slide>
-        <title>Intégrer une carte Leaflet/OpenStreetMap dans votre application</title>
+        <title>Intégrer une carte Leaflet/OpenStreetMap</title>
 
         <block title="Initialiser ce que l'on veut voir sur la carte">
             <p>Plusieurs objets parmi <a href="https://leafletjs.com/reference-1.6.0.html" target="_blank">tous ceux proposés par l'API</a> seront particulièrement utiles : </p>
@@ -2078,7 +2077,7 @@ Javascript côté client (3)
     </slide>
             
     <slide>
-        <title>Intégrer une carte Leaflet/OpenStreetMap dans votre application</title>
+        <title>Intégrer une carte Leaflet/OpenStreetMap</title>
 
         <block title="Carte centrée sur la Citadelle de Besançon">
             <div class="playground nocss h50 readonly" data-href="./examples/jsLeaflet2.html" data-opened="js"></div>
@@ -2087,7 +2086,7 @@ Javascript côté client (3)
     </slide>
 
     <slide>
-        <title>Intégrer une carte Leaflet/OpenStreetMap dans votre application</title>
+        <title>Intégrer une carte Leaflet/OpenStreetMap</title>
 
         <block title="Les stations de bus de la ligne 9 récupérées en AJAX depuis l'API de Ginko Voyage">
             <div class="playground nocss h50 readonly" data-href="./examples/jsLeaflet3.html" data-opened="js"></div>
@@ -2096,7 +2095,7 @@ Javascript côté client (3)
     </slide>
 
     <slide>
-        <title>Intégrer une carte Leaflet/OpenStreetMap dans votre application</title>
+        <title>Intégrer une carte Leaflet/OpenStreetMap</title>
 
         <block title="D'autres possibilités">
             <p>L'API de Leaflet et d'OpenStreetMap fournit tout un ensemble de possibilités :</p>
@@ -2115,7 +2114,7 @@ Javascript côté client (3)
 
     <subsection>Le mobile</subsection>        
             
-    <slide outline class="no-navigation section currentSection">
+    <slide outline class="no-navigation section currentSection currentSubsection">
         <title>Plan du chapitre</title>
     </slide>
 
@@ -2291,7 +2290,7 @@ Javascript côté client (3)
         
     <subsection>Dessiner dans les canvas</subsection>
     
-    <slide outline class="no-navigation section currentSection">
+    <slide outline class="no-navigation section currentSection currentSubsection">
         <title>Plan du chapitre</title>
     </slide>
 
@@ -2554,7 +2553,7 @@ Javascript côté client (3)
     
     <section>Les trucs à connaître</section>
     
-    <slide outline class="no-navigation section currentSection">
+    <slide outline class="no-navigation section currentSection currentSubsection">
         <title>Plan du chapitre</title>
     </slide>
             
@@ -2679,6 +2678,8 @@ Javascript côté client (3)
         
     </slide>    
         
+    <subsubsection>VanillaJS</subsubsection>
+        
     <slide>
         <title>Vanilla JS</title>
         
@@ -2703,31 +2704,8 @@ Javascript côté client (3)
         </block>
         
     </slide>           
-        
-    <slide>
-        <title>Assurer la rétro-compatibilité avec BabelJS</title>
-        
-        <p>On l'a vu, tous les navigateurs ne sont pas toujours à jour, et certaines vieilles versions de navigateurs 
-        peuvent ne pas reconnaître certaines constructions du langage trop récentes. </p>
-        
-        <block title="BabelJS, qu'est-ce que c'est ?">
-            <p><a href="https://babeljs.io/" target="_blank">BabelJS</a> est un compilateur Javascript qui permet de 
-            traduire un code Javascript "récent" (ES2015+) dans un langage compatible avec la majorité des navigateurs. 
-            Babel propose les fonctionnalités suivantes : </p>
-            <ul>
-                <li>tranformation de la syntaxe (ex. <code>`salut ${toi}`</code> &rarr; <code>"salut " + toi</code>)</li>
-                <li>ajout de prothèses d'émulation (polyfills) pour les fonctions qui n'existeraient pas</li>
-                <li>réécriture de code source (par exemple pour les opérateurs Rest, Spread, ou les gabarits étiquetés)</li>
-                <li>etc.</li>
-            </ul>
-        </block>
-        
-        <p>BabelJS fonctionne aussi bien côté client que côté serveur où il s'interface ainsi avec les principaux 
-        environnements de déploiement de code. </p>
-        
-    </slide>    
-        
-    <subsubsection>React, Vue, Angular, Ember, etc.</subsubsection>    
+    
+    <subsubsection>React, Vue, Angular, etc.</subsubsection>    
     
     <slide>
         <title>Frameworks de développement d'applications</title>
@@ -2751,16 +2729,28 @@ Javascript côté client (3)
             </ul>
             <p>Bien évidemment, c'est souvent un mix des deux techniques qui est utilisé. </p>
         </block>
+        
+    </slide>
 
+    <slide>
+        <title>Frameworks de développement d'applications</title>
+        
         <block title="Les architectures Multi-Page Application">
             <p>C'est l'architecture que l'on connait et que l'on manipule depuis l'an dernier (UE LW du S4). </p>
+            <img src="images/archi-MPA.png" style="width: 65%;">
         </block>
         
         <block title="Les architectures Single-Page Application">
             <p>Il s'agit des architectures qui peuvent désormais être mises en place, grâce aux appels asynchrones 
             (AJAX) et la réécriture du DOM proposées par Javascript</p>
+            <img src="images/archi-SPA.png" style="width: 65%;">
         </block>
 
+        
+    </slide>
+
+    <slide>
+        <title>Frameworks de développement d'applications</title>
         
         <block title="Les frameworks actuels">
             <p>En très large majorité, les frameworks actuels visent principalement à produire des applications 
@@ -2777,38 +2767,79 @@ Javascript côté client (3)
             </ul>
             <p>Contrairement à jQuery il ne s'agit donc pas juste de quelques fonctions "raccourcis". </p>
         </block>
-        
-        
-        Par ordre de popularité : 
-        
-        <img alt="Popularité des frameworks Javascripts récents">
-        
-        <block title="1. VueJS">
-            S'appuie sur un système de templates pour décrire des composants.
-            Ajoute des attributs préfixés par <code>v-</code> aux balises HTML
-            pour donner des directives spécifiques. 
-        </block>
-        
-        <block title="2. ReactJS">
-            S'appuie sur TypeScript (version typée de Javascript) et un langage 
-            de description de composants nommé JSX (mélange de Javascript et de HTML/XML.
-        </block>
-        
-        <block title="3. Angular">
-            Développé par Google.
-            Modèle MVC, liaisons entre les données affichées dans les éléments HTML et le
-            modèle de données de l'application. 
-        </block>
-        
-        <block title="4. Ember">
-            Sur le déclin.  
-        </block>
-        
-        <p>Il serait trop présomptueux d'intégrer l'un ou l'autre de ces frameworks qui 
-        représente à lui seul un cours spécifique. </p>
+    
+        <p>Voir : <url>https://www.lambdatest.com/blog/best-javascript-framework-2020/</url></p>
         
     </slide>
+
+    <slide>
+        <title>Frameworks de développement d'applications</title>
         
+        <block title="1. ReactJS">
+            <img src="images/frameworks-react.png" style="width: 30%;">
+            <ul>
+                <li>Produit par une équipe de développeurs de Facebook en 2011 et rendu open source en 2013. </li>
+                <li>React s'appuie sur un langage de description de composants 
+                    nommé JSX (mélange de Javascript et de HTML/XML) pour la spécification de composants.
+                </li>
+                <li>Chaque composant est une classe qui étend un composant React générique, avec son modèle
+                de données (attributs de classe) et ses opérations internes. </li>
+                <li>Une méthode particulière <code>render</code> a pour objectif de produire le composant visualisé 
+                avec les interactions qui lui sont associées. </li>
+            </ul>
+        </block>
+
+    </slide>
+
+    <slide>
+        <title>Frameworks de développement d'applications</title>        
+        <block title="application React simple (tic-tac-toe pris du tutoriel React)">
+            <div class="playground nohtml nocss h50 nooutput" data-href="./examples/js-React.html" data-opened="js"></div>
+        </block>
+        
+        <p>Pour ceux qui sont intéressés : <url>https://fr.reactjs.org/tutorial/tutorial.html</url></p>
+        
+    </slide>
+
+    <slide>
+        <title>Frameworks de développement d'applications</title>
+        
+        <block title="2. VueJS">
+            <img src="images/Vue-js.svg" style="width: 40%;">
+            <ul>
+                <li>Initialement développé par Evan You en 2014, principalement destiné à des application simple page. </li>
+                <li>Vue s'appuie sur un système de templates pour décrire des composants. </li>
+                <li>Chaque composant est un triplet HTML+CSS+JS. </li>
+                <li>On utilise un modèle pour les données et les traitements (objets Javascript) qui sont rendus sur une 
+                page HTML contenant des directives spécifiques (<code>{{ ... }}</code> ou <code>@click</code>, etc.) </li>
+                <li>Ce framework permet d'ajouter des attributs préfixés par <code>v-</code> aux balises HTML pour donner des directives spécifiques
+                    (boucles, affichages conditionnels, etc.). </li>
+                <li>L'application maintient un lien constant entre les données manipulées (modèle) et les informations affichées 
+                (vue). </li>
+            </ul>
+        </block>
+        
+        <p>Pour ceux qui sont intéressés, une rapide démo des possibilités de Vue.js <url>https://vimeo.com/247494684</url></p>        
+
+    </slide>
+
+    <slide>
+        <title>Frameworks de développement d'applications</title>
+        
+        <block title="3. Angular">
+            <img src="images/frameworks-angularjs.png" style="width: 50%;">
+            <ul>
+                <li>1ère version sortie en 2010, 2nde version (actuelle) reprise en 2016</li>
+                <li>Modèle MVC, liaisons bi-directionnelles entre les données affichées dans les éléments HTML et le modèle de données de l'application.</li>
+                <li>Arborescence spécifique (1 dossier par composant, conventions de nommage des fichiers HTML, CSS, et JS propre au composant).</li>
+                <li>S'appuie sur TypeScript pour l'écriture de composants.</li>
+                <li>Enrichit le code HTML des composants avec des constructions spécifiques (préfixées par <code>*ng</code> pour les directives, 
+                    <code>{{ ... }}</code> pour l'inclusion de données du modèle, etc.) 
+                </li>
+            </ul>
+        </block>
+        
+    </slide>
         
         
     <slide>
@@ -2835,8 +2866,8 @@ Javascript côté client (3)
                     <url>https://reactjs.org/</url>, VueJS <url>https://vuejs.org/</url>, 
                 pour ne citer qu'eux). A l'heure actuelle, il est difficile, voire impossible d'avoir une
                 visibilité sur la durée de vie de ces environnements. Il y a 5 ans, on ne parlait pas d'Angular
-                et EmberJS (<url>https://www.emberjs.com/</url>) était le framework Javascript préféré des entreprises. Aujourd'hui, React séduit 
-                de plus en plus... Jusqu'à quand ?</li>
+                et EmberJS (<url>https://www.emberjs.com/</url>) était le framework Javascript préféré des entreprises. 
+                L'an dernier, React était incontournable. Cette année VueJS lui dispute la première place... et ensuite ?</li>
                 <!--
                 <li>la mise en place d'une usine à gaz : avec l'arrivée de NodeJS côté serveur, le développement
                 de code Javascript est devenu de plus en plus complexe avec le temps. Même si, au final, on 
@@ -2854,76 +2885,11 @@ Javascript côté client (3)
 
     <subsection>Quelques pratiques à connaître</subsection>
 
-    <slide outline class="no-navigation section currentSection">
+    <slide outline class="no-navigation section currentSection currentSubsection">
         <title>Plan du chapitre</title>
     </slide>
-        
-    <subsubsection>Minifier son code</subsubsection>        
 
-    <slide>
-        <title>Minification</title>
-        
-        <block title="Qu'est-ce que c'est ?">
-            <p>La minification consiste à réduire la taille du code. C'et un procédé classique qui permet d'éviter
-            de surcharger le réseau en réduisant le nombre de caractères utilisés. </p>
-            <p>Pour ce faire, le minifier va généralement retirer les commentaires, espaces et retours à la ligne 
-            superflus. Il peut également procéder à un renommage des variables pour les réduires à un nombre réduit 
-            de caractères.</p>
-        </block>
-        
-        <block title="Quelques outils">
-        <ul>
-            <li>JSCompress : <url>https://jscompress.com/</url></li>    
-            <li>javascript-minifier : <url>https://javascript-minifier.com/</url></li>
-            <li>minify : <url>https://www.minifier.org/</url></li>
-            <li>jsmin : <url>http://www.crockford.com/javascript/jsmin.html</url></li>
-        </ul>
-        </block>
-        
-    </slide>           
-
-        
-    <subsubsection>Obfusquer son code</subsubsection>        
-    
-    <slide>
-        <title>Obfuscation</title>
-        
-        <block title="Qu'est-ce que c'est ?">
-            <p>Offusquer son code consiste à le rendre illisible, en renommant les variables, en réécrivant les fonctions, 
-                les instructions, etc. Il s'agit ainsi d'en faire un code impénétrable : celui-ci est impossible à 
-            comprendre pour un être humain, mais il reste complètement valide et compréhensible par l'ordinateur. </p>
-            <p>Cette pratique est désignée par une terminologie variée : offusquer, assombrir, obscurcir. </p>
-        </block>
-        
-        <block title="A quoi cela sert-il ?">
-            <p>Ce mécanisme, qui n'est pas limité au code, a pour objectif de masquer des informations sensibles. </p>
-            <p>Javascript est un langage interprété, et donc le navigateur doit avoir accès au code source pour l'exécuter. 
-                Si le navigateur y a accès, l'utilisateur aussi. </p>
-            <p>On utilisera alors le principe d'offuscation pour faire en sorte que, bien que l'humain ait accès au code, 
-            il ne lui est pas possible de le comprendre et de l'exploiter (extraire les algorithmes, la logique métier, 
-                les informations sensibles, etc.). </p>
-        </block>
-    </slide>
-        
-    
-    <slide>
-        <title>Obfuscation</title>
-        
-        <block title="Comment faire ?">
-            <p>Ce n'est bien évidemment pas à vous de réécrire votre code ! Des outils/compilateurs peuvent le faire 
-            pour vous. Ceux-ci peuvent s'utiliser comme application desktop, en ligne de commande ou en ligne. 
-            Quelques références : </p>
-            <ul>
-                <li>Javascript Obfuscator : <url>https://javascriptobfuscator.com/</url> - en ligne ou desktop</li>
-                <li>Closure compiler : <url>https://developers.google.com/closure/compiler/</url></li>
-                <li>Jscrambler : <url>https://jscrambler.com/</url></li>
-                <li>YUI compressor : <url>http://yui.github.io/yuicompressor/</url></li>
-                <li>JS-Obfus : <url>http://stunnix.com/prod/jo/</url></li>
-            </ul>
-            <p>Et plein d'autres...</p>
-        </block>
-        
-    </slide>      
+    <subsubsection>Organiser son code en modules</subsubsection>
 
     <slide>
         <title>Les modules en Javascript</title>
@@ -3001,7 +2967,13 @@ Javascript côté client (3)
             </ul>
         </block>
 
-        <block title="Concernant le fichier contenant le code du module">
+    </slide>
+
+
+
+    <slide>
+        <title>Importer des fonctionnalités depuis un module</title>
+                <block title="Concernant le fichier contenant le code du module">
 
             <ul>
             <li>L'importation ne pourra se faire que depuis un script qui est lui-même un module (déclaré dans le navigateur avec 
@@ -3026,11 +2998,105 @@ Javascript côté client (3)
         <block>
             <title>Import du fichier précédent</title>
 
-            <div class="playground nocss nojs console noiframe h30" data-href="./examples/jsModules2.html" data-opened="html"></div>
+            <div class="playground nocss nojs console noiframe h50" data-href="./examples/jsModules2.html" data-opened="html"></div>
 
         </block>
         
     </slide>
+
+
+    <subsubsection>Assurer la rétro-compatibilité avec BabelJS</subsubsection>
+
+    <slide>
+        <title>Assurer la rétro-compatibilité avec BabelJS</title>
+        
+        <p>On l'a vu, tous les navigateurs ne sont pas toujours à jour, et certaines vieilles versions de navigateurs 
+        peuvent ne pas reconnaître certaines constructions du langage trop récentes. </p>
+        
+        <block title="BabelJS, qu'est-ce que c'est ?">
+            <p><a href="https://babeljs.io/" target="_blank">BabelJS</a> est un compilateur Javascript qui permet de 
+            traduire un code Javascript "récent" (ES2015+) dans un langage compatible avec la majorité des navigateurs. 
+            Babel propose les fonctionnalités suivantes : </p>
+            <ul>
+                <li>tranformation de la syntaxe (ex. <code>`salut ${toi}`</code> &rarr; <code>"salut " + toi</code>)</li>
+                <li>ajout de prothèses d'émulation (polyfills) pour les fonctions qui n'existeraient pas</li>
+                <li>réécriture de code source (par exemple pour les opérateurs Rest, Spread, ou les gabarits étiquetés)</li>
+                <li>etc.</li>
+            </ul>
+        </block>
+        
+        <p>BabelJS fonctionne aussi bien côté client que côté serveur où il s'interface ainsi avec les principaux 
+        environnements de déploiement de code. </p>
+        
+    </slide>    
+        
+
+    <subsubsection>Minifier son code</subsubsection>        
+
+    <slide>
+        <title>Minification</title>
+        
+        <block title="Qu'est-ce que c'est ?">
+            <p>La minification consiste à réduire la taille du code. C'et un procédé classique qui permet d'éviter
+            de surcharger le réseau en réduisant le nombre de caractères utilisés. </p>
+            <p>Pour ce faire, le minifier va généralement retirer les commentaires, espaces et retours à la ligne 
+            superflus. Il peut également procéder à un renommage des variables pour les réduires à un nombre réduit 
+            de caractères.</p>
+        </block>
+        
+        <block title="Quelques outils">
+        <ul>
+            <li>JSCompress : <url>https://jscompress.com/</url></li>    
+            <li>javascript-minifier : <url>https://javascript-minifier.com/</url></li>
+            <li>minify : <url>https://www.minifier.org/</url></li>
+            <li>jsmin : <url>http://www.crockford.com/javascript/jsmin.html</url></li>
+        </ul>
+        </block>
+        
+    </slide>           
+
+        
+    <subsubsection>Obfusquer son code</subsubsection>        
+    
+    <slide>
+        <title>Obfuscation</title>
+        
+        <block title="Qu'est-ce que c'est ?">
+            <p>Offusquer son code consiste à le rendre illisible, en renommant les variables, en réécrivant les fonctions, 
+                les instructions, etc. Il s'agit ainsi d'en faire un code impénétrable : celui-ci est impossible à 
+            comprendre pour un être humain, mais il reste complètement valide et compréhensible par l'ordinateur. </p>
+            <p>Cette pratique est désignée par une terminologie variée : offusquer, assombrir, obscurcir. </p>
+        </block>
+        
+        <block title="A quoi cela sert-il ?">
+            <p>Ce mécanisme, qui n'est pas limité au code, a pour objectif de masquer des informations sensibles. </p>
+            <p>Javascript est un langage interprété, et donc le navigateur doit avoir accès au code source pour l'exécuter. 
+                Si le navigateur y a accès, l'utilisateur aussi. </p>
+            <p>On utilisera alors le principe d'offuscation pour faire en sorte que, bien que l'humain ait accès au code, 
+            il ne lui est pas possible de le comprendre et de l'exploiter (extraire les algorithmes, la logique métier, 
+                les informations sensibles, etc.). </p>
+        </block>
+    </slide>
+        
+    
+    <slide>
+        <title>Obfuscation</title>
+        
+        <block title="Comment faire ?">
+            <p>Ce n'est bien évidemment pas à vous de réécrire votre code ! Des outils/compilateurs peuvent le faire 
+            pour vous. Ceux-ci peuvent s'utiliser comme application desktop, en ligne de commande ou en ligne. 
+            Quelques références : </p>
+            <ul>
+                <li>Javascript Obfuscator : <url>https://javascriptobfuscator.com/</url> - en ligne ou desktop</li>
+                <li>Closure compiler : <url>https://developers.google.com/closure/compiler/</url></li>
+                <li>Jscrambler : <url>https://jscrambler.com/</url></li>
+                <li>YUI compressor : <url>http://yui.github.io/yuicompressor/</url></li>
+                <li>JS-Obfus : <url>http://stunnix.com/prod/jo/</url></li>
+            </ul>
+            <p>Et plein d'autres...</p>
+        </block>
+        
+    </slide>      
 
 
     <slide class="no-navigation">

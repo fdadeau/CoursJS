@@ -813,6 +813,7 @@ body.portrait {
         width: 100%;
         padding: 10px;
         left: 0;
+        box-sizing: border-box;
         z-index: 10000;
     }
     .portrait .slide[id='1'] .title2 {
