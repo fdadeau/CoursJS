@@ -803,9 +803,11 @@ body.portrait {
         color: black !important;       
     }
 
-    nav li:hover {
-        margin-left: 15px;    
+    nav li li:hover {
+        margin-left: 15px; 
+        text-decoration: underline;
     }
+
 
     .portrait .slide[id='1'] .title2, .portrait .slide[id='1'] .title3 {
         position: fixed;
