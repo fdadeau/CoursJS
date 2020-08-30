@@ -786,7 +786,7 @@ body.portrait {
         width: 24em;
         background-color: white;
         border: solid 1px #000;
-        padding-left: 20px;
+        padding: 10px 10px 10px 30px;
         list-style-type: upper-roman;
     }
     nav ol > li > ol  {

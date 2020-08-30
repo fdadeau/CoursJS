@@ -375,7 +375,7 @@ var slides = new (function() {
         for (var pg0 of pgs) {
             // ajouter un bouton 
             var pgButton = document.createElement("button");
-            pgButton.style = "display: inline;";
+            pgButton.style = "display: inline; width: auto;";
             pgButton.innerHTML = "Charger l'exemple";
             var pgSlide = pg0.parentElement;
             while (!pgSlide.classList.contains("slide")) {
