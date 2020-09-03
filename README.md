@@ -7,7 +7,7 @@
 Cours de Licence Informatique 3e année pour l'unité d'enseignement **Web Avancé** (3 ECTS). Les slides sont supposées représenter 9h de CM.
 
 
-## Rérequis du cours
+## Prérequis du cours
 
 Le contenu du cours suppose une bonne connaissance de HTML (syntaxe, balises, versions, etc.) ainsi que CSS (DOM, syntaxe et poids des sélecteurs, règles de style, etc.). 
 
