@@ -68,7 +68,7 @@ Javascript côté client (3)
     
         <block title="L'histoire vue par Douglas Crockford">
             <p>Big bang &rarr; Apparition de l'homme &rarr; Javascript</p>
-            <p>Voir <url>https://www.youtube.com/watch?v=wWi9lPEfNHc</url></p>
+            <p>Voir <url>https://www.youtube.com/watch?v=RO1Wnu-xKoY</url> et toute la série de vidéos associées</p>
         </block>
         
         <block title="Back to 1995...">
@@ -168,8 +168,8 @@ Javascript côté client (3)
                 <li><strong>V8</strong> - Chrome, Node.js, Opera, MarkLogic</li>
                 <li><strong>JavaScriptCore</strong> - Webkit, Safari, Qt5</li>
             </ul>
-        <p>Tous 3 supportent la dernière spécification ES2018. D'autres (comme Chakra pour MS Edge) bloquent à 
-            des versions antérieures d'ES et ne proposent éventuellement que certaines fonctionnalités d'ES2018.
+        <p>Tous 3 supportent généralement la dernière spécification ECMA-262. D'autres (comme Chakra pour MS Edge Legacy - avant 2019) 
+            bloquent à des versions antérieures d'ES et ne proposent éventuellement que certaines des fonctionnalités récentes.
             </p>
         
         <p>A noter que pour des questions de performances, ces moteurs utilisent la technique de compilation Just-In-Time,
@@ -2112,7 +2112,7 @@ Javascript côté client (3)
             <ol>
                 <li>Utiliser <code>Array.isArray(<i>t</i>)</code>, mais celui-ci n'est supporté que depuis ECMAScript 5 (pas sur
                 les anciens navigateurs). </li>
-                <li>Tester le constructeur : <code><i>t</i>.constructor.toString()indexOf("Array") > -1</code> ... un peu tordu non ? </li>
+                <li>Tester le constructeur : <code><i>t</i>.constructor.toString().indexOf("Array") > -1</code> ... un peu tordu non ? </li>
                 <li>Utiliser <code><i>t</i> instanceof Array</code> : la meilleure solution</li>
             </ol>
         </block>
