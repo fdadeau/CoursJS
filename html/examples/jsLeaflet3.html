@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async function(e) {
         maxZoom: 19
     }).addTo(mymap);
     
-    var response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=XXX&idLigne=9&idVariante=2-1");  
+    var response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=XXX&idLigne=9&idVariante=5-4");  
 
     if (response.status == 200) {
         var data = await response.json();
