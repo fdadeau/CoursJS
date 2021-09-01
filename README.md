@@ -18,16 +18,16 @@ Des connaissances en programmation, en algorithmique et structures de données, 
 
 Le cours est divisé en 3 chapitres dont les liens sont accessibles ci-dessous : 
 
-### [Chapitre 1 - Javascript, le langage](./html/chap1-JS-langage.html)
+### <a href="https://fdadeau.github.io/CoursJS/html/chap1-JS-langage.html" target="_blank">Chapitre 1 - Javascript, le langage</a>
 
 Ce chapitre a pour objectif de parcourir les principaux éléments de syntaxe et de sémantique du langage Javascript : les types de données, les instructions, les mécanismes internes au langage (par ex. hoisting). Après un rapide historique du langage et de ses évolutions, nous nous attardons sur des types de données particuliers : les chaînes de caractères, les tableaux, les fonctions, les objets. 
 
-### [Chapitre 2 - Javascript, côté client](./html/chap2-JS-client.html) 
+### [Chapitre 2 - Javascript, côté client](https://fdadeau.github.io/CoursJS/html/chap2-JS-client.html)
 
 Ce chapitre a pour objectif de présenter le fonctionnement du langage Javascript lorsqu'il est interprété par un navigateur. Les principales fonctions d'interactions avec le navigateur sont abordées : manipulation du DOM, modification des styles, gestion des événements (clavier, souris, etc.), utilisation d'API natives du navigateur (géolocalisation, orientation, canvas, etc.), intégration d'API tierces (cartes, etc.). Ce chapitre est également l'occasion de revenir sur la gestion de l'asynchronisme en Javascript et d'introduire les promesses.
 
 
-### [Chapitre 3 - Javascript, côté serveur](./html/chap3-JS-serveur.html)
+### [Chapitre 3 - Javascript, côté serveur](https://fdadeau.github.io/CoursJS/html/chap3-JS-serveur.html)
 
 Ce dernier chapitre, plus court que les précédents, a pour objectif de présenter le fonctionnement de Javascript côté serveur avec Node.js. 
 Nous présentons principalement la mise en place d'un serveur avec Express, le développement d'API REST, et l'utilisation des sockets qui seront utiles pour le projet.
