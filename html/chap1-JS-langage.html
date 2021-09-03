@@ -148,6 +148,7 @@ Javascript côté client (3)
                 <tr><td>9 / ES2018</td><td>06/2018</td><td>Rest/Spread properties, amélioration des RegExp</td></tr>
                 <tr><td>ES2019</td><td>06/2019</td></td><td>Array flattening, <code>Object.fromEntries</code>, amélioration JSON</url></td></tr>
                 <tr><td>ES2020</td><td>06/2020</td></td><td>BigInt, Dynamic Import, optional chaining, <code>matchAll</code>, etc. </url></td></tr>
+                <tr><td>ES2021</td><td>06/2021</td></td><td><code>replaceAll</code>, WeakRef, Finalizers, logical assignment operators, etc. </url></td></tr>
             </table>
             <p>Chaque proposition d'amélioration est discutée par le comité technique TC39 et progressivement validée <br>
                 <url>https://www.ecma-international.org/publications/standards/Ecma-262.htm</url>. </p>
@@ -1437,6 +1438,10 @@ Javascript côté client (3)
                     <td rowspan="1"><code>replace(regexp,str)</code></td>
                     <td rowspan="1">Replace les occurrences de <code>regexp</code> par la chaîne <code>str</code>.</td>
                 </tr>
+                <tr>
+                        <td rowspan="1"><code>replaceAll(regexp,str)</code></td>
+                        <td rowspan="1">Replace toutes les occurrences de <code>regexp</code> par la chaîne <code>str</code> (ES2020).</td>
+                </tr>
             </table>
             
         </block>
@@ -2577,7 +2582,22 @@ Javascript côté client (3)
         </block>
   
     </slide>
-    
+
+    <slide>
+            <title>Les objets</title>
+        
+            <block title="Optional chaining">
+            <p>Depuis ES2020, la notation <code>obj?.prop1?.prop2</code> peut être utilisée pour accéder aux membres des objets sans avoir à vérifier
+                si les objets conteneurs sont <code>null</code> ou <code>undefined</code> au préalable.  
+            </p>
+            </block>
+            
+            <block title="Optional chaining">
+                <div class="playground nohtml nocss noiframe console h40" data-href="./examples/jsObjectOptionalChaining.html" data-opened="js"></div>
+            </block>
+      
+        </slide>
+        
     <subsubsection>Les membres d'un objet</subsubsection>
   
     <slide>
