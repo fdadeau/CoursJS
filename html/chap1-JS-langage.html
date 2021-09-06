@@ -2656,9 +2656,27 @@ Javascript côté client (3)
     </slide>
 
     <slide>
+            <title>Les objets</title>
+            
+            <block title="Lister les propriétés d'un objet et leurs valeurs">
+            <p>La classe <code>Object</code> contient plusieurs méthodes statiques qui peuvent être utiles : </p>
+            <ul>
+                <li><code>Object.keys(obj)</code> renvoie un tableau des propriétés de l'objet en paramètre</li>
+                <li><code>Object.values(obj)</code> renvoie un tableau des valeurs des propriétés de l'objet en paramètre</li>
+                <li><code>Object.entries(obj)</code> renvoie un tableau de couples <code>[propriete, valeur]</code> de l'objet en paramètre</li>
+            </ul>
+            </block>
+            
+            <block title="Enumérer les propriétés d'un objet">
+                <div class="playground nohtml nocss noiframe console h25" data-href="./examples/jsObjectKeysValuesEntries.html" data-opened="js"></div>
+            </block>
+        
+    </slide>
+    
+    <slide>
         <title>Les objets</title>
         
-        <block title="Lister les propriétés d'un objet">
+        <block title="Parcourir les propriétés d'un objet">
         <p>La structure de boucle <code>for...in</code> permet de parcourir les attributs d'un objet. </p>
         </block>
         
