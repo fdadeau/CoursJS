@@ -813,7 +813,7 @@ var slides = new (function() {
                 slides.menu.previous();
                 break;
             case 70:    // f
-                if (document.body.querySelector(":target .playground :focus") && 
+                if (!e.ctrlKey && document.body.querySelector(":target .playground :focus") && 
                     document.body.querySelector(":target .playground :focus").tagName === "TEXTAREA") return;
             case 116:   // f5
                 slides.menu.fullscreen();
