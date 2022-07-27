@@ -1,3 +1,0 @@
-Bonjour, je suis un fichier de texte AJAX. 
-Si vous pouvez m'afficher, c'est que vous avez réussi à me lire. 
-Si vous m'affichez sur plusieurs lignes, après un petit traitement sur le texte, c'est encore mieux.  
