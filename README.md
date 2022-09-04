@@ -1,6 +1,6 @@
 # Cours de Javascript
 
-## Année universitaire 2021-2022
+## Année universitaire 2022-2023
 
 ###  [Frederic Dadeau](mailto:frederic.dadeau@univ-fcomte.fr)
 
