@@ -8,20 +8,23 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-function Personnalite(nom, prenom) {
-    this.nom = nom;
-    this.prenom = prenom;
-    var age = 0;
-    this.birthday = function() { age++};
-    this.getAge = function() {
-        return age;
-    };
+class Personnage {
+    #age;
+    constructor(nom, prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.#age = 0;
+    }
+    birthday() { this.#age++};
+    getAge() { return this.#age; };
+    #notVisible() { return 42; };
 }
-var johnny= new Personnalite("Smet", "Jean-Philippe");
-for (var i = 1944; i <= 2017; i++) {
-    johnny.birthday();
+let gb = new Personnage("Threepwood", "Guybrush");
+for (let i = 1990; i <= 2022; i++) {
+    gb.birthday();
 }
-console.log("Johnny avait " + johnny.getAge() + " ans.");
+console.log(gb.prenom + " a " + gb.getAge() + " ans.");
+console.log(gb.#notVisible);
 </script>
 </head>
 

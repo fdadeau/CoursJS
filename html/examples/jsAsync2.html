@@ -10,16 +10,16 @@
     <script src="./includeInIFrame.js"></script>
     <script>
 function loadResources() {
-  var debut = Date.now();
-  var img1 = new Image(200, 300);
+  let debut = Date.now();
+  let img1 = new Image(200, 300);
   img1.onload = function(_e) { 
     log("Image 1 loaded -- " + (Date.now() - debut)); 
     document.body.appendChild(this); 
-    var img2 = new Image(200, 300);
+    let img2 = new Image(200, 300);
     img2.onload = function(_e) { 
       log("Image 2 loaded -- " + (Date.now() - debut)); 
       document.body.appendChild(this); 
-      var img3 = new Image(200, 300);
+      let img3 = new Image(200, 300);
       img3.onload = function(_e) {
         log("Image 3 loaded -- " + (Date.now() - debut)); 
         document.body.appendChild(this);

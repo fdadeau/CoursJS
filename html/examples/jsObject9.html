@@ -8,11 +8,11 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-function Personnalite(nom, prenom) {
+function Personnage(nom, prenom) {
     this.nom = nom;
     this.prenom = prenom;
 }
-Personnalite.prototype.metier = "chanteur"
+Personnalite.prototype.metier = "pirate"
 Personnalite.prototype.presenteToi = function() {
     return "Bonjour, je m'appelle " + this.prenom +
         " " + this.nom + ". Je suis " + this.metier + ".";

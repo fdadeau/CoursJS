@@ -41,7 +41,7 @@ div p:hover input {
 <script>
 function ajouter() {
     if (item.value.trim().length > 0) {
-        var liste = localStorage.getItem("liste");
+        let liste = localStorage.getItem("liste");
         liste = (!liste) ? [] : JSON.parse(liste);
         liste.push(item.value);
         localStorage.setItem("liste", JSON.stringify(liste));
@@ -49,14 +49,14 @@ function ajouter() {
     }
 }
 function supprimer(i) {
-    var liste = JSON.parse(localStorage.getItem("liste"));
+    let liste = JSON.parse(localStorage.getItem("liste"));
     liste.splice(i, 1);
     localStorage.setItem("liste", JSON.stringify(liste));
     afficherListe();
 }
 function afficherListe() {
     maListe.innerHTML = "";
-    var liste = localStorage.getItem("liste");
+    let liste = localStorage.getItem("liste");
     if (liste) {
         liste = JSON.parse(liste);
         liste.forEach(function(elem, index) {

@@ -17,7 +17,7 @@ function geolocalise() {
     
 function showPosition(position) {
     
-	var mymap = L.map('mapid', {
+	let mymap = L.map('mapid', {
                     center: L.latLng(position.coords.latitude, position.coords.longitude), 
                     zoom: 16
                 });

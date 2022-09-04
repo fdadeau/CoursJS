@@ -10,9 +10,9 @@
 <script>
 function convertir() {
     try {
-        var obj = JSON.parse(monTexte.textContent);
+        let obj = JSON.parse(monTexte.textContent);
         output.innerHTML = "";
-        for (var i in obj) {
+        for (let i in obj) {
             output.innerHTML += 
                 "Propriété : " + i + 
                 "<br> - Valeur : " + obj[i] + 

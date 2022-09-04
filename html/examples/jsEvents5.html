@@ -14,7 +14,7 @@ function clicB1() {
 }
 function clicB2() {
     alert("clic bouton 2");
-    var ev = new CustomEvent("clicB2", { "detail": new Date() });
+    let ev = new CustomEvent("clicB2", { "detail": new Date() });
     document.dispatchEvent(ev);
 }
 document.addEventListener("clicB2", function(e) {

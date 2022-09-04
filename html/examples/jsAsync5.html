@@ -10,11 +10,11 @@
     <script src="./includeInIFrame.js"></script>
     <script>
 async function loadResources() {
-  var debut = Date.now();
+  let debut = Date.now();
     
   function loadImage(src) {
     return new Promise(function(resolve, reject) {
-       var img = new Image(200, 300);
+       let img = new Image(200, 300);
        img.onload = () => { resolve(img); log("Image loaded " + img.src + " -- " + (Date.now() - debut)); }
        img.onerror = () => reject(new Error("Can't find image " + img.src));
        img.src = src;
@@ -22,11 +22,11 @@ async function loadResources() {
     });
   }                      
   try {
-    var img1 = await loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg");
+    let img1 = await loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg");
     document.body.appendChild(img1);
-    var img2 = await loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg");       
+    let img2 = await loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg");       
     document.body.appendChild(img2);
-    var img3 = await loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif");
+    let img3 = await loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif");
     document.body.appendChild(img3);
     await (function() {
       console.log("Done.");

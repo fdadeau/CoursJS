@@ -9,11 +9,11 @@
 <script src="./includeInIFrame.js"></script>
 <script>
 function check() {
-    var reg = document.getElementById("reg").value;
-    var ch = document.getElementById("ch").value;
+    let reg = document.getElementById("reg").value;
+    let ch = document.getElementById("ch").value;
     if (reg && ch) {
         try {
-            var tab = ch.match(eval(reg));
+            let tab = ch.match(eval(reg));
             result.innerHTML = "Sous-chaines reconnues : " + (tab ? tab.toString() : "aucune");
         }
         catch (err) {

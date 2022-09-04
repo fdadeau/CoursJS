@@ -10,7 +10,7 @@
     <script>
 
 function sendRequest() {
-    var xhttp = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); 
+    let xhttp = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             reponse.innerHTML = "Plus qu'à parser : <pre>" + this.responseXML + "</pre> Moi j'ai pas le courage.";   

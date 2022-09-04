@@ -8,17 +8,18 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-var johnny = {
-    nom: "Smet",
-    prenom: "Jean-Philippe",
+let gb = {
+    nom: "Threepwood",
+    prenom: "Guybrush",
     presenteToi: function() { 
-        return "Bonjour, je m'appelle " + 
-            this.prenom + " " + this.nom + "."; 
+        return "My name is " + 
+            this.prenom + " " + this.nom + 
+            " and I want to be a pirate."; 
     }
 };
-console.log(johnny.nom);
-console.log(johnny["prenom"]);
-console.log(johnny.presenteToi);
+console.log(gb.nom);
+console.log(gb["prenom"]);
+console.log(gb.presenteToi);
 </script>
 </head>
 

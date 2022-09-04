@@ -8,12 +8,12 @@
 </style>
     <script src="./includeInIFrame.js"></script>
 <script>
-var messages = ["J'ai dit quoi ?", 
+const messages = ["J'ai dit quoi ?", 
                 "Tu ne sais pas lire ?", 
                 "Arrête, je vais m'énerver !", 
                "Tu joues avec ta vie...", 
                "Sérieux, arrête, c'est pas drôle !"];
-var current = 0;
+let current = 0;
 function clic() {
     if (current < messages.length) {
         alert(messages[current]);   

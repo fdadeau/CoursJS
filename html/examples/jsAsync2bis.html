@@ -11,11 +11,11 @@
     <script>
 function loadResources() {
 
-  var debut = Date.now();
+  let debut = Date.now();
 
   function loadImage(src, callback) {
     log("Loading image -- " + (Date.now() - debut));
-    var img = new Image(200, 300);
+    let img = new Image(200, 300);
     img.onload = () => callback(null, img);
     img.onerror = () => callback("Error", null);
     img.src = src;

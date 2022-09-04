@@ -3,19 +3,23 @@
     <nom>Web avancé</nom>
     <CM>9</CM>
     <TD>0</TD>
-    <TP>27</TP>
+    <TP>18</TP>
     <intervenants>
         <intervenant>
             <nom>Dadeau</nom>
             <prenom>Fred</prenom>
         </intervenant>
         <intervenant>
-            <nom>Gros</nom>
-            <prenom>Jean-Philippe</prenom>
+            <nom>Merlet</nom>
+            <prenom>Eric</prenom>
         </intervenant>
         <intervenant>
-            <nom>Voiron</nom>
-            <prenom>Guillaume</prenom>
+            <nom>Tabary</nom>
+            <prenom>Dorine</prenom>
+        </intervenant>
+        <intervenant>
+            <nom>Henriet</nom>
+            <prenom>Julien</prenom>
         </intervenant>
     </intervenants>
 </module>

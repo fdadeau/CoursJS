@@ -1,10 +1,10 @@
-var h2g2 = 42;
+let h2g2 = 42;
 
 function alea(min, max) {
     return (Math.random() * (max-min) + min) | 0; 
 }
 
-var moi = "Fred";
+let moi = "Fred";
 
 console.log("coucou");
 

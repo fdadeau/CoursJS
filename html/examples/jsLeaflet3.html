@@ -9,7 +9,7 @@
     <script>
 document.addEventListener("DOMContentLoaded", async function(e) {
     
-    var mymap = L.map('mapid', { 
+    let mymap = L.map('mapid', { 
         center: [47.2364, 5.987499], 
         zoom: 13 
     });
@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", async function(e) {
         maxZoom: 19
     }).addTo(mymap);
     
-    var response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=XXX&idLigne=9&idVariante=5-4");  
+    let response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=XXX&idLigne=9&idVariante=5-4");  
 
     if (response.status == 200) {
-        var data = await response.json();
-        for (var i=0; i < data.objets.length; i++) {
-            var numero = (i+1);
-            var nom = data.objets[i].nom;
+        let data = await response.json();
+        for (let i=0; i < data.objets.length; i++) {
+            let numero = (i+1);
+            let nom = data.objets[i].nom;
             L.marker([data.objets[i].latitude, data.objets[i].longitude])
                 .addTo(mymap)
                 .bindPopup(numero + " - " + nom);

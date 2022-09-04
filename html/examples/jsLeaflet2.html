@@ -8,7 +8,7 @@
     <script src="includeInIFrame.js"></script>
     <script>
 document.addEventListener("DOMContentLoaded", function(e) {
-    var mymap = L.map('mapid', { 
+    let mymap = L.map('mapid', { 
         center: [47.22969, 6.03442], 
         zoom: 15 
     });
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
         maxZoom: 19
     }).addTo(mymap);
         
-    var myIcon = L.icon({
+    let myIcon = L.icon({
         iconUrl: "../images/cadet.png", 
         iconSize: [64,64], 
         iconAnchor: [32,32], 

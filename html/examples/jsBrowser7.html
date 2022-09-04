@@ -8,13 +8,13 @@
 </style>
     <script src="./includeInIFrame.js"></script>
 <script>
-var inFrame = (window.top != window.self);
+let inFrame = (window.top != window.self);
 
-var w = ((inFrame) ? window.top.innerWidth : window.innerWidth)
+let w = ((inFrame) ? window.top.innerWidth : window.innerWidth)
   || document.documentElement.clientWidth
   || document.body.clientWidth;
   
-var h = ((inFrame) ? window.top.innerHeight : window.innerHeight)
+let h = ((inFrame) ? window.top.innerHeight : window.innerHeight)
 || document.documentElement.clientHeight
 || document.body.clientHeight;
 

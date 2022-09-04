@@ -28,8 +28,8 @@ div {
     <script src="./includeInIFrame.js"></script>
 <script>
 function valider(e) {
-    var enfantsSages = [];
-    for (var i=0; i < sages.options.length; i++) {
+    let enfantsSages = [];
+    for (let i=0; i < sages.options.length; i++) {
         enfantsSages.push(sages.options[i].value);   
     }
     alert("C'est envoyé. Il y aura de beaux cadeaux à Noël pour : " 
@@ -37,8 +37,8 @@ function valider(e) {
     e.preventDefault();
 }
 function ajouter() {
-    var ps = document.getElementById("pasSages");
-    var newOption = document.createElement("option");
+    let ps = document.getElementById("pasSages");
+    let newOption = document.createElement("option");
     if (nom.value.trim().length == 0) {
         alert("Veuillez remplir le nom");
         return;
@@ -52,8 +52,8 @@ function ajouter() {
     ps.add(newOption);
 }
 function supprimer() {
-    var aSupprimer = [];
-    for (var i=0; i < pasSages.options.length; i++) {
+    let aSupprimer = [];
+    for (let i=0; i < pasSages.options.length; i++) {
         if (pasSages.options[i].selected) {
             aSupprimer.push(i);
         };   
@@ -61,7 +61,7 @@ function supprimer() {
     while (aSupprimer.length > 0) {
         pasSages.options.remove(aSupprimer.pop());   
     }
-    for (i=0; i < sages.options.length; i++) {
+    for (let i=0; i < sages.options.length; i++) {
         if (sages.options[i].selected) {
             aSupprimer.push(i);
         };   
@@ -71,14 +71,14 @@ function supprimer() {
     }
 }
 function deplace(source, dest) {
-    var aDeplacer = [];
-    for (var i=0; i < source.options.length; i++) {
+    let aDeplacer = [];
+    for (let i=0; i < source.options.length; i++) {
         if (source.options[i].selected) {
             aDeplacer.push(i);
         };   
     }
     while (aDeplacer.length > 0) {
-        i = aDeplacer.pop();
+        let i = aDeplacer.pop();
         var opt = source.options[i];
         source.options.remove(i);   
         dest.options.add(opt);
@@ -106,9 +106,9 @@ function deplace(source, dest) {
   </div>
   <div>Enfants sages<br>
     <select multiple id="sages" size="6">
-      <option value="karla">Karla Breschi</option>
-      <option value="jp">Jean-Philippe Gros</option>
-      <option value="guillaume">Guillaume Voiron</option>
+      <option value="dorine">Dorine Tabary</option>
+      <option value="eric">Eric Merlet</option>
+      <option value="ju">Julien Henriet</option>
     </select>
   </div>
   <input type="submit" value="Envoyer au Père Noël">

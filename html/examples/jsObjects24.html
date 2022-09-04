@@ -8,30 +8,30 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-function Personne(p, n) {
-    this.nom = n;
-    this.prenom = p;
+class Personne {
+    constructor(p, n) {
+        this.nom = n;
+        this.prenom = p;
+    }
+    
+    getNom() {
+        return this.prenom + " " + this.nom;
+    }
+}
+class MiniPersonne extends Personne {
+    constructor(p, n) {
+        super(p, n);
+    }
+    getNom() {
+        return super.getNom() + " (mini)";
+    }
 }
     
-Personne.prototype.getNom = function() {
-    return this.prenom + " " + this.nom;
-}
-
 var moi = new Personne("Fred", "Dadeau");
-var jube = new Personne("Julien", "Bernard");    
-    
-function MiniPersonne(p, n) {
-    Personne.call(this, p, n);
-}    
-MiniPersonne.prototype = Object.create(Personne.prototype);
-MiniPersonne.prototype.constructor = MiniPersonne;
-
-MiniPersonne.prototype.getNom = function() {
-    return Personne.prototype.getNom.call(this) + " (mini)";
-}
-    
+var jube = new Personne("Julien", "Bernard");            
 var raph = new MiniPersonne("Raph", "Dadeau");
 
+console.log(raph.getNom());
 console.log(moi instanceof Personne);
 console.log(moi instanceof MiniPersonne);
 console.log(raph instanceof Personne);

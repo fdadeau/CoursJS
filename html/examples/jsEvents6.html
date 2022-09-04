@@ -11,12 +11,12 @@
 function afficher(type, event) {
     document.body.innerHTML = "<p>Evenement " + type + 
         "</p><p>event.touches = <br>";
-    for (var i=0; i < event.touches.length; i++) {
+    for (let i=0; i < event.touches.length; i++) {
         document.body.innerHTML += 
             i + " -> " + afficherTouche(event.touches[i]);
     }
     document.body.innerHTML += "</p><p>event.changedTouches = <br>";
-    for (i=0; i < event.changedTouches.length; i++) {
+    for (let i=0; i < event.changedTouches.length; i++) {
         document.body.innerHTML += 
             i + " -> " + afficherTouche(event.changedTouches[i]);
     }    

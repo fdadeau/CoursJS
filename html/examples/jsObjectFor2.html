@@ -8,22 +8,22 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-var johnny = {
-    nom: "Smet",
+var gb = {
+    nom: "Threepwood",
     presenteToi: function() { 
-        return "Bonjour, je m'appelle " + 
+        return "My name is " + 
             this.prenom + " " + 
             this.nom + "."; 
     }
 };
-Object.defineProperty(johnny, "prenom", {
+Object.defineProperty(gb, "prenom", {
     configurable: false,
     enumerable: false,
-    value: "Jean-Philippe",
+    value: "Guybrush",
     writable: false
 });
-for (var i in johnny) {
-    console.log(i + " -> " + johnny[i]);
+for (var i in gb) {
+    console.log(i + " -> " + gb[i]);
 }
 </script>
 </head>

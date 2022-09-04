@@ -10,18 +10,19 @@
 <script>
 function presenteToi() {
     console.log(this);
-    return "Bonjour, je m'appelle " + 
-        this.prenom + " " + this.nom + "."; 
+    return "My name is " + 
+        this.prenom + " " + this.nom + 
+        " and I want to be a pirate."; 
 }    
 
-var johnny = { 
-  nom: "Smet", 
-  prenom: "Jean-Philippe", 
+let gb = { 
+  nom: "Threepwood", 
+  prenom: "Guybrush", 
   disQuelqueChose: presenteToi 
 };
 
 console.log(presenteToi());
-console.log(johnny.disQuelqueChose());
+console.log(gb.disQuelqueChose());
 </script>
 </head>
 

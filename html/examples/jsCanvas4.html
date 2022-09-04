@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     cvs.width = window.innerWidth;
     cvs.height = window.innerHeight;
     
-    var ctx = cvs.getContext("2d");
+    let ctx = cvs.getContext("2d");
     
-    var img = new Image();
+    let img = new Image();
     img.onload = function() {
         ctx.drawImage(this, 
                       0,        // sourceX 

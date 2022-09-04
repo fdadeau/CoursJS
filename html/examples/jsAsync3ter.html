@@ -8,11 +8,11 @@
 </style>
     <script src="./includeInIFrame.js"></script>
 <script>
-var p = new Promise(function(resolve, reject) {
+let p = new Promise(function(resolve, reject) {
     console.log("Preum's");     // affiché en premier
     resolve(42);   
 });
-var r = p.then(function(result) {
+let r = p.then(function(result) {
     console.log(result);    // affiché en troisième
 });
 console.log(r);     // affiché en deuxième

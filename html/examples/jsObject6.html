@@ -8,14 +8,14 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-var johnny = { nom: "Smet", prenom: "Jean-Philippe" };
+let gb = { nom: "Threepwood", prenom: "Guybrush" };
 
 function presenteToi(prefixe) {
-    return prefixe + ", je m'appelle " + 
+    return prefixe + ", my name is " + 
         this.prenom + " " + this.nom + "."; 
 }    
 
-console.log(presenteToi.apply(johnny, ["Bonjour"]));    
+console.log(presenteToi.apply(gb, ["Hi"]));    
     
 </script>
 </head>

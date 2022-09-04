@@ -3,21 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Exemple 2 - Strucutre try catch </title>
+    <title>AJAX 1</title>
 <style>
 </style>
     <script src="./includeInIFrame.js"></script>
     <script>
 
 function sendRequest() {
-    var xhttp = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); 
+    let xhttp = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"); 
     xhttp.onreadystatechange = function() {
         document.getElementById("reponse").innerHTML += "readyState -> " + this.readyState + "(" + this.status + ")<br>";
         if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            for (var i=0; i < data.objets.length; i++) {
-                var numero = (i+1);
-                var nom = data.objets[i].nom;
+            let data = JSON.parse(this.responseText);
+            for (let i=0; i < data.objets.length; i++) {
+                let numero = (i+1);
+                let nom = data.objets[i].nom;
                 document.getElementById("reponse").innerHTML += numero + " - " + nom + "<br>";
             }
         }

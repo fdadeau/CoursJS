@@ -52,6 +52,7 @@ Javascript côté client (3)
     <title>Chapitre 1 - Javascript, le langage</title>
     
     <slide>
+        <img src="images/JS.png" style="display: block; width: 10%; margin: 20px auto;">
         <title1>@ref{title}</title1>
         <title2>Cours &ldquo;Web avancé&rdquo; - Licence Info 3<sup>ème</sup> année</title2>
         <title3>Frédéric Dadeau - <a href="mailto:frederic.dadeau@univ-fcomte.fr">frederic.dadeau@univ-fcomte.fr</a></title3>
@@ -76,7 +77,7 @@ Javascript côté client (3)
             <li>Large domination de Netscape, à une époque où le web n'est qu'un moyen de diffuser du contenu. </li>
             <li>Mark Anderssen, responsable de Netscape, souhaite ajouter de l'interactivité côté client, avec un langage utilisable 
             par les designers et les développeurs. </li>
-            <li>Netscape missionne Brendon Eich pour embarquer... <strong>Scheme dans le navigateur</strong> (#WTF)</li>
+            <li>Netscape missionne Brendon Eich pour embarquer... <strong>Scheme dans le navigateur</strong> (cf. cours PFS)</li>
             <li>Fusion Sun Microsystems (Java) avec Netscape &rarr; Java revient en force, mais est jugé trop complexe tel quel. </li>
             <li>Finalement, Eich s'inspire de Java pour créer l'ancêtre de Javascript, appelé Mocha, en seulement 10 jours.</li>
         </ul>
@@ -147,8 +148,11 @@ Javascript côté client (3)
                 <tr><td>8 / ES2017</td><td>06/2017</td><td>Asychronisme avec <code>await</code>/<code>async</code></td></tr>
                 <tr><td>9 / ES2018</td><td>06/2018</td><td>Rest/Spread properties, amélioration des RegExp</td></tr>
                 <tr><td>ES2019</td><td>06/2019</td></td><td>Array flattening, <code>Object.fromEntries</code>, amélioration JSON</url></td></tr>
+                <!--
                 <tr><td>ES2020</td><td>06/2020</td></td><td>BigInt, Dynamic Import, optional chaining, <code>matchAll</code>, etc. </url></td></tr>
                 <tr><td>ES2021</td><td>06/2021</td></td><td><code>replaceAll</code>, WeakRef, Finalizers, logical assignment operators, etc. </url></td></tr>
+                -->
+                <tr><td>...</td><td>...</td></td><td>...</td></tr>
                 <tr><td>ES2022</td><td>06/2022</td></td><td><code>at</code>, <code>Object.hasOwn</code>, causes d'erreurs, nouveaux membres dans les classes, etc. </url></td></tr>
             </table>
             <p>Chaque proposition d'amélioration est discutée par le comité technique TC39 et progressivement validée <br>
@@ -234,6 +238,8 @@ Javascript côté client (3)
                     <td>permet de déclarer deux variables (<code>z</code> et <code>t</code>) et de leur affecter leurs valeurs initiales<br>(resp. <code>42</code> et la valeur de la variable <code>y</code> définie précédemment)</td>
                 </tr>
             </table>
+            <p>Pour l'instant, on déclare les variables avec <code>var</code> (notation historique), mais
+            il existe aussi <code>let</code> et <code>const</code> dont on reparlera un peu plus tard...</p>
         </block>
         
         <block title="Nommage des variables">
@@ -561,7 +567,7 @@ Javascript côté client (3)
                     <tr><td><code>"abc" >= "ABC"</code></td><td><code>true</code></td></tr>
                     <tr><td><code>42 >= "40"</code></td><td><code>false</code></td></tr>
                     <tr><td><code>true >= 0</code></td><td><code>true</code></td></tr>
-                    <tr><td><code>[4] >= 42</code></td><td><code>false</code></td></tr>
+                    <tr><td><code>[4] < 42</code></td><td><code>true</code></td></tr>
                     <tr><td><code>"d" >= function(){}</code></td><td><code>false</code></td></tr>
                     <tr><td><code>&gt;</code></td><td><code>42 &gt; "40"</code></td><td><code>false</code></td></tr>
                     <tr><td><code>&lt;=</code></td><td><code>42 &lt;= 40</code></td><td><code>true</code></td></tr>
@@ -1820,10 +1826,10 @@ Javascript côté client (3)
         <title>Les portées des variables</title>
         <block title="Portée locale vs. portée globale">
             <ul>
-                <li>Portée globale : pour les variables déclarées (avec <code>var</code>) en dehors de toute fonction, qui 
+                <li>Portée globale : pour les variables déclarées en dehors de toute fonction, qui 
                 seront accessibles de n'importe où (ie. dans n'importe quelle fonction ou en dehors), mais aussi les variables 
                 affectées dans une fonction sans avoir été déclarées (!)</li>
-                <li>Portée locale : pour les variables déclarées (avec <code>var</code>) dans une fonction, qui 
+                <li>Portée locale : pour les variables déclarées dans une fonction, qui 
                     ne seront accessible que depuis la fonction où elles sont déclarées. </li>
             </ul>
         </block>   
@@ -1840,7 +1846,7 @@ Javascript côté client (3)
             deux mots-clés pour définir des données : </p>
             <ul>
                 <li><code>const</code> qui permet de définir une constante. Celle-ci constante devra obligatoirement être déclarée avec une valeur assignée. </li>
-                <li><code>let</code> qui permet de déclarer une variable locale au bloc de code considéré. </li>
+                <li><code>let</code> qui permet de déclarer une variable locale <strong>au bloc de code</strong> considéré. </li>
             </ul>
         </block>
 
@@ -1876,7 +1882,7 @@ Javascript côté client (3)
 
             <block title="Arrow functions">
             <p>ES2015 a introduit les fonctions fléchées (arrow functions). Il s'agit d'un sucre syntaxique [avec une 
-                petite subtilité, on y reviendra plus tard] pour 
+                petite subtilité, on y reviendra plus tard] pour 
             la déclaration d'une fonction dans le plus pure style de la programmation fonctionnelle à la Caml. 
             </p>
             
@@ -1930,52 +1936,6 @@ Javascript côté client (3)
     </slide>
 
 
-    <slide>
-        <title>Fonctions immédiatement invoquées (IIEF)</title>
-        
-        <block title="Qu'est-ce que c'est ? &Agrave; quoi ça sert ?">
-            <p>Cette pratique consiste à déclarer une fonction qui s'exécute immédiatement. L'intérêt principal est de créer 
-            une portée locale dont les variables ne viendront pas "polluer" le scope global. </p>
-        </block>
-        
-        <block title="IIEF, syntaxe et principe">
-            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsFunctions17.html" data-opened="js"></div>
-        </block>
-        
-    </slide>
-
-    <slide> 
-        <title>Fonctions immédiatement invoquées (IIEF)</title>
-
-        <block title="Quelques remarques">
-            <ul>
-                <li>Les déclaration de fonctions ne peuvent pas être écrites sous cette forme. </li>
-                <li>Si la fonction retourne un résultat, celui-ci peut bien sûr être récupéré. </li>
-            </ul>
-        </block>
-        
-        <block title="Self-invoking functions">
-            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsFunctions12.html" data-opened="js"></div>
-        </block>
-    </slide>
-
-
-    <slide>
-        <title>Retour sur les gabarits de chaîne</title>
-        
-        <p>Les gabarits de chaîne peuvent aussi contenir des étiquettes grâce à la syntaxe <code>etiquette`...`</code>. 
-        On parle alors de gabarits étiquetés. </p>
-        
-        <p>Dans ce cas l'étiquette est une fonction <code>function(chaines, ...expressions)</code> où le premier paramètre 
-        est un tableau des différentes sous-chaines "fixes" constituant le gabarit, et les paramètres restants sont les 
-        expressions contenues dans la chaîne. </p>
-            
-        <block title="Gabarits étiquetés">
-            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsStringTemplate2.html" data-opened="js"></div>
-        </block>
-        
-    </slide>
-
     
    <slide>
         <title>Déclaration vs. Expressions</title>
@@ -2010,6 +1970,25 @@ Javascript côté client (3)
         </block>
         
     </slide>
+
+    <slide>
+        <title>Le hoisting en Javascript</title>
+
+        <block title="Cas particuliers : <code>let</code> et <code>const</code>">
+            <p>Le hoisting s'applique aux fonctions et variables déclarées avec <code>var</code>, mais
+            pas à celles déclarées avec <code>let</code> ou <code>const</code>... enfin pas exactement. </p>
+            <p>Les déclarations sont (en interne) effectivement bien remontées, mais une donnée 
+                déclarée avec <code>let</code> ou <code>const</code> n'est pas accessible avant 
+            sa déclaration, sous peine de générer une erreur. </p>
+        </block>
+        
+        <block title='Différences de "hoisting" (<code>var</code> vs. <code>let</code>)'>
+            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsFunctions13bis.html" data-opened="js"></div>
+        </block>
+        
+    </slide>
+
+
 
     <slide>
         <title>Les closures</title>
@@ -2059,7 +2038,55 @@ Javascript côté client (3)
         <p>Pour plus d'informations sur ce concept (un peu abstrait) : <url>https://fr.wikipedia.org/wiki/Curryfication</url></p>
         
     </slide>
-    
+
+    <slide>
+        <title>Retour sur les gabarits de chaîne</title>
+        
+        <p>Les gabarits de chaîne peuvent aussi contenir des étiquettes grâce à la syntaxe <code>etiquette`...`</code>. 
+        On parle alors de gabarits étiquetés. </p>
+        
+        <p>Dans ce cas l'étiquette est une fonction <code>function(chaines, ...expressions)</code> où le premier paramètre 
+        est un tableau des différentes sous-chaines "fixes" constituant le gabarit, et les paramètres restants sont les 
+        expressions contenues dans la chaîne. </p>
+            
+        <block title="Gabarits étiquetés">
+            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsStringTemplate2.html" data-opened="js"></div>
+        </block>
+        
+    </slide>
+
+    <slide>
+        <title>Fonctions immédiatement invoquées (IIEF)</title>
+        
+        <block title="Qu'est-ce que c'est ? &Agrave; quoi ça sert ?">
+            <p>Cette pratique consiste à déclarer une fonction qui s'exécute immédiatement. L'intérêt principal est de créer 
+            une portée locale dont les variables ne viendront pas "polluer" le scope global. </p>
+        </block>
+        
+        <block title="IIEF, syntaxe et principe">
+            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsFunctions17.html" data-opened="js"></div>
+        </block>
+        
+    </slide>
+
+    <slide> 
+        <title>Fonctions immédiatement invoquées (IIEF)</title>
+
+        <block title="Quelques remarques">
+            <ul>
+                <li>Les déclaration de fonctions ne peuvent pas être écrites sous cette forme. </li>
+                <li>Si la fonction retourne un résultat, celui-ci peut bien sûr être récupéré. </li>
+            </ul>
+        </block>
+        
+        <block title="Self-invoking functions">
+            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsFunctions12.html" data-opened="js"></div>
+        </block>
+    </slide>
+
+
+
+
     
     <section>Les tableaux</section>
     
@@ -2543,7 +2570,7 @@ Javascript côté client (3)
         
         <block title="Une première notation (déjà rencontrée)">
         <p>En Javascript, les objets sont et peuvent être déclarés comme un ensemble de couples <code>(nom, valeur)</code>. </p>
-        <p>La syntaxe pour déclarer un objet : <code>var personne = { nom: "Smet", prenom: "Jean-Philippe" };</code></p>
+        <p>La syntaxe pour déclarer un objet : <code>var personnage = { nom: "Threepwood", prenom: "Guybrush" };</code></p>
         </block>
         
     </slide>
@@ -3089,13 +3116,18 @@ Javascript côté client (3)
         <block title="Une seconde approche - le modèle classique avec new">
         <p>Le modèle classique est une autre manière, plus conventionnelle, de construire des objets. Il s'agit de la 
             représentation que vous rencontrerez le plus souvent. </p>
+        <p>Il y a deux manières de déclarer ses objets :</p>
+        <ul>
+            <li>Utiliser des fonctions : une fonction définit une classe (notation/approche historique)</li>
+            <li>Utiliser des déclarations de classe (notation moderne - ES2015)</li>
+        </ul>
         </block>
         
     </slide>
             
     
     <slide>
-        <title>Les objets - Construire des objets</title>
+        <title>Les objets - Construire des objets avec des fonctions</title>
     
         <block title="Une particularité des fonctions">
         <p>Lorsque l'on déclare une fonction en Javascript, un objet <code>Function</code> est créé en mémoire, celui-ci possède en 
@@ -3113,7 +3145,7 @@ Javascript côté client (3)
     </slide>   
 
     <slide>
-        <title>Les objets - Construire des objets</title>
+        <title>Les objets - Construire des objets avec des fonctions</title>
     
         <block title="Oh wait!">
             <p>Cela ressemble à quelque chose que l'on connaît...</p>
@@ -3125,7 +3157,7 @@ Javascript côté client (3)
     </slide>   
 
     <slide>
-        <title>Les objets - Construire des objets</title>
+        <title>Les objets - Construire des objets avec des fonctions</title>
     
         <block title="Quelle est la conséquence de tout cela ?">
             <p>Chaque function possède son propre prototype associé : </p>
@@ -3147,7 +3179,7 @@ Javascript côté client (3)
     </slide>   
     
      <slide>
-        <title>Les objets - Construire des objets</title>
+        <title>Les objets - Construire des objets avec des fonctions</title>
     
          <block title="En image !">
             <img src="images/objets6.png" style="float: right; width: 45vw; height: 19vw; margin-top: 5vh; display: block; border: solid 1px #000;">
@@ -3157,7 +3189,7 @@ Javascript côté client (3)
     </slide>   
     
      <slide>
-        <title>Les objets - Construire des objets</title>
+        <title>Les objets - Construire des objets avec des fonctions</title>
     
          <block title="Modèle de prototype vs. modèle classique">
             <img src="images/objets7.png" style="float: left; width: 43vw; height: 17vw; margin-top: 5vh; display: block; border: solid 1px #000;">
@@ -3168,22 +3200,7 @@ Javascript côté client (3)
     </slide>   
     
     
-    <slide>
-        <title>Encapsulation</title>
-    
-        <block title="Vous avez dit encapsuler ?">
-            <p>Jusqu'à présent, les objets créés encapsulent des attributs ayant une visibilité publique : ils sont nécessairement
-            accessibles depuis l'extérieur puisque déclarés avec <code>this.</code>.</p>
-            <p>Il est pourtant possible de rendre des attributs et des méthodes privées au sein d'un objet. Pour ce faire, au lieu 
-            de les déclarer comme un membre de l'objet (préfixé par <code>this.</code>), on les déclare comme une variable interne
-            à l'objet. On laisse les closures faire le reste. </p>
-        </block>
-
-        <block title="Attributs et méthodes privées">
-            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsObjects10.html" data-opened="js"></div>
-        </block>
-            
-    </slide>  
+  
         
     <slide>
         <title>Héritage avec prototype</title>
@@ -3227,6 +3244,38 @@ Javascript côté client (3)
 
 
     <slide>
+        <title>Les objets - Définir des méthodes statiques</title>
+        
+        <block title="Methodes statiques">
+            <p>On peut aussi créer des méthodes statiques en les ajoutant directement à la fonction constructeur et non pas
+                à son prototype. </p>
+        </block>
+        
+        <block title="Exemple de méthode statique">
+            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsObjectsMethodeStatique.html" data-opened="js"></div>
+        </block>
+        
+    </slide>   
+
+
+    <slide>
+        <title>Les objets - Définir des attributs privés</title>
+        
+        <block title="Attributs privés">
+            <p>Dans cette représentation, il est possible de déclarer des attributs comme privés en "trichant"
+                sur leur déclaration : on déclare une variable locale à la fonction (sans <code>this</code>)
+            et on laisse la notion de closure faire le reste, pour y accéder au sein des différentes méthodes.
+         </p>
+        </block>
+        
+        <block title="Exemple de méthode statique">
+            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsObjects10_2.html" data-opened="js"></div>
+        </block>
+        
+    </slide>   
+
+
+    <slide>
         <title>Prototypes vs. Classes</title>
                 
         <block title="Comparaison des langages de classes et des langages de prototype">
@@ -3261,38 +3310,44 @@ Javascript côté client (3)
     
     </slide>  
     
-    <slide>
-        <title>Les objets - Définir des méthodes statiques</title>
-        
-        <block title="Methodes statiques">
-            <p>On peut aussi créer des méthodes statiques en les ajoutant directement à la fonction constructeur et non pas
-                à son prototype. </p>
-        </block>
-        
-        <block title="Exemple de méthode statique">
-            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsObjectsMethodeStatique.html" data-opened="js"></div>
-        </block>
-        
-    </slide>
-        
-    
 
     
     <slide>
-        <title>Les mot-clés class et extends</title>
+        <title>ES2015 : arrivée des déclarations de classes</title>
     
-        <block title="Pour les amoureux de Java">
+        <block title="Déclaration de classes, comme en Java">
             <p>ECMAScript 2015 a rajouté au standard des mots-clés bien connus : <code>class</code>, <code>extends</code>, 
                 <code>super</code> comme sucre syntaxique pour les constructions définies précédemment. 
             </p>
+            <p>Les méthodes sont déclarées sans utiliser mot-clé <code>function</code>.</p>
+            <p>Les classes présentent une méthode <code>constructor</code> qui permet d'initialiser 
+            les attributs de l'objet ainsi créé. </p>
         </block>
 
         <block title="Le même exemple avec class, extends et super">
             <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsObjects23.html" data-opened="js"></div>
         </block>
+
+        <p><strong>NB. les déclarations de classes ne sont pas hissées (hoisted).</strong></p>
             
     </slide>
     
+    <slide>
+        <title>ES2015 : arrivée des déclarations de classes</title>
+    
+        <block title="Encapsulation">
+            <p>Jusqu'à présent, les objets créés encapsulent des attributs ayant une visibilité publique : ils sont nécessairement
+            accessibles depuis l'extérieur puisque déclarés avec <code>this.</code>.</p>
+            <p>Il est pourtant possible de rendre des attributs et des méthodes privées au sein d'un objet, en les déclarant et en 
+                les nommant avec le préfixe <code>#</code> (nouveauté ES2022). </p>
+        </block>
+
+        <block title="Attributs et méthodes privées">
+            <div class="playground nohtml nocss noiframe console h30" data-href="./examples/jsObjects10.html" data-opened="js"></div>
+        </block>
+            
+    </slide>  
+
     
     <slide>
         <title>L'opérateur instanceof</title>
@@ -3561,7 +3616,49 @@ Javascript côté client (3)
         </block>
         
     </slide>
+
+
+    <slide>
+        <title>Typescript</title>
+        <block title="Qu'est-ce que c'est ?">
+            <p>Typescript est tout simplement une version typée de Javascript, dans laquelle chaque variable, 
+                paramètre, fonction, etc. déclare un type parmi les types primitifs (<code>number</code>, etc.)
+                ou dérivés (<code>Array&lt;number&gt;</code>, etc.). 
+            </p>
+            
+    </block>
+                
+        <block title="Exemple de Typescript (TS)">
+                <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsTS.html" data-opened="js"></div>
+        </block>
+                         
+        </block>
+        
+    </slide>
            
+    <slide>
+        <title>Typescript</title>
+
+        <img src="images/compilationTS.png" style="display: block; margin: 10px auto; width: 30%;">
+
+        <block title="Nécessite un compilateur">
+            <p>Un compilateur est en charge de réaliser l'analyse statique des types et ainsi de s'assurer
+                de l'utilisation correcte des données. Si aucune erreur n'est levée, un fichier JS 
+                "pur" est ainsi créé et est prêt à être exécuté (côté client ou serveur). </p>
+            
+                <p>
+                    Certains éditeurs de code (comme VSCode) sont capables d'analyser les sources 
+                    et de lever ainsi certaines erreurs avant même la compilation.
+                </p>
+    </block>
+                     
+            <p>Plus d'infos sur <url>https://www.typescriptlang.org/</url></p>
+            
+        </block>
+        
+    </slide>
+
+
     <slide>
         <title>Ressources</title>
         
@@ -3600,6 +3697,8 @@ Javascript côté client (3)
         
         <p>A vous de jouer :<br>
             <url>https://h5bp.github.io/Front-end-Developer-Interview-Questions/translations/french/#js-questions</url>
+            ou 
+            <url>https://morioh.com/p/620129429e84</url>
         </p>
         
     </slide>

@@ -8,20 +8,26 @@
 </style>
 <script src="includeInIFrame.js"></script>
 <script>
-var johnny = { nom: "Smet", prenom: "Jean-Philippe", 
-              epouses: ["Nathalie", "Sylvie", "Laeticia"] };
+let matt = { nom: "Bellamy", prenom: "Matthew", 
+              instruments: ["guitare", "piano", "chant"] };
 
-var { nom: leNom, prenom: lePrenom } = johnny;
+let { nom: leNom, prenom: lePrenom } = matt;
 console.log("leNom = " + leNom);
 console.log("lePrenom = " + lePrenom);
     
-var { nom, prenom } = johnny;
+let { nom, prenom } = matt;
 console.log("nom = " + nom);
 console.log("prenom = " + prenom);
     
-var [ep1, ep2] = johnny.epouses;
-console.log("ep1 = " + ep1);
-console.log("ep2 = " + ep2);
+let [instr1, instr2] = matt.instruments;
+console.log("instr1 = " + instr1);
+console.log("instr2 = " + instr2);
+
+// échange de contenu de variables
+[instr2, instr1] = [instr1, instr2];
+console.log("après échange :");
+console.log("instr1 = " + instr1);
+console.log("instr2 = " + instr2);
 </script>
 </head>
 

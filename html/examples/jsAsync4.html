@@ -10,11 +10,11 @@
     <script src="./includeInIFrame.js"></script>
     <script>
 function loadResources() {
-  var debut = Date.now();
+  let debut = Date.now();
     
   function loadImage(src) {
     return new Promise(function(resolve, reject) {
-      var img = new Image(200, 300);
+      let img = new Image(200, 300);
       img.onload = () => resolve(img);
       img.onerror = () => reject(new Error("Can't find image " + img.src));
       img.src = src;

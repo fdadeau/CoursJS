@@ -8,14 +8,14 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
+const http = require('http');
+const fs = require('fs');
+const url = require('url');
 
-var SERVER_ROOT = ".";    
+const SERVER_ROOT = ".";    
     
 http.createServer(function (req, res) {
-    var zeURL = url.parse(req.url);
+    let zeURL = url.parse(req.url);
     
     if (zeURL.pathname.endsWith(".html")) {
         fs.readFile(SERVER_ROOT + zeURL.pathname, function(err, data) {

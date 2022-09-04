@@ -10,7 +10,7 @@
 <script>
 function ajouter(duree) {
     if (cle.value.trim().length > 0) {
-        var d = new Date();
+        let d = new Date();
         d.setTime(d.getTime() + duree*1000);
         document.cookie = cle.value + "=" + valeur.value + 
             "; expires=" + d.toUTCString() + "; path=/";

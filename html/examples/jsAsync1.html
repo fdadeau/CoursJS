@@ -10,9 +10,9 @@
     <script src="./includeInIFrame.js"></script>
     <script>
 function loadResources() {
-    var debut = Date.now();
+    let debut = Date.now();
     
-    var img1 = new Image(200, 300);
+    let img1 = new Image(200, 300);
     img1.onload = function(_e) { 
         log("Image 1 loaded -- " + (Date.now() - debut)); 
         document.body.appendChild(this); 
@@ -23,7 +23,7 @@ function loadResources() {
     log("Loading image 1 -- " + (Date.now() - debut));
     img1.src = "https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg";
     
-    var img2 = new Image(200, 300);
+    let img2 = new Image(200, 300);
     img2.onload = function(_e) { 
         log("Image 2 loaded -- " + (Date.now() - debut)); 
         document.body.appendChild(this); 
@@ -34,7 +34,7 @@ function loadResources() {
     log("Loading image 2 -- " + (Date.now() - debut));
     img2.src = "https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg";
     
-    var img3 = new Image(200, 300);
+    let img3 = new Image(200, 300);
     img3.onload = function(_e) { 
         log("Image 3 loaded -- " + (Date.now() - debut)); 
         document.body.appendChild(this); 

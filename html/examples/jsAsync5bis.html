@@ -11,12 +11,12 @@
     <script>
 async function executer() {
  
-  var p = new Promise(function(resolve, reject) {
+  let p = new Promise(function(resolve, reject) {
     resolve(6);   
   });
     
   try {
-  	var six = await p;
+  	let six = await p;
   	log(six * 7);
   }
   catch (error) {

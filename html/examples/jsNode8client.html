@@ -9,7 +9,7 @@
 <script src="./includeInIFrame.js"></script>
 <script>
 // ouverture de la connexion
-var socket = io.connect('http://localhost:8080');
+const socket = io.connect('http://localhost:8080');
 // envoi d'un message spécifique
 socket.emit("login", { id: "freddadeau", password: "1234" });
 // traitement des différents messages reçus

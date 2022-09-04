@@ -8,15 +8,15 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-var johnny = {
-    nom: "Smet",
-    prenom: "Jean-Philippe",
+var gb = {
+    nom: "Threepwood",
+    prenom: "Guybrush",
     presenteToi: function(prefixe) { 
-        return prefixe + ", je m'appelle " + 
+        return prefixe + ", my name is " + 
             this.prenom + " " + this.nom + "."; 
     }
 };   
-console.log(johnny.presenteToi.call({nom: "Dadeau", prenom: "Fred"}, "Salut"));    
+console.log(gb.presenteToi.call({nom: "Dadeau", prenom: "Fred"}, "Hi"));    
     
 </script>
 </head>

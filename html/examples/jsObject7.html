@@ -8,12 +8,14 @@
 </style>
 <script src="./includeInIFrame.js"></script>
 <script>
-function Personnalite(nom, prenom) {
-    this.nom = nom;
-    this.prenom = prenom;
+class Personnage {
+    constructor(nom, prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
 }
-var johnny = new Personnalite("Smet", "Jean-Philippe");
-console.log(johnny.prenom + " " + johnny.nom);
+let gb = new Personnage("Threepwood", "Guybrush");
+console.log(gb.prenom + " " + gb.nom);
 </script>
 </head>
 

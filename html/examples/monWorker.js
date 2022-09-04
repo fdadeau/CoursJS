@@ -1,4 +1,4 @@
-var i=0;
+let i=0;
 setInterval(function() {
     i++;
     if (i % 100 == 0) {
