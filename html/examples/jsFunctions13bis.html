@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hoisting</title>
+<style>
+</style>
+<script src="includeInIFrame.js"></script>
+<script>
+let t;
+function f() {
+    console.log(x);
+    t = 777;
+    console.log(t);
+        
+    var x = 42;    
+    let t = 666;
+}
+f();
+console.log(t);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

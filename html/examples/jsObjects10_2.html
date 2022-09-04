@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function Personnage(nom, prenom) {
+    this.nom = nom;
+    this.prenom = prenom;
+    let age = 0;
+
+    this.birthday = function() { age++};
+    this.getAge = function() { return age; };    
+    let notVisible = function() { return 42; };
+}
+
+let gb = new Personnage("Threepwood", "Guybrush");
+for (let i = 1990; i <= 2022; i++) {
+    gb.birthday();
+}
+console.log(gb.prenom + " a " + gb.getAge() + " ans.");
+console.log(gb.notVisible);
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    
