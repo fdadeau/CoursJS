@@ -9,7 +9,10 @@
     <script src="./includeInIFrame.js"></script>
     <script>
 async function sendRequest() {    
-  let response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=XXX&idLigne=101&idVariante=15-0");  
+
+  let key = prompt("Saisir la clé d'API Ginko");
+
+  let response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=" + key + "&idLigne=101&idVariante=15-0");  
 
   if (response.status == 200) {
     let data = await response.json();

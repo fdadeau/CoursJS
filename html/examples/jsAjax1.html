@@ -22,7 +22,10 @@ function sendRequest() {
             }
         }
     }
-    xhttp.open("get", "https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=XXX&idLigne=101&idVariante=15-0", true);  
+
+    let key = prompt("Saisir la clé d'API Ginko");
+
+    xhttp.open("get", "https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=" + key + "&idLigne=101&idVariante=15-0", true);  
     
     xhttp.send();
     document.getElementById("bouton").value = "C'est parti";
