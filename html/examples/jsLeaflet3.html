@@ -9,8 +9,6 @@
     <script>
 document.addEventListener("DOMContentLoaded", async function(e) {
     
-    let key = prompt("Saisir la clé API Ginko");
-
     let mymap = L.map('mapid', { 
         center: [47.2364, 5.987499], 
         zoom: 13 
@@ -21,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async function(e) {
         maxZoom: 19
     }).addTo(mymap);
     
-    let response = await fetch("https://api.ginko.voyage/DR/getDetailsVariante.do?apiKey=" + key + "&idLigne=9&idVariante=11-0");  
+    let response = await fetch("./ajaxGinko.json");  
 
     if (response.status == 200) {
         let data = await response.json();
