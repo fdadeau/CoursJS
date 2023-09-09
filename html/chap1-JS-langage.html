@@ -392,7 +392,7 @@ Javascript côté client (3)
             <tr><td colspan="4"><i>Conversions d'objets :</i></td></tr>
             <tr><td><code>{}</code></td><td><code>NaN</code></td><td><code>"[object Object]"</code></td><td><code>true</code></td></tr>    
             <tr><td colspan="4"><i>Conversions de fonctions :</i></td></tr>
-            <tr><td><code>function(...){...}</code></td><td><code>Nan</code></td><td><code>"function(...){...}"</code></td><td><code>true</code></td></tr>    
+            <tr><td><code>function(...){...}</code></td><td><code>NaN</code></td><td><code>"function(...){...}"</code></td><td><code>true</code></td></tr>    
             <tr><td colspan="4"><i>Conversions de valeurs remarquables :</i></td></tr>
             <tr><td><code>null</code></td><td><code>0</code> (!)</td><td><code>"null"</code></td><td><code>false</code></td></tr>    
             <tr><td><code>undefined</code></td><td><code>NaN</code></td><td><code>"undefined"</code></td><td><code>false</code></td></tr>    
@@ -455,7 +455,7 @@ Javascript côté client (3)
         <row>
 
         <block title="Opérateur <code>typeof</code>">
-            <p><code>type of</code> permet de connaître le type d'une valeur. Cette fonction renvoie une chaîne de caractères.</p>
+            <p><code>typeof</code> permet de connaître le type d'une valeur. Cette fonction renvoie une chaîne de caractères.</p>
                  <table style="font-size: 90%;">
                 <tr><td><code>typeof "42"</code></td><td>&rarr; <code>"string"</code></td>
                 <tr><td><code>typeof 42</code></td><td>&rarr; <code>"number"</code></td>
@@ -2462,8 +2462,7 @@ Javascript côté client (3)
                 </tr>
                 <tr>
                     <td><code><i>t</i>.reduce(<i>f</i>, <i>initiale</i>)</code></td>
-                    <td>Retourne un nouveau tableau composé des éléments du tableau d'origine sur lesquels on a appliqué 
-                        la fonction (de gauche à droite).<br>
+                    <td>Réduit le tableau à une valeur en appliquant une fonction successivement sur tous les éléments du tableau, de gauche à droite.<br>
                     Signature de <code>f</code> : <code>function(<i>accumulateur</i>, <i>valeurCourante</i>, <i>indice</i>, <i>tableau</i>)</code><br>
                     Les deux derniers paramètres sont optionnels. </td>
                 </tr>
@@ -2485,8 +2484,7 @@ Javascript côté client (3)
                 </tr>
                 <tr>
                     <td><code><i>t</i>.reduceRight(<i>f</i>, <i>initiale</i>)</code></td>
-                    <td>Retourne un nouveau tableau composé des éléments du tableau d'origine sur lesquels on a appliqué 
-                        la fonction (de droite à gauche).<br>
+                    <td>Réduit le tableau à une valeur en appliquant une fonction successivement sur tous les éléments du tableau, de droite à gauche.<br>
                     Signature de <code>f</code> : <code>function(<i>accumulateur</i>, <i>valeurCourante</i>, <i>indice</i>, <i>tableau</i>)</code><br>
                     Les deux derniers paramètres sont optionnels. </td>
                 </tr>
@@ -2936,7 +2934,7 @@ Javascript côté client (3)
         <title>Tous les objets possèdent des prototypes</title>
         
         <block title="Des prototypes pour tous les objets">
-            <p>Au somme de la hiérarchie, tous les objets héritent d'un prototype <code>Object.prototype</code>. </p>
+            <p>Au sommet de la hiérarchie, tous les objets héritent d'un prototype <code>Object.prototype</code>. </p>
             <p>Par exemple, les objets <code>Date</code> héritent de <code>Date.prototype</code>, qui 
             lui-même hérite de <code>Object.prototype</code>. </p>
         </block>
