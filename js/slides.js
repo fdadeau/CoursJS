@@ -370,6 +370,18 @@ var slides = new (function() {
             document.location.href += "#1";   
         }
 
+        let observer = new IntersectionObserver(function(entries) {
+            if (portrait && entries[0].isIntersecting == true) {
+                if (!entries[0].target.querySelector(".code")) {
+                    let pgSlide = entries[0].target.parentElement;
+                    while (!pgSlide.classList.contains("slide")) {
+                        pgSlide = pgSlide.parentElement;    
+                    }   
+                    loadPlayground(".slide[id='" + pgSlide.id + "']");
+                }
+            }
+        }, { threshold: [0.5] });
+
         // ajouter bouton pour charger manuellement playgrounds
         var pgs = document.querySelectorAll("div.playground");
         for (var pg0 of pgs) {
@@ -377,7 +389,8 @@ var slides = new (function() {
             var pgButton = document.createElement("button");
             pgButton.style = "display: inline; width: auto;";
             pgButton.innerHTML = "Charger l'exemple";
-            var pgSlide = pg0.parentElement;
+            pgButton.className = "btnChargerExemple"
+            let pgSlide = pg0.parentElement;
             while (!pgSlide.classList.contains("slide")) {
                 pgSlide = pgSlide.parentElement;    
             }
@@ -387,7 +400,9 @@ var slides = new (function() {
             if (pg0.parentElement.tagName == "DIV" && pg0.parentElement.classList.contains("block")) {
                 pg0.parentElement.classList.add("example");   
             }
+            observer.observe(pg0);
         }
+        
         
         document.body.className = (portrait) ? "portrait" : "landscape";
 
@@ -768,11 +783,6 @@ var slides = new (function() {
             }
             return ret;
         };
-        
-        // on slide change --> stop speech
-        document.addEventListener("slideLoaded", function(e) {
-            // slides.speech.stopSpeech();    
-        });
         
         // returns newly-created singleton
         return this;
