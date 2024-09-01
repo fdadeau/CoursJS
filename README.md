@@ -1,10 +1,10 @@
 # Cours de Javascript
 
-## Année universitaire 2023-2024
+## Année universitaire 2024-2025
 
 ###  [Frederic Dadeau](mailto:frederic.dadeau@univ-fcomte.fr)
 
-Cours de Licence Informatique 3e année pour l'unité d'enseignement **Web Avancé** (3 ECTS). Les slides sont supposées représenter 9h de CM.
+Cours de Licence Informatique 3e année pour l'unité d'enseignement **Web 4** (3 ECTS). Les slides sont supposées représenter 9h de CM.
 
 
 ## Prérequis du cours
