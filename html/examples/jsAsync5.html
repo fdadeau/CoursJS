@@ -22,11 +22,11 @@ async function loadResources() {
     });
   }                      
   try {
-    let img1 = await loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg");
+    let img1 = await loadImage("../images/blake1.jpg");
     document.body.appendChild(img1);
-    let img2 = await loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg");       
+    let img2 = await loadImage("../images/blake2.jpg");       
     document.body.appendChild(img2);
-    let img3 = await loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif");
+    let img3 = await loadImage("../images/blake3.jpg");
     document.body.appendChild(img3);
     await (function() {
       console.log("Done.");

@@ -22,21 +22,21 @@ function loadResources() {
     });
   }
                            
-  promesse1 = loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg");
+  promesse1 = loadImage("../images/blake1.jpg");
     
   log("Promise created -- " + (Date.now() - debut));
         
   promesse1.then(function(img) { 
     log("Image 1 loaded -- " + (Date.now() - debut));
     document.body.appendChild(img); 
-    return loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg");        
+    return loadImage("../images/blake2.jpg");        
   }, function(error) {
     log("Error loading image 1 --> " + error);
   })
   .then (function(img) {
     log("Image 2 loaded -- " + (Date.now() - debut));
     document.body.appendChild(img); 
-    return loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif");
+    return loadImage("../images/blake3.jpg");
   }, function(error) {
     log("Error loading image 2 --> " + error);
   })

@@ -26,15 +26,15 @@ function loadResources() {
       }
       img3.onerror = function(_e) { log("Error on Image 2 -- " + (Date.now() - debut)); }
       log("Loading image 3 -- " + (Date.now() - debut));
-      img3.src = "https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif";
+      img3.src = "../images/blake3.jpg";
     }
     img2.onerror = function(_e) { log("Error on Image 2 -- " + (Date.now() - debut)); }
     console.log("Loading image 2 -- " + (Date.now() - debut));
-    img2.src = "https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg";
+    img2.src = "../images/blake2.jpg";
   }
   img1.onerror = function(_e) { log("Error on Image 1 -- " + (Date.now() - debut)); }
   log("Loading image 1 -- " + (Date.now() - debut));
-  img1.src = "https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg";
+  img1.src = "../images/blake1.jpg";
   log("End of script -- " + (Date.now() - debut));    
 }
 function log(txt) {

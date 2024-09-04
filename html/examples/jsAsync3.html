@@ -17,7 +17,7 @@ function loadResources() {
     img.onload = () => resolve(img);
     img.onerror = () => reject(new Error("Can't find image " + img.src));
     log("Loading image 1");
-    img.src = "https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg";
+    img.src = "../images/blake1.jpg";
   });
 
   log("Promise created -- " + (Date.now() - debut));

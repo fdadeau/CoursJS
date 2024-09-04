@@ -21,18 +21,18 @@ function loadResources() {
         });
     }
                            
-    promesse1 = loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg");
+    promesse1 = loadImage("../images/blake1.jpg");
     
     console.log("Promise created -- " + (Date.now() - debut));
         
     promesse1.then(function(img) { 
         console.log("Image 1 loaded -- " + (Date.now() - debut));
         document.body.appendChild(img); 
-        return loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jp");        
+        return loadImage("../images/blake2.jpg");        
     }).then (function(img) {
         console.log("Image 2 loaded -- " + (Date.now() - debut));
         document.body.appendChild(img); 
-        return loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif");
+        return loadImage("../images/blake3.jpg");
     })
     .then (function(img) {
         console.log("Image 3 loaded -- " + (Date.now() - debut));

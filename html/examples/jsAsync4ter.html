@@ -22,9 +22,9 @@ function loadResources() {
     }
                          
     Promise.all([
-        loadImage("https://pbs.twimg.com/media/DtKhYWeXoAAETSJ.jpg"),
-        loadImage("https://pbs.twimg.com/media/DtPBrfOX4AAWgXI.jpg"),       
-        loadImage("https://media.giphy.com/media/gmg7s5bBQzlN6/giphy.gif")
+        loadImage("../images/blake1.jpg"),
+        loadImage("../images/blake2.jpg"),       
+        loadImage("../images/blake3.jpg")
     ]).then (function(imgs) {
         console.log("All images loaded -- " + (Date.now() - debut));
         for (var img in imgs) {
