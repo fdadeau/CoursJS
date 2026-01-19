@@ -511,6 +511,9 @@ Javascript côté client (3)
      <slide>
         <title>Modification du style</title>
         
+        <p>Une fonction générique <code>setProperty(name,value)</code> permet de mettre à jour une propriété donnée 
+        (y compris des variables CSS). </p>
+
         <block title="Quelques propriétés de styles fréquemment utilisées">
             <table>
                 <tr><td>Propriété</td><td>Description</td></tr>
@@ -524,10 +527,10 @@ Javascript côté client (3)
                 <tr><td><code>textAlign</code></td><td>Alignement du texte dans l'élément</td></tr>
                 <tr><td><code>visibility</code></td><td>Visibilité de l'élément (<code>hidden</code>/<code>visible</code>)</td></tr>     
             </table>            
-            <p>Les valeurs de ces propriétés sont des chaînes de caractères qui correspondent au style CSS que l'on souhaite 
+            <p>Les valeurs de ces propriétés sont des <strong>chaînes de caractères</strong> qui correspondent au style CSS que l'on souhaite 
             appliquer. </p>
          </block>
-        
+         
          <p>Globalement, toutes les propriétés de styles sont modifiables par Javascript. L'ensemble des propriétés de 
              style existantes est résumé ici : <url>https://www.w3schools.com/jsref/dom_obj_style.asp</url></p>
          
