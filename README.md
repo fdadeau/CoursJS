@@ -4,7 +4,7 @@
 
 ###  [Frederic Dadeau](mailto:frederic.dadeau@univ-fcomte.fr)
 
-Cours de Licence Informatique 3e année pour l'unité d'enseignement **Web 4** (3 ECTS). Les slides sont supposées représenter 9h de CM.
+Cours de Licence Informatique en 2e et 3e année pour les unités d'enseignement ***Web 3*** et **Web 4** (3 ECTS). 
 
 
 ## Prérequis du cours
