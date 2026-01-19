@@ -1890,7 +1890,7 @@ Javascript côté client (3)
         <title>La fonction fetch</title>    
         
         <block title="On peut oublier XMLHttpRequest">
-            <p>La fonction <code>fetch(<i>url</i>)</code> (implantée dans l'objet <code>window</code> ou dans un worker) 
+            <p>La fonction <code>fetch</code> (implantée dans l'objet <code>window</code> ou dans un worker) 
             permet d'aller récupérer une ressource via une url. </p>
             <p>Cette fonction renvoie une promesse qui contient la réponse (objet de type <code>Response</code>) à 
                 la requête HTTP ainsi envoyée. </p>
@@ -1898,6 +1898,19 @@ Javascript côté client (3)
                 <code>status</code> de l'objet <code>Response</code> renvoyé pour savoir si la ressource a bien été 
                 trouvée (status 200). 
             </p>
+        </block>
+
+        <block title="Détails de <code>fetch</code>">
+            <p>La fonction <code>fetch</code> présente la signaure : 
+                <code>fetch(resource, options)</code> où</p>
+            <ul>
+                <li><code>resource</code> est la ressource demandée, le plus souvent une URL, mais aussi une <code>Request</code></li>
+                <li><code>options</code> est un objet décrivant les options, présentant les champs (facultatifs) 
+                <code>headers</code>, <code>method</code> (<code>"POST"</code>,<code>"GET"</code>, etc.), 
+                    <code>body</code> (le corps de la requête potentiellement au format JSON).
+            </li>
+            </ul>
+            <p>Cette fonction renvoie une promesse qui se résoud en un objet <code>Response</code>. </p>
         </block>
     </slide>
 
