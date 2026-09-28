@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function authenticate(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1]; // Format attendu : "Bearer <token>"
+
+  if (!token) {
+    return res.status(401).json({ erreur: 'Accès refusé, jeton manquant.' });
+  }
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, claims) => {
+    if (err) {
+      return res.status(403).json({ erreur: 'Accès refusé, jeton invalide ou expiré.' });
+    }
+    req.role = claims.role; // extraction des données du payload
+    req.user = claims.user; 
+    next(); // Passe au contrôleur suivant
+  });
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+

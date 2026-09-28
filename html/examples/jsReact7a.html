@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+import { useState, useEffect } from 'react';
+
+export function useOnlineStatus() {
+  // 1. On initialise avec le statut actuel du navigateur
+  const [online, setOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    // 2. Fonctions pour mettre à jour l'état
+    const handleOnline = () => setOnline(true);
+    const handleOffline = () => setOnline(false);
+
+    // 3. On s'abonne aux événements du système
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // 4. Fonction de cleanup lors du démontage
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []); // [] = s'exécute uniquement au montage
+
+  // 5. On retourne la valeur qui intéresse nos composants
+  return isOnline;
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

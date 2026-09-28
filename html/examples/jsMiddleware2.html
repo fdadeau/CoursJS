@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+app.use((res, req, next) => {
+    console.log("Middleware 1");
+    next();
+});
+app.use((res, req, next) => {
+    console.log("Middleware 2");
+    res.send("OK");
+});
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+import { useContext } from "react"; 
+
+function Header() {
+  return <UserMenu />;
+}
+
+function UserMenu() {
+  // utilisation du hook associé aux contextes
+  const user = useContext(UserContext);
+
+  return <span>Bonjour {user.name}</span>;
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

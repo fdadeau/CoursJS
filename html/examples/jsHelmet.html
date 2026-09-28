@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Principe d'héritage avec class, extends, super</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+import express from "express";
+import helmet from "helmet"; 
+
+const app = express();
+
+// on applique Helmet au plus tôr
+app.use(helmet({
+  // activer / désactiver
+  noSniff: true,
+
+  // configurer
+  referrerPolicy: {
+    policy: "no-referrer"
+  },
+
+  // configurer finement
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"]
+    }
+  },
+
+  // désactiver
+  hsts: false
+}));
+
+// reste du code de l'application
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

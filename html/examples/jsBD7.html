@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+const connection = await pool.getConnection(); 
+
+try { 
+    await connection.beginTransaction(); 
+    await connection.query(...); 
+    await connection.query(...); 
+    await connection.commit(); 
+} 
+catch (error) { 
+    await connection.rollback(); 
+    throw error; 
+} 
+finally { 
+    connection.release(); 
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+    

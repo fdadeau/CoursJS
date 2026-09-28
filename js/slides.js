@@ -207,6 +207,9 @@ var slides = new (function() {
                 var url = document.createElement("a");
                 url.href = elem.innerHTML;
                 url.innerHTML = (elem.innerHTML.length > 100) ? (elem.innerHTML.substr(0, 100) + "...") : elem.innerHTML;
+                if (elem.hasAttribute("label")) {
+                    url.innerHTML = elem.getAttribute("label");
+                }
                 url.setAttribute("target", "_blank");
                 appendWithOnSlide(parent, url);
             }

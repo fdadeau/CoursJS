@@ -162,6 +162,12 @@
     width: 45%;
     height: 52vh;
 }
+.playground.h10 {
+    min-height: 10vh;
+}
+.playground.h10 .code, .playground.h10 .output {
+    height: 10vh;
+}
 .playground.h20 {
     min-height: 20vh;   
 }

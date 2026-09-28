@@ -16,11 +16,13 @@ document.addEventListener("DOMContentLoaded", function(_event) {
                 libs.push(lib[i].src);   
             }
         }
+        const noscript = document.body.querySelector("noscript");
+        if (noscript) js = document.body.querySelector("noscript").textContent.trim();
         var slide = ":target";
         if (document.location.href.indexOf("?") > 0) {
             slide = document.location.href.substr(document.location.href.indexOf("?")+1);
         }
-        parent.postMessage({type:"code", slide: slide, html: html, css: css, js: js, libs: libs}, "*");
+        parent.postMessage({type:"code", slide: slide, html: html, css: css, js: js, libs: libs, exec: Boolean(noscript)}, "*");
     }
 });
 

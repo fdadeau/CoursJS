@@ -32,7 +32,9 @@ window.addEventListener("message", function(event) {
             newJS.setAttribute("src","angular.min.js");
         }
         newJS.innerHTML = event.data.js;
-        document.head.appendChild(newJS);
+        if (event.data.exec) {
+            document.head.appendChild(newJS);
+        }
         
         document.body.innerHTML = event.data.html;
         nodeScriptReplace(document.body);

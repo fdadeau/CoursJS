@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple instanceof</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+class Personne {
+    constructor(p, n) {
+        this.nom = n;
+        this.prenom = p;
+    }
+    getNom() {
+       return this.prenom + " " + this.nom;
+    }
+
+    static type = "humain";
+
+    static quiEstTu() {
+        return "Je suis " + type;
+    }
+}
+
+console.log(Personne.quiEsTu());    
+</script>
+</head>
+
+<body>
+</body>
+
+</html>

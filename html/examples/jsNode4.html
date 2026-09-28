@@ -10,21 +10,25 @@
 <script>
 let content = {};
 
-exports.read = function(key) {
+const database = {};
+
+database.read = function(key) {
   return (key !== undefined) ? content[key] : content;
 }
 
-exports.update = function(key, value) {
+database.update = function(key, value) {
   content[key] = value;
 }
 
-exports.delete = function(key) {
+database.delete = function(key) {
   if (content[key] === undefined) {
     return false;
   }
   delete content[key];
   return true;
 }
+
+export default database;
 </script>
 </head>
 

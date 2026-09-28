@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import webpush from "web-push";
+
+webpush.setVapidDetails("mailto:admin@example.com", process.env.VAPID_PUBLIC_KEY, process.env.VAPID_PRIVATE_KEY);
+
+await webpush.sendNotification(
+  subscription,   // le jeton PushSubscription
+  JSON.stringify({ title: "Nouveau message de Fred", body: "Courage le cours est bientôt fini !" })
+);
+</noscript>
+</body>
+
+</html>
+    

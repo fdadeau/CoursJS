@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="./includeInIFrame.js"></script>
+<script>
+function authenticate(req, res, next) {
+    const token = req.headers.authorization;
+    if (!token) {
+        return res.sendStatus(401);     // 401 Unauthorized
+    }
+    next();
+}
+</script>
+</head>
+
+<body>
+</body>
+
+</html>
+
+
