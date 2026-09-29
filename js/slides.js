@@ -161,7 +161,9 @@ var slides = new (function() {
                     }
                 }
                 nav += "</div>";
-                slide.innerHTML = nav + slide.innerHTML;
+                if (!elem.classList.contains("no-nav")) {
+                    slide.innerHTML = nav + slide.innerHTML;
+                }
                 if (currentSection) currentSection.slides.push(slide.id);
                 if (currentSubsection) currentSubsection.slides.push(slide.id);
                 if (currentSubsubsection) currentSubsubsection.slides.push(slide.id);

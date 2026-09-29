@@ -114,7 +114,7 @@ function loadPlayground(selector) {
             var initialJS = e.detail.js; 
             jsCodeMirror.setValue(initialJS);
 
-            console.log({initialHTML, initialCSS, initialJS});
+            //console.log({initialHTML, initialCSS, initialJS});
             
             var executer = function(html, css, js) {
                 // reset console
