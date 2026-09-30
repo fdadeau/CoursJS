@@ -814,17 +814,19 @@ var slides = new (function() {
      *  Keyboard navigation
      */
     document.addEventListener("keydown", function(e) {
-        switch (e.keyCode) {
-            case 39:    // left arrow
+        switch (e.code) {
+            case "ArrowDown":
+            case "ArrowRight":    
                 if (document.body.querySelector(":target .playground :focus") && 
                     document.body.querySelector(":target .playground :focus").tagName === "TEXTAREA") return;
-            case 34:    // page up
+            case "PageDown":    // page up
                 slides.menu.next();
                 break;
-            case 37:    // right arrow
+            case "ArrowUp":    
+            case "ArrowLeft":    
                 if (document.body.querySelector(":target .playground :focus") && 
                     document.body.querySelector(":target .playground :focus").tagName === "TEXTAREA") return;
-            case 33:    // page down
+            case "PageUp":    // page down
                 slides.menu.previous();
                 break;
             case 70:    // f

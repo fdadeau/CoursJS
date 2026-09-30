@@ -29,8 +29,11 @@ Ce chapitre a pour objectif de présenter le fonctionnement du langage Javascrip
 
 ### [Chapitre 3 - Javascript, côté serveur](https://fdadeau.github.io/CoursJS/html/chap3-JS-serveur.html)
 
-Ce dernier chapitre, plus court que les précédents, a pour objectif de présenter le fonctionnement de Javascript côté serveur avec Node.js. 
-Nous présentons principalement la mise en place d'un serveur avec Express, le développement d'API REST, et l'utilisation des sockets qui seront utiles pour le projet.
+Ce dernier chapitre a pour objectif de présenter le fonctionnement de Javascript côté serveur avec Node.js. 
+Nous présentons d'abord la mise en place d'un serveur avec Express, le développement d'API REST sécurisées, 
+nous verrons ensuite les différentes manières d'interagir avec une bases de données (driver, query builder, ORM/ODM) qu'elles soient relationnelles ou NoSQL. Nous nous pencherons ensuite sur l'utilisation de 
+Node.js comme environnement de développement pour des applications clientes, et nous verrons plus en détail la bibliothèque React. Le cours termine sur deux techniques de communication client-serveur plus originales
+que sont les websockets et les notifications push. 
 
 
 

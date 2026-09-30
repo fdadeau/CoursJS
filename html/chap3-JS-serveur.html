@@ -35,8 +35,6 @@
 
 <mask>
     <img src="../images/LOGO_UMLP.png" class="top right padding" style="height: 8vh;">
-<!--    <img src="../images/abeille.png" class="top right" style="height: 20vh;">
-    <img src="../images/logo-femto.png" class="top left padding" style="height: 7vh;">-->
 </mask>    
     
 
@@ -1124,9 +1122,9 @@
                 ne s'appliquent que sur celle-ci. 
             </p>
             <p>Par exemple : <br>
-                <code class="indent">app.get("/favoris", authenticate, process);</code><br>
+                <code class="indent">app.get("/favoris", authenticate, getFavoris);</code><br>
                 ne s'appliquera que sur l'URL <code>/favoris</code>, et n'effectuera le traitement 
-                final (<code>process</code>) que si l'authentification (<code>authenticate</code>) 
+                final (<code>getFavoris</code>) que si l'authentification (<code>authenticate</code>) 
                 a réussi.
             </p>
             <p>On remarque, au passage, que l'on peut associer plusieurs handlers à des routes, 
@@ -4237,7 +4235,7 @@
 
         <ul>
             <li>ajouter des types aux déclarations de variables : <br>
-                <code class="indent">const message: string = "Hello World";</code></li>
+                <code class="indent">const message: string = "Hello World";</code>, <code>for (let i:number = 0; ... )</code></li>
             <li>ajouter des types aux signatures des fonctions : <br>
                 <code class="indent">function add(a:number, b:number): number { ... }</code></li>
             <li>déclarer des types structurés complexes qui pourront ensuite servir à typer des données : <br>
