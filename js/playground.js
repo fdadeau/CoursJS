@@ -130,7 +130,7 @@ function loadPlayground(selector) {
                 // executes them by reloading the iframe content
                 executer(initialHTML, initialCSS, initialJS);
             });
-            if (!readonly) {
+            if ( !readonly) {
                 playground.querySelector("button:nth-child(2)").addEventListener("click", function(e) {
                     // executes the current code by reloading the iframe content
                     executer(htmlCodeMirror.getValue(), cssCodeMirror.getValue(), jsCodeMirror.getValue());
