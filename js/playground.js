@@ -143,7 +143,9 @@ function loadPlayground(selector) {
                     iframe.contentWindow.postMessage({newcode: 1, 
                                                     html: htmlCodeMirror.getValue(), 
                                                     css: cssCodeMirror.getValue(), 
-                                                    js: jsCodeMirror.getValue()}, "*");
+                                                    js: jsCodeMirror.getValue(), 
+                                                    exec: !readonly }, 
+                                                    "*");
                 });
             
             playground.querySelector("button:last-child").addEventListener("click", function(e) {

@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function(_event) {
             css = c[c.length - 1].textContent.trim();
         }
         var j = document.head.querySelector("script:not([src])");
-        var js = "";
-        if (j) js = j.textContent.trim();
+        var js = j.textContent.trim();
         var lib = document.head.querySelectorAll("script[src]");
         var libs = [];
         for (var i=0; i < lib.length; i++) {
@@ -21,8 +20,9 @@ document.addEventListener("DOMContentLoaded", function(_event) {
         var slide = ":target";
         if (document.location.href.indexOf("?") > 0) {
             slide = document.location.href.substr(document.location.href.indexOf("?")+1);
+            // console.log(slide);
         }
-        parent.postMessage({type:"code", slide: slide, html: html, css: css, js: js, libs: libs, exec: Boolean(noscript)}, "*");
+        parent.postMessage({type:"code", slide: slide, html: html, css: css, js: js, libs: libs, exec: noscript != undefined}, "*");
     }
 });
 
