@@ -451,14 +451,15 @@ body.landscape {
     }
 
     .slide.outline > ol > li {
-        margin-bottom: 4vh !important;
+        margin-bottom: 3vh !important;
     } 
 
     .slide.outline > ol {
+        list-style-type: upper-roman;
         margin-left: 10vh;
     }
     .slide.outline ol ol {
-        list-style-type: lower-alpha;
+        list-style-type: decimal;
         margin-left: 0vh;
     }
     .slide.outline ol ol ol {
@@ -466,7 +467,11 @@ body.landscape {
     }
     .slide.outline.section ol > li > ol {
         display: none;
-    } 
+        font-size: 90%;
+    }
+    .slide.outline.section ol > li > ol > li {
+        margin-bottom: 1.2vh !important;
+    }
     .slide.outline.subsection ol > li > ol {
         display: block;
     } 
@@ -879,14 +884,17 @@ body.portrait {
         width: 95%;       
     }
 
+    /*
     .portrait .slide .block:not(.example) {
         background-color: transparent;
         padding: 0;
         box-shadow: none;
     }
+    */
     .portrait .slide .block.example {
         margin-bottom: 40px;
     }
+    /*
     .portrait .slide .block:not(.example) .title {
         background-color: transparent;
         padding: 0;
@@ -894,6 +902,7 @@ body.portrait {
         color: black;
         font-weight: bold;
     }
+        */
 
     .portrait #mask, .portrait .slide.outline, .portrait .slide .navigation, .portrait .slide .number, .portrait .slide > .title {
         display: none;   
