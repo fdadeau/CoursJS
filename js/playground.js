@@ -3,7 +3,7 @@ window.addEventListener("message", function(event) {
         return;
     }
     // console.log(event);
-    const playground = document.body.querySelector("div#" + event.data.slide);
+    const playground = document.body.querySelector("div#" + event.data.playground);
 
     switch (event.data.type) {
         case "code": 

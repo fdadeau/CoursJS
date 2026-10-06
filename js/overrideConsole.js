@@ -4,7 +4,7 @@ window.console.log = function(msg) {
         if (document.location.href.indexOf("?") > 0) {
             slide = document.location.href.substr(document.location.href.indexOf("?")+1);
         }
-        parent.postMessage({type: "log", slide: slide, message: String(msg)}, "*");
+        parent.postMessage({type: "log", playground: slide, message: String(msg)}, "*");
     }    
 }
 window.onerror = function(msg,file,line) {
@@ -13,7 +13,7 @@ window.onerror = function(msg,file,line) {
         if (document.location.href.indexOf("?") > 0) {
             slide = document.location.href.substr(document.location.href.indexOf("?")+1);
         }
-        parent.postMessage({type: "error", slide: slide, message: String(msg), file: file, line: line}, "*");
+        parent.postMessage({type: "error", playground: slide, message: String(msg), file: file, line: line}, "*");
     }    
 }
 
