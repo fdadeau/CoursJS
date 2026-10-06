@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import express from 'express'; 
+
+const routeurAPI = express.Router();
+
+routeurAPI.get("/", (req, res) => {
+    // ...
+});
+
+routeurAPI.post("/new", (req, res) => {
+    // ...
+});
+
+export default routeurAPI;
+</noscript>
+</body>
+
+</html>
+
+

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+function verifRole(role) {
+    return function(req, res, next) {
+        if (!req.role || req.role !== role) {
+            res.status(403).json({ erreur: 'Accès interdit, permission non accordée.' });
+        }
+        next();
+  };
+}
+</noscript>
+</body>
+
+</html>
+
+

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+const stops = await Stop.find({ city: "Besançon" }) 
+                        .select("name latitude longitude") 
+                        .sort({ name: 1 }) 
+                        .skip(20) 
+                        .limit(10)
+</noscript>
+</body>
+
+</html>
+    

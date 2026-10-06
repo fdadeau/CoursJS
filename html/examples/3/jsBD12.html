@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import mongoose from "mongoose"; 
+
+await mongoose.connect(
+    uri: `mongodb://${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DB}`, 
+    { 
+        auth: { 
+            username: process.env.MONGODB_USER, 
+            password: process.env.MONGODB_PASSWORD 
+        } 
+    }
+);
+// Alternative : les credentials peuvent être intégrés à l'URI de connexion
+// Par exemple : mongodb://username:password@server:port/nomDeLaBase
+</noscript>
+</body>
+
+</html>
+    

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+function logger(req, res, next) {
+    console.log(req.mathod, req.path);      // traitement (log)
+    next();     // passe au suivant
+}
+
+app.use(logger);
+</noscript>
+</body>
+
+</html>
+
+

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+function errorHandler(err, req, res, next) {
+    console.error(err);         // on peut aussi journaliser l'erreur
+    
+    res.status(500).json({      // 500 Internal Server Error 
+        error: err.message
+    });
+}
+app.use(errorHandler);
+</noscript>
+</body>
+
+</html>
+
+

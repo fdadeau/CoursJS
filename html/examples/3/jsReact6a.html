@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import { useEffect, useState } from "react"; 
+
+function Stops() { 
+    const [stops, setStops] = useState([]); 
+
+    useEffect(() => { 
+        fetch("/api/stops") 
+        .then(r => r.json()) 
+        .then(data => setStops(data)); 
+    }, []); 
+
+    return <StopList stops={stops} />;   // StopList est un composant décrit précédemment
+}
+</noscript>
+</body>
+
+</html>
+    

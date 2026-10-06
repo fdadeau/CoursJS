@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import { validationResult } from "express-validator"; 
+
+export function handleValidationErrors(req, res, next) { 
+    const errors = validationResult(req); 
+    if (!errors.isEmpty()) { 
+        return res.status(400).json({ errors: errors.array() });  // erreur = { type, path, msg }
+    } 
+    next(); 
+}
+</noscript>
+</body>
+
+</html>
+
+

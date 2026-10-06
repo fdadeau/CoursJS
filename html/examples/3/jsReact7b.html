@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import { useOnlineStatus } from './useOnlineStatus';
+
+function IndicateurReseau() {
+  const isOnline = useOnlineStatus();
+
+  const classStatus = isOnline ? "en-ligne" : "hors-ligne";
+
+  const message = isOnline ? "Connecté" : "Déconnecté !";
+
+  return (
+    <div className={`barre-statut ${classStatus}`}>
+      { message }
+    </div>
+  );
+}
+</noscript>
+</body>
+
+</html>
+    

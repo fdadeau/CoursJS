@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import jwt from 'jsonwebtoken';
+
+// Définition des données (payload)
+const payload = {
+  user: 'fdadeau',
+  role: 'ADMIN'
+};
+
+// Clé secrète robuste stockée dans les variables d'environnement (.env)
+const secretKey = process.env.JWT_SECRET;
+
+// Création du token (valable 1 heure, chiffrement par défaut)
+const token = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+</noscript>
+</body>
+
+</html>
+
+

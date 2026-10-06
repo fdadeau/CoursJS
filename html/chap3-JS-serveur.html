@@ -542,7 +542,7 @@
         <title>Le module http</title>
     
         <block title="Code d'un serveur très basique">
-           <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsNode1.html" data-opened="js"></div>
+           <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsNode1.html" data-opened="js"></div>
         </block>
         
         <block title="Exemples d'exécution">
@@ -622,7 +622,7 @@
         
         <block title="Un serveur déjà plus capable">
             <p>Par contre, si ma page a des paramètres ou une ancre, il faut être plus subtil... mais bon.</p>
-            <div class="playground nohtml nocss nooutput h50" data-href="./examples/jsNode2.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h50" data-href="./examples/3/jsNode2.html" data-opened="js"></div>
         </block>
         
         <p>La référence du module File System : <url>https://www.w3schools.com/nodejs/ref_fs.asp</url>.</p>
@@ -664,7 +664,7 @@
         <title>Modules http, fs et url</title>
         
         <block title="Un serveur finalement apte">
-           <div class="playground nohtml nocss nooutput h50" data-href="./examples/jsNode3.html" data-opened="js"></div>
+           <div class="playground nohtml nocss nooutput h50" data-href="./examples/3/jsNode3.html" data-opened="js"></div>
         </block>
 
         <p>Bien évidemment, nous verrons plus loin comment écrire un serveur web de façon plus simple...</p>
@@ -685,7 +685,7 @@
         
         <block title="Exemple de module <code>database.js</code>">
             <p>Ce module sera importé avec <code>import maBase from "./database.js";</code></p>
-           <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsNode4.html" data-opened="js"></div>
+           <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsNode4.html" data-opened="js"></div>
         </block>
         
     </slide>
@@ -780,7 +780,7 @@
                     <code>.end(<i>texte</i>)</code>, <code>.send(<i>données</i>)</code>, 
                     ou <code>json(<i>données_JSON</i>)</code> - voir <url>http://expressjs.com/fr/4x/api.html#res</url>)</li>
             </ul>
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsNode6.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsNode6.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -973,7 +973,7 @@
         </code>
         <span>&rarr;</span>
 
-        <div class="playground nohtml nocss nooutput h40" style="width: 50vw;" data-href="./examples/jsExpress2.html" data-opened="js"></div>
+        <div class="playground nohtml nocss nooutput h40" style="width: 50vw;" data-href="./examples/3/jsExpress2.html" data-opened="js"></div>
         </row>
         </block>
     </slide>
@@ -1022,7 +1022,7 @@
             </block>
             
             <block title="un premier middleware simple (logger)">
-                <div class="playground nohtml nocss nooutput h25" data-href="./examples/jsMiddleware1.html" data-opened="js"></div>
+                <div class="playground nohtml nocss nooutput h25" data-href="./examples/3/jsMiddleware1.html" data-opened="js"></div>
             </block>
 
         </slide>
@@ -1032,7 +1032,7 @@
             <block title="Le rôle de <code>next()</code>">
                 <p><code>next()</code> est essentiel, car il permet de continuer le traitement. </p>
                 <p>Sans <code>next()</code>, le code s'arrête à la première fonction et n'envoie pas de réponse !</p>
-                <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsMiddleware2.html" data-opened="js"></div>
+                <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsMiddleware2.html" data-opened="js"></div>
             </block>
 
             <p><strong>&rarr; Un middleware doit toujours soit appeler <code>next()</code>, soit renvoyer une réponse !</strong></p>
@@ -1052,7 +1052,7 @@
         <block title="Ordre de traitement">
             <p>L'ordre d'enregistrement des middleware avec <code>app.use(...)</code> définit l'ordre des traitements 
             (FIFO). </p>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsMiddleware3.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsMiddleware3.html" data-opened="js"></div>
         </block>
 
     </slide> 
@@ -1103,7 +1103,7 @@
                 passera pas au suivant) avec une page ou un message spécifique. 
             </p>
 
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsMiddleware4.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsMiddleware4.html" data-opened="js"></div>
 
         </block>
 
@@ -1176,7 +1176,7 @@
 
 
         <block title="Module de routage utilisant l'objet <code>Router</code>">
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsMiddleware7-2.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsMiddleware7-2.html" data-opened="js"></div>
         </block>
             
     </slide>
@@ -1188,7 +1188,7 @@
         une sous-partie de l'application, grâce à un préfixe. </p>
         <block title="fichier principal">
             <p>En utilisant le préfixe <code>/api</code>, les routes utilisables sont donc <code>GET /api</code> et <code>POST /api/new</code></p>
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsMiddleware7-1.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsMiddleware7-1.html" data-opened="js"></div>
         </block>
         
 
@@ -1203,7 +1203,7 @@
             <p>Les middlewares de gestion d'erreurs sont comme les fonctions de middlewares classiques, mais 
                 avec un paramètre supplémentaire (au début de la liste) représentant l'erreur qui s'est produite.
             </p>
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsMiddleware5.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsMiddleware5.html" data-opened="js"></div>
         </block>
 
         <p>Celui-ci est appelé automatiquement en cas d'erreur à l'exécution (quelle qu'elle soit). 
@@ -1226,7 +1226,7 @@
             <p>Pour capturer et gérer une erreur 404 personnalisée, on ajoute à la fin du pipeline, 
                 un middleware qui capture une demande qui n'a pas pu être satisfaite précédemment. 
             </p>
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsMiddleware6.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsMiddleware6.html" data-opened="js"></div>
             </code>
         </block>
 
@@ -1528,7 +1528,7 @@
         </block>
 
         <block title="Code de test vitest">
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsVitest1.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsVitest1.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -1551,7 +1551,7 @@
 
         <block title="La mauvaise pratique">
             <p>Mettre ces paramètres dans le code de l'application sous forme de constantes et les utiliser dans le code. </p>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsDotEnv1.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsDotEnv1.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -1577,7 +1577,7 @@
                     NODE_ENV=development
                 </code>
                 </p>
-                <div class="playground nohtml nocss nooutput h25" style="width: 50vw;" data-href="./examples/jsDotEnv2.html" data-opened="js"></div>
+                <div class="playground nohtml nocss nooutput h25" style="width: 50vw;" data-href="./examples/3/jsDotEnv2.html" data-opened="js"></div>
             </row>
         </block>
     </slide>
@@ -2026,7 +2026,7 @@
             <p>La première étape consiste à charger le package approprié :</p>
             <code class="indent">npm install swagger-ui-express</code>
             <p>Il est ensuite possible d'exposer la documentation :</p>
-            <div class="playground nohtml nocss nooutput h25" data-href="./examples/jsSwaggerUI.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h25" data-href="./examples/3/jsSwaggerUI.html" data-opened="js"></div>
         </block>
 
         <p>La documentation sera ainsi accessible à l'adresse <utl>http://localhost:3000/api-docs</utl></p>
@@ -2277,7 +2277,7 @@
             <p>La création d'un payload s'appuie sur un <o>secret</o> (une chaine de caractères) qui est 
                 propre au serveur et sera utilisé pour signer le token. Ce secret n'a pas vocation à être 
                 partagé à l'extérieur (il est généralement stocké dans le <code>.env</code>).</p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsJWT1.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsJWT1.html" data-opened="js"></div>
         </block>
 
         <p>Le détail de l'API des JWT avec le package <code>jsonwebtoken</code> est disponible à l'adresse : 
@@ -2319,7 +2319,7 @@
         </p>
 
         <block title="Middleware d'authentification">
-            <div class="playground nohtml nocss nooutput h50" data-href="./examples/jsJWT2.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h50" data-href="./examples/3/jsJWT2.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -2365,7 +2365,7 @@
         </p>
 
         <block title="Middleware d'autorisation">
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsJWT3.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsJWT3.html" data-opened="js"></div>
         </block>
 
         <p>On peut ensuite rajouter le middleware d'autorisation : <code class="">routeur.get("/api/delete/:id", authenticate, verifRole("ADMIN"), deleteData)</code></p>
@@ -2450,7 +2450,7 @@
 
         <block title="Renouvellement d'un access token">
             <p>Le refresh token utilise généralement un secret qui lui est propre (lui aussi stocké dans le <code>.env</code> du projet).</p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsJWT4.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsJWT4.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -2509,7 +2509,7 @@
             <p>Comme vu précédemment, l'access token a vocation à être transmis via l'entête de la requête HTTP, dans le champ <code>Bearer</code>.</p>
             <p>On utilise généralement la commande <code>fetch(url, options)</code>, que l'on peut encapsuler dans une fonction dédiée que 
                 l'on utilisera systématiquement pour interroger le serveur. </p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsJWT5.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsJWT5.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -2523,7 +2523,7 @@
         <block title="Renouveler l'access token">
             <p>On réutilise la fonction précédente et on capture son retour. La fonction <code>refreshAccessToken</code>
             envoie une requête à <code>/api/refresh</code> et renvoie le nouvel access token. </p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsJWT6.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsJWT6.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -2726,7 +2726,7 @@
         <p>Le traitement des erreurs est généralement placé dans un middleware réutilisable. </p>
 
         <block title="Middleware de traitement des erreurs syntaxiques">
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsExpressValidator1.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsExpressValidator1.html" data-opened="js"></div>
         </block>
 
         <p>Usage : <code>router.post("/favorites", body("stopId").isString().notEmpty(), handleValidationErrors, createFavorite)</code></p>
@@ -2746,7 +2746,7 @@
         </p>
 
         <block title="Schéma de validation">
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsExpressValidator2.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsExpressValidator2.html" data-opened="js"></div>
         </block>
 
         <p>Le schéma est ensuite utilisé comme un middleware : <br>
@@ -2813,7 +2813,7 @@
 
          <block title="Chargement et utilisation de Helmet">
             <p>Helmet applique une configuration par défaut qui peut être ajustée au moyen d'un objet passé en paramètre. </p>
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsHelmet.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsHelmet.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -2949,7 +2949,7 @@
         <p>Son installation est classique : <code>npm install cors</code></p>
 
         <block title="Utilisation simple de <code>cors</code>">
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsCors1.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsCors1.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -3147,7 +3147,7 @@
 
         <block title="Utilisation du driver MySQL">
             <p>Avec un driver, c'est au développeur d'écrire la requête (par ex. en SQL)</p>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsBD1.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsBD1.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -3164,7 +3164,7 @@
 
         <block title="Utilisation du query builder <code>knex</code>">
             <p>Avec un query builder, le développeur utilise des méthodes JS pour construire sa requête. </p>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsBD2.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsBD2.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -3184,7 +3184,7 @@
 
         <block title="Utilisation d'un modèle de  <code>moongoose</code>">
             <p>Le développeur manipule un modèle <code>User</code> défini par ailleurs. </p>
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsBD3.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsBD3.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -3233,7 +3233,7 @@
                 nouvelle connexion à chaque requête HTTP. On maintient donc un ensemble de connexions 
                 dans lequel on piochera ensuite. 
             </p>
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsBD4.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsBD4.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -3366,7 +3366,7 @@
                     le début de la transaction sera effectuée (ROLLBACK).
                 </p>
                 </div>
-                <div class="playground nohtml nocss nooutput h40" style="width: 50%;" data-href="./examples/jsBD7.html" data-opened="js"></div>
+                <div class="playground nohtml nocss nooutput h40" style="width: 50%;" data-href="./examples/3/jsBD7.html" data-opened="js"></div>
 
         
             </row>
@@ -3393,7 +3393,7 @@
                     &darr;<br>
                     JSON HTTP
                 </p>
-                <div class="playground nohtml nocss nooutput h50" style="width: 65%;" data-href="./examples/jsBD5.html" data-opened="js"></div>
+                <div class="playground nohtml nocss nooutput h50" style="width: 65%;" data-href="./examples/3/jsBD5.html" data-opened="js"></div>
             </row>
         </block>
     </slide>
@@ -3408,15 +3408,15 @@
         <row>
             <div style="width: 40%;">
                 <block title="Le modèle dans <code>/models/stopModel.js</code>">
-                    <div class="playground nohtml nocss nooutput h25" data-href="./examples/jsBD6a.html" data-opened="js"></div>
+                    <div class="playground nohtml nocss nooutput h25" data-href="./examples/3/jsBD6a.html" data-opened="js"></div>
                 </block>
                 <block title="La route dans <code>/routes/stops.js</code>">
-                    <div class="playground nohtml nocss nooutput h10" data-href="./examples/jsBD6b.html" data-opened="js"></div>
+                    <div class="playground nohtml nocss nooutput h10" data-href="./examples/3/jsBD6b.html" data-opened="js"></div>
                 </block>
             </div>
             <div style="height: 65vh; width: 50vw;">
                 <block title="Le contrôleur dans <code>/controllers/stopsController.js</code>">
-                    <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsBD6c.html" data-opened="js"></div>
+                    <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsBD6c.html" data-opened="js"></div>
                 </block>
                 <p>On note la présence de fonction asynchrones, obligatoires pour le 
                     traitement des promesses. 
@@ -3498,7 +3498,7 @@
         <block title="Ouverture de connexion">
             <p>Le <code>MongoClient</code> gère automatiquement un pool de connexions vers MongoDB.
             </p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsBD11.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsBD11.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -3613,8 +3613,8 @@
 
         <block title="Configuration et utilisation de <code>knex</code>">
             <row>
-                <div style="width: 38%;" class="playground nohtml nocss nooutput h40" data-href="./examples/jsBD8.html" data-opened="js"></div>
-                <div  style="width: 65%;" class="playground nohtml nocss nooutput h40" data-href="./examples/jsBD9.html" data-opened="js"></div>
+                <div style="width: 38%;" class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsBD8.html" data-opened="js"></div>
+                <div  style="width: 65%;" class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsBD9.html" data-opened="js"></div>
             </row>
         </block>
 
@@ -3706,7 +3706,7 @@
         <p>Avec cet ORM, les modèles, représentant les tables de la base, doivent être définis pour 
             pouvoir être utilisés dans des "requêtes". </p>
             <row>
-                <div style="width: 68%;" class="playground nohtml nocss nooutput h40" data-href="./examples/jsBD10.html" data-opened="js"></div>
+                <div style="width: 68%;" class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsBD10.html" data-opened="js"></div>
                 <p style="width: 40%">Définition d'un modèle : <br><code>const User = sequelize.define("User", {<br>
                     &nbsp;&nbsp;name: DataTypes.STRING,<br>
                     &nbsp;&nbsp;email: DataTypes.STRING,<br>
@@ -3810,7 +3810,7 @@
             <p>Les paramètres de connexion sont les mêmes que ceux permettant d'accéder à la base MongoDB 
             sous-jacente (URI du serveur, port, utilisateur+mot de passe, base de données). 
             </p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsBD12.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsBD12.html" data-opened="js"></div>
         </block>
 
         <p>La connexion est généralement initialisée au démarrage de l'application, puis réutilisée 
@@ -3826,12 +3826,12 @@
         <block title="Schéma Moongoose">
             <p>Un schéma définit la structure et les contraintes des documents manipulés par Moongoose. Par exemple, 
                 pour définir un arrêt de bus : </p>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsBD13a.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsBD13a.html" data-opened="js"></div>
         </block>
 
         <block title="Schéma &rarr; Modèle">
             <p>Un schéma permet ensuite de définir un modèle, qui proposera une API de manipulation de données. </p>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsBD13b.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsBD13b.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -3920,7 +3920,7 @@
         </block>
 
         <block title="Exemple pour la pagination des résultats">
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsBD13c.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsBD13c.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -3989,7 +3989,7 @@
         <p>Pour terminer proprement, on peut rajouter un événement qui répond au signal de fin du 
             processus : 
         </p>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsBD14.html" data-opened="js"></div>
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsBD14.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -4482,7 +4482,7 @@
             <p>Les composants peuvent eux-mêmes être composés d'autres composants. Le composant racine 
                 s'appelle <code>App</code>. 
             </p>
-            <div class="playground jsx nohtml nocss nooutput h30" data-href="./examples/jsReact0.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h30" data-href="./examples/3/jsReact0.html" data-opened="js"></div>
         </block>
 
         <p>Les composants encapsulent une partie de l'interface et de son comportement. </p>
@@ -4500,7 +4500,7 @@
         <block title="Un exemple de code JSX">
             <p>La notation <code>{...}</code> au sein des balises permet d'injecter une expression JS dans le code 
             HTML résultant. </p>
-            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/jsReact1.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/3/jsReact1.html" data-opened="js"></div>
         </block>
 
         <p>JSX n'est pas du HTML, mais c'est un langage permettant de décrire l'interface. </p>
@@ -4520,7 +4520,7 @@
         </p>
 
         <block title="Passage de props d'un parent à son enfant">
-            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/jsReact2.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/3/jsReact2.html" data-opened="js"></div>
         </block>
 
         <p>Un composant reçoit ses props de son parent. Il ne doit pas les modifier directement. </p>
@@ -4535,7 +4535,7 @@
 
         
         <block title="Exemple d'affichage conditionnel">
-            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/jsReact5a.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/3/jsReact5a.html" data-opened="js"></div>
         </block>
 
         <p>Ainsi, JSX utilise les mécanismes de Javascript pour contrôler le rendu. </p>
@@ -4559,7 +4559,7 @@
             ajoutés/modifiés/supprimés lor d'une mise à jour. </p>
 
         <block title="Exemple d'affichage avec une itération">
-            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/jsReact5b.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/3/jsReact5b.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -4578,7 +4578,7 @@
         </p>
 
         <block title="Exemple d'événements sur un composant">
-            <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact4.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact4.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -4618,7 +4618,7 @@
 
             <p> Au lieu de redessiner tout le bouton, seul son contenu sera mis à jour. 
             </p>
-            <div class="playground jsx nohtml nocss nooutput h30" data-href="./examples/jsReact3.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h30" data-href="./examples/3/jsReact3.html" data-opened="js"></div>
         </block>
     </slide>
 
@@ -4665,7 +4665,7 @@
         </p>
 
         <block title="Un premier exemple">
-            <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact6a.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact6a.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -4716,7 +4716,7 @@
         </block>
 
         <block title="Un second exemple">
-            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/jsReact6b.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h25" data-href="./examples/3/jsReact6b.html" data-opened="js"></div>
         </block>
 
     </slide>
@@ -4732,11 +4732,11 @@
             <row>
                 <div style="width: 50%;">
                     <p>Hook personnalisé <code>useOnlineStatus</code> </p>
-                    <div class="playground jsx nohtml nocss nooutput h50" data-href="./examples/jsReact7a.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h50" data-href="./examples/3/jsReact7a.html" data-opened="js"></div>
                 </div>
                 <div style="width: 50%;"> 
                     <p>Composant <code>IndicateurReseau</code> utilisant le hook personnalisé </p>
-                    <div class="playground jsx nohtml nocss nooutput h50" data-href="./examples/jsReact7b.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h50" data-href="./examples/3/jsReact7b.html" data-opened="js"></div>
                 </div>
             </row>
         </block>
@@ -4760,11 +4760,11 @@
             <row>
                 <div style="width: 50%;">
                     <p>Création d'un context englobant : </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact8a.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact8a.html" data-opened="js"></div>
                 </div>
                 <div style="width: 50%;"> 
                     <p>Accès aux données du contexte : </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact8b.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact8b.html" data-opened="js"></div>
                 </div>
             </row>
         </block>
@@ -4787,11 +4787,11 @@
             <row>
                 <div style="width: 50%;">
                     <p>Création d'un context englobant portant une variable et son setter : </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact9a.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact9a.html" data-opened="js"></div>
                 </div>
                 <div style="width: 50%;"> 
                     <p>Modification au travers du setter : </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact9b.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact9b.html" data-opened="js"></div>
                 </div>
             </row>
         </block>
@@ -4810,7 +4810,7 @@
         <block title="Navigation manuelle">
             <p>On peut stocker l'état courant dans une variable et mettre celle-ci à jour avec 
                 des clics sur des liens/boutons de navigation. </p>
-            <div class="playground jsx nohtml nocss nooutput h50" data-href="./examples/jsReact10.html" data-opened="js"></div>
+            <div class="playground jsx nohtml nocss nooutput h50" data-href="./examples/3/jsReact10.html" data-opened="js"></div>
         </block>
     
     </slide>
@@ -4853,11 +4853,11 @@
             <row>
                 <div style="width: 55%;">
                     <p>Déclaration des routes, avec les composants adéquats : </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact11a.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact11a.html" data-opened="js"></div>
                 </div>
                 <div style="width: 45%;"> 
                     <p>Déclaration des liens de navigation, avec le composant <code>Link</code> : </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact11b.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact11b.html" data-opened="js"></div>
                 </div>
             </row>
         </block>
@@ -4875,11 +4875,11 @@
             <row>
                 <div style="width: 55%;">
                     <p>La déclaration d'une route mentionne le paramètre </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact12a.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact12a.html" data-opened="js"></div>
                 </div>
                 <div style="width: 45%;"> 
                     <p>Le paramètre est récupérable via le hook <code>useParams</code> </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact12b.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact12b.html" data-opened="js"></div>
                 </div>
             </row>
         </block>
@@ -4930,11 +4930,11 @@
             <row>
                 <div style="width: 50%;">
                     <p>Fichier <code>main.jsx</code> </p>
-                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/jsReact13a.html" data-opened="js"></div>
+                    <div class="playground jsx nohtml nocss nooutput h40" data-href="./examples/3/jsReact13a.html" data-opened="js"></div>
                 </div>
                 <div style="width: 50%;"> 
                     <p>Fichier <code>index.html</code> </p>
-                    <div class="playground nojs nocss nooutput h40" data-href="./examples/jsReact13b.html" data-opened="html"></div>
+                    <div class="playground nojs nocss nooutput h40" data-href="./examples/3/jsReact13b.html" data-opened="html"></div>
                 </div>
             </row>
         </block>
@@ -5052,7 +5052,7 @@
         </block>
             
         <block title="Attente de connexion côté serveur">
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsNode7.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsNode7.html" data-opened="js"></div>        
         </block>
         
     </slide>    
@@ -5069,7 +5069,7 @@
         </block>
                
         <block title="Ouverture de connexion côté client">
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsNode7client.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsNode7client.html" data-opened="js"></div>        
         </block>
         
     </slide>    
@@ -5080,7 +5080,7 @@
         <block title="Autres événements intéressants">
             <p>Le serveur peut envoyer des messages à un client, ou en recevoir, et gérer les déconnexions des clients, 
                 en associant des événements à la socket avec laquelle le client se connecte. </p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsNode8.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsNode8.html" data-opened="js"></div>        
         </block>
         
     </slide>    
@@ -5090,7 +5090,7 @@
         
         <block title="Côté client">
             <p>Le client a la possibilité d'envoyer et de recevoir des messages.</p>
-            <div class="playground nohtml nocss nooutput h40" data-href="./examples/jsNode8client.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h40" data-href="./examples/3/jsNode8client.html" data-opened="js"></div>        
         </block>
     
         <p>Pour plus de détails : <url>https://socket.io</url></p>
@@ -5182,7 +5182,7 @@
                 <li><code>"denied"</code> signifie qu'elle est refusée, </li>
                 <li><code>"default"</code> signifie que l'utilisateur n'a pas encore choisi. </li>
             </ul>
-            <div class="playground nohtml nocss nooutput h20" data-href="./examples/jsPush1.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsPush1.html" data-opened="js"></div>        
         </block>
     </slide>
 
@@ -5196,7 +5196,7 @@
         <block title="Code d'installation du service worker et lancement de la souscription">
             <p>La souscription passe par l'objet <code>pushManager</code> natif du <code>ServiceWorkerRegistration</code> 
             renvoyé par la méthode <code>register</code>. </p>
-            <div class="playground nohtml nocss nooutput h25" data-href="./examples/jsPush2.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h25" data-href="./examples/3/jsPush2.html" data-opened="js"></div>        
         </block>
 
     </slide>
@@ -5250,7 +5250,7 @@
         </block>
 
         <block title="Code du service worker">
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsPush3.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsPush3.html" data-opened="js"></div>        
         </block>
 
     </slide>
@@ -5270,7 +5270,7 @@
         <code class="indent">npx web-push generate-vapid-keys</code></p>
 
          <block title="Code d'envoi d'une notification côté serveur applicatif">
-            <div class="playground nohtml nocss nooutput h30" data-href="./examples/jsPush4.html" data-opened="js"></div>        
+            <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsPush4.html" data-opened="js"></div>        
         </block>
 
 

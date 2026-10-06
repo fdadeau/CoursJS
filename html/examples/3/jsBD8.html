@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import knexLib from "knex"; 
+
+const knex = knexLib({ 
+  client: "mysql2", 
+  connection: { 
+    host: process.env.DB_HOST, 
+    user: process.env.DB_USER, 
+    password: process.env.DB_PASSWORD, 
+    database: process.env.DB_NAME 
+  } 
+});
+</noscript>
+</body>
+
+</html>
+    

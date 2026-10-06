@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+process.on("SIGTERM", async () => {
+    await pool.end(); // mysql2 ou pg
+    // await sequelize.close();
+    // await mongoose.disconnect();
+});
+</noscript>
+</body>
+
+</html>
+    

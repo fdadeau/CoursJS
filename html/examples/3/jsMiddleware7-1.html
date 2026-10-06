@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import express from 'express';    
+const app = express();
+
+import routerAPI from "./routes/api.js";
+
+app.use("/api", routerAPI);     // ce préfixe sera rajouté aux routes de routerAPI (/ et /new)
+</noscript>
+</body>
+
+</html>
+
+

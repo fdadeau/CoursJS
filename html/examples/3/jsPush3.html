@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+self.addEventListener("push", event => {
+  const data = event.data.json();
+
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body
+    })
+  );
+});
+</noscript>
+</body>
+
+</html>
+    

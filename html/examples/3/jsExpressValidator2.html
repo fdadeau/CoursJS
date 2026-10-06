@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+const favoriteSchema = [
+  body("stopId").isString().notEmpty().withMessage("stopId est obligatoire"),
+  body("label").optional().isString().isLength({ max: 50 })
+];
+</noscript>
+</body>
+
+</html>
+
+

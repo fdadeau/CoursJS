@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node.js</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+let content = {};
+
+const database = {};
+
+database.read = function(key) {
+  return (key !== undefined) ? content[key] : content;
+}
+
+database.update = function(key, value) {
+  content[key] = value;
+}
+
+database.delete = function(key) {
+  if (content[key] === undefined) {
+    return false;
+  }
+  delete content[key];
+  return true;
+}
+
+export default database;
+</noscript>
+</body>
+
+</html>
+
+

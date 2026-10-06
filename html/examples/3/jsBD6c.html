@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+export async function getStop(req, res) { 
+    try { 
+        const stop = await findStopById(req.params.id); 
+        if (!stop) { 
+            return res.status(404)
+                      .json({ error: "Arrêt introuvable" }); 
+        } 
+        res.json(stop); 
+    } 
+    catch (error) { 
+        res.status(500).json({ error: "Erreur interne" }); 
+    } 
+}
+</noscript>
+</body>
+
+</html>
+    

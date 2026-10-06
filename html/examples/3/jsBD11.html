@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import { MongoClient } from "mongodb"; 
+
+const client = new MongoClient( 
+    process.env.MONGODB_URI, { 
+        auth: { 
+            username: process.env.MONGODB_USER, 
+            password: process.env.MONGODB_PASSWORD 
+        }
+    }
+);
+await client.connect(); 
+const db = client.db(process.env.MONGODB_DB);
+const stops = db.collection("stops");
+</noscript>
+</body>
+
+</html>
+    

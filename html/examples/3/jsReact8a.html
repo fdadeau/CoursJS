@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import { createContext } from "react"; 
+
+const UserContext = createContext(null); 
+
+function App() { 
+  return ( 
+    <UserContext.Provider value={{ name: "Alice" }}> 
+      <Header /> 
+    </UserContext.Provider> 
+  ); 
+}
+</noscript>
+</body>
+
+</html>
+    

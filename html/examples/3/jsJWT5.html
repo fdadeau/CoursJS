@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+async function fetchWithToken(url, options = {}) {
+  const token = getAccessToken() // récupération de l'access token
+
+  const headers = {
+    ...options.headers,
+    Authorization: `Bearer ${token}`
+  };
+
+  return fetch(url, {
+    ...options,
+    headers
+  });
+}
+</noscript>
+</body>
+
+</html>
+
+

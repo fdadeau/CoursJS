@@ -24,7 +24,7 @@ window.addEventListener("message", function(event) {
             }
             break;
         case "error":
-            var console1 = document.body.querySelector(selector + " .output .console");
+            var console1 = playground.querySelector(".output .console");
             if (console1) {
                 console1.innerHTML += "<p class='error'><span class='line'>"+event.data.line+"</span>" + event.data.message + "</p>";
             }
@@ -130,12 +130,13 @@ function loadPlayground(selector) {
                 // executes them by reloading the iframe content
                 executer(initialHTML, initialCSS, initialJS);
             });
-            if ( !readonly) {
+            if (!readonly) {
                 playground.querySelector("button:nth-child(2)").addEventListener("click", function(e) {
                     // executes the current code by reloading the iframe content
                     executer(htmlCodeMirror.getValue(), cssCodeMirror.getValue(), jsCodeMirror.getValue());
                 });
-                // opens an empty page with appropriate message processing 
+            }
+               // opens an empty page with appropriate message processing 
                 var ifSource = (playground.classList.contains("angular")) ? "?angular" : ("?" + nb);     
                 iframe.src = "./examples/empty.html" + ifSource;
                 iframe.addEventListener("load", function(event) {
@@ -144,7 +145,7 @@ function loadPlayground(selector) {
                                                     css: cssCodeMirror.getValue(), 
                                                     js: jsCodeMirror.getValue()}, "*");
                 });
-            }
+            
             playground.querySelector("button:last-child").addEventListener("click", function(e) {
                 playground.classList.toggle("fullsize");
             });

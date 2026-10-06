@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+const UserContext = createContext(null);
+
+function App() {
+  const [user, setUser] = useState({ name: "Alice" });
+
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      <Header />
+      <Profile />
+    </UserContext.Provider>
+  );
+}
+</noscript>
+</body>
+
+</html>
+    

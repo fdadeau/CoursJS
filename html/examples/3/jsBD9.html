@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+// SELECT 
+const users = await knex("users") 
+                    .select("id", "name", "email") 
+                    .where("active", true); 
+// INSERT 
+await knex("users").insert({ name: "Alice", email: "alice@example.com" }); 
+// UPDATE 
+await knex("users") .where("id", 42) .update({ active: false }); 
+// DELETE 
+await knex("users") .where("id", 42) .del();;
+</noscript>
+</body>
+
+</html>
+    

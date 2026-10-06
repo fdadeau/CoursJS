@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modules 1</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+async function apiFetch(url, options = {}) {
+
+  let response = await fetchWithToken(url, options);    // fonction de la diapo précédente
+
+  if (response.status === 401) {
+    const success = await refreshAccessToken();
+
+    if (!success) {
+      logout();
+      return response;
+    }
+
+    response = await fetchWithToken(url, options);
+  }
+
+  return response;
+}
+</noscript>
+</body>
+
+</html>
+
+

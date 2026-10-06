@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>new Object</title>
+<style>
+</style>
+<script src="../includeInIFrame.js"></script>
+</head>
+
+<body>
+<noscript>
+import { useParams } from "react-router"; 
+
+function ProfileDetail() { 
+    // chargement des paramètres
+    const { id } = useParams(); 
+    
+    // récupération des données de l'utilisateur
+    const user = getProfileInfo(id);
+
+    return <h1>Profil {user.nom}</h1>; 
+}
+</noscript>
+</body>
+
+</html>
+    
