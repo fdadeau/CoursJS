@@ -135,7 +135,7 @@ function loadPlayground(selector) {
                     // executes the current code by reloading the iframe content
                     executer(htmlCodeMirror.getValue(), cssCodeMirror.getValue(), jsCodeMirror.getValue());
                 });
-            }
+            
                // opens an empty page with appropriate message processing 
                 var ifSource = (playground.classList.contains("angular")) ? "?angular" : ("?" + nb);     
                 iframe.src = "./examples/empty.html" + ifSource;
@@ -147,7 +147,7 @@ function loadPlayground(selector) {
                                                     exec: !readonly }, 
                                                     "*");
                 });
-            
+            }
             playground.querySelector("button:last-child").addEventListener("click", function(e) {
                 playground.classList.toggle("fullsize");
             });
