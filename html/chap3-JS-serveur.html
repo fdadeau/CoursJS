@@ -1590,15 +1590,15 @@
         <block title="Chargement du fichier <code>.env</code>">
             <p>L'accès se fait via <code>process.env.<i>clé</i></code></p>
             <row>
-                <p>Contenu du fichier <code>.env</code> : <br><br>
-                <code style="color: black; font-size: 90%;">
+                <p>Contenu du fichier <code>.env</code> : <br>
+                <code class="codeblock" style="color: black; font-size: 90%;">
                     PORT=3000<br>
                     JWT_SECRET=4d8af5...<br>
                     MONGO_URI=mongodb://localhost:27017/mabasemongodb<br>
                     NODE_ENV=development
                 </code>
                 </p>
-                <div class="playground nohtml nocss nooutput h25" style="width: 50vw;" data-href="./examples/3/jsDotEnv2.html" data-opened="js"></div>
+                <div class="playground nohtml nocss nooutput h25" style="width: 100%;" data-href="./examples/3/jsDotEnv2.html" data-opened="js"></div>
             </row>
         </block>
     </slide>
@@ -1617,9 +1617,13 @@
         <p>L'objectif est de séparer le client et le serveur. </p>
 
         <block title="Schéma classique d'une application web">
-            Client web      -->    API REST         -->     Base de données 
-            (HTML,CSS,JS)           Node + Express          
-                                    PHP, J2EE
+            <div style="display: flex; align-items: center; justify-content: space-between; width: 50%;">
+                <div style="background-color: white; text-align: center; border: solid 1px #000; padding: 10px;">Client web<br><br>(HTML,CSS,JS)</div>
+                <span style="font-size: 200%;">&lrarr;</span>
+                <div style="background-color: white; text-align: center; border: solid 1px #000; padding: 10px;">API REST<br><br>(Node + Express, PHP, J2EE)</div>
+                <span style="font-size: 200%;">&lrarr;</span>
+                <div style="background-color: white; text-align: center; border: solid 1px #000; padding: 10px;">Base de données<br><br>(SGBDR, NoSQL)</div>
+            </div>
             <p>L'API fournit au client des <strong>services accessibles via HTTP</strong>. </p>
         </block>
 
@@ -1771,7 +1775,7 @@
                 &nbsp;&nbsp;"date": "2026-10-12"<br>
                 }
                 </code>
-                <p>&rarr;</p>
+                <span>&rarr;</span>
                 <code class="codeblock">
                 HTTP/1.1 201 Created<br>
                 Content-Type: application/json<br>
@@ -2052,7 +2056,35 @@
 
         <p>La documentation sera ainsi accessible à l'adresse <utl>http://localhost:3000/api-docs</utl></p>
 
+    </slide>
 
+    <slide>
+        <title>Swagger - générer la documentation à partir des commentaires</title>
+
+        <P>Il est possible d'alimenter la documentation OpenAPI à partir de commentaires 
+            écrits dans le code des routes. Ces commentaires pourront ensuite être analysés 
+            pour produire un document swagger qui pourra être servi par 
+            <code>swagger-ui-express</code>, ou exporté comme fichier <code>JSON</code> ou 
+            <code>YAML</code> avec le module <code>swagger-jsdoc</code> (utilisable dans le code
+            ou en ligne de commande).
+        </P>
+
+        <block title="Commentaires OpenAPI/Swagger">
+            <div class="playground nohtml nocss nooutput h50" data-href="./examples/3/swagger2.html" data-opened="js"></div>
+        </block>
+
+    </slide>
+
+
+    <slide>
+        <title>Swagger - générer la documentation à partir des commentaires</title>
+
+        <p>L'extraction des commentaires pour publication peut-être réalisée directement dans le code 
+            en utilisant le module <code>swagger-jsdoc</code>. </p>
+
+        <block title="Module personnalisé <code>SwaggerExporter</code>">
+            <div class="playground nohtml nocss nooutput h50" data-href="./examples/3/swagger1.html" data-opened="js"></div>
+        </block>
 
     </slide>
 
@@ -2066,15 +2098,20 @@
     <slide>
         <title>Pourquoi sécuriser une API ?</title>
 
-        <p>Une API expose des données et des opérations. </p>
+        <block title="Trust no one">
+            <p>Tous les clients/utilisateurs/visiteurs n'ont généralement pas le droit de tout voir ou tout faire.</p>
+            <ul>
+                <li>Une API expose des données et des opérations. </li>
 
-        <p>Certaines données sont publiques, d'autres sont privées. </p>
+                <li>Certaines données sont publiques, d'autres sont privées. </li>
 
-        <p>Certaines opérations nécessitent des droits particuliers. </p>
+                <li>Certaines opérations nécessitent des droits particuliers. </li>
 
-        <p>Les clients ne sont pas nécessairement dignes de confiance. </p>
-    
-        <p>Sans mécanisme de protection particulier, n'importe quel client peut effectuer n'importe 
+                <li>Les clients ne sont pas nécessairement dignes de confiance. </li>
+            </ul>    
+        </block>
+
+        <p class="indent">&rarr; Sans mécanisme de protection particulier, n'importe quel client peut effectuer n'importe 
             quelle opération sur le système via l'API !
         </p>
     </slide>
@@ -2084,15 +2121,17 @@
 
         <block title="Authentification : qui es-tu ?">
             <P>Certaines actions ne doivent pas être accessibles à n'importe quel utilisateur, mais 
-                doivent plutôt être réalisables par des utilisateurs connus du système. <br>
-                On parle alors de mécanisme d'<strong>authentification</strong>. 
+                doivent plutôt être réalisables par des utilisateurs connus du système.</p>
+
+            <p>On parle alors de mécanisme d'<strong>authentification</strong>. 
             </P>
         </block>
 
         <block title="Autorisation : as-tu le droit de faire cette opération ?">
             <p>Parmi les utilisateurs connus, seuls certains doivent pouvoir effectuer des 
-                actions spécifiques (ex. suppression d'un enregistrement par une administrateur).<br>
-                On parle de <strong>rôle</strong> d'un utilisateur authentifié. 
+                actions spécifiques (ex. suppression d'un enregistrement par une administrateur).</p>
+
+            <p> On parle de <strong>rôle</strong> d'un utilisateur authentifié. 
             </p>
         </block>
 
@@ -2113,28 +2152,27 @@
             </p>
             <p>Une solution (parmi d'autres) est d'utiliser l'algorithme <code>bcrypt</code> qui 
             calcule un hash </p>
-            <code>bcrypt.hash(password, 12)  &rarr; $2b$12$LQv3c1yqBW8...</code>
+            <code class="indent">bcrypt.hash(password, 12)  &rarr; $2b$12$LQv3c1yqBW8...</code>
             <p>Ce hash est à sens unique : il n'est pas possible de retrouver le mot de passe d'origine 
                 à partir du hash. 
             </p>
             
         </block>    
 
-    </slide>
-
-    <slide>
-        <title>Authentification avec mot de passe</title>
-
-        <p>Pour s'authentifier, puisqu'il n'est pas possible de déchiffrer le hash, on compare 
+        <block title="Authentification par mot de passe">
+            <p>Pour s'authentifier, puisqu'il n'est pas possible de déchiffrer le hash, on compare 
             le hash du mot de passe proposé avec celui que l'on a enregistré pour l'utilisateur. 
-        </p>
+            </p>
+            <code class="indent">bcrypt.compare(mdp_proposé, hash_enregistré) &rarr; true/false</code>
+        </block>
 
     </slide>
+
 
     <slide>
         <title>Autres algorithmes de chiffrement</title>
 
-        <p><code>bcrypt</code>, évoqué ici, n'est pas la seule solution. </p>
+        <p><code>bcrypt</code>, évoqué ici (module installable avec <code>npm</code>), n'est pas la seule solution. </p>
 
         <p>Pour stocker des mots de passe, on utilise une fonction de dérivation de clé lente et résistante 
             aux attaques par brute-force. 
@@ -2187,7 +2225,7 @@
                 chaque nouvelle requête. <br>
                 Néamoins, il faut éviter que le client puisse simplement dire : </p>
                 <code class="codeblock">X-User-Id: 42</code>
-            <p>car c'est identité peut potentiellement facilement être usurpée. </p>
+            <p>car cette identité peut potentiellement facilement être usurpée. </p>
         </block>
 
         <p>L'identité du client doit être authentifiée par le serveur ! C'est le but de JWT. </p>
@@ -4408,7 +4446,12 @@
             un DOM au sein du navigateur est une opération malheureusement bien plus coûteuse...
         </p>
 
-        <p class="todo">Ajouter des illustrations</p>
+    </slide>
+
+     <slide>
+        <title>Le principe de composants React</title>
+
+        <img src="images/react-principes.png" style="width: 60%;">
 
     </slide>
 

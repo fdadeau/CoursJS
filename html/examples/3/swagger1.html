@@ -1,0 +1,29 @@
+<html>
+    <head>
+      <script src="../includeInIFrame.js"></script>
+      <style></style>
+    </head>
+    <body>
+    <noscript>
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
+
+// Options de configuration pour swagger-jsdoc
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Mon API Express',
+      version: '1.0.0',
+      description: 'Documentation interactive de mon API générée à partir des commentaires',
+    }
+  },
+  // Chemin vers vos fichiers contenant les commentaires OpenAPI
+  apis: ['./routes/*.js', './app.js'], 
+};
+
+// Initialiser le document OpenAPI
+export const swaggerDocs = swaggerJsdoc(swaggerOptions);
+</noscript>
+</body>
+</html>

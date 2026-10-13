@@ -1,0 +1,34 @@
+<html>
+    <head>
+      <script src="../includeInIFrame.js"></script>
+      <style></style>
+    </head>
+    <body>
+    <noscript>
+/**
+ * @openapi
+ * /users:
+ *   get:
+ *     summary: Récupérer la liste des utilisateurs
+ *     description: Renvoie un tableau contenant tous les utilisateurs enregistrés.
+ *     responses:
+ *       200:
+ *         description: Succès
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                   name:
+ *                     type: string
+ */
+router.get('/users', (req, res) => {
+  res.json([{ id: 1, name: 'Alice' }]);
+});
+    </noscript>
+  </body>
+</html>
