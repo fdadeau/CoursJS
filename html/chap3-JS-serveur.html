@@ -2040,7 +2040,7 @@
     <slide>
         <title>Swagger UI - visualisation de spécification OpenAPI</title>
 
-        
+        <img src="images/scSwagger.png" style="width: 70%;">
 
     </slide>
 
@@ -5108,6 +5108,19 @@
         
         <img src="images/sockets.png" class="figure" style="height: 20vh; width: auto;">
         
+        <block title="Les différents packages pour les websockets">
+            <ul>
+                <li><code>ws</code> est simple et efficace, mais limité en termes de gestion fine 
+                des messages envoyés, qu'il faudra souvent parser à la main. Il fonctionne avec 
+                l'implémentation standard des Websocket du navigateur. </li>
+                <li><code>socket.io</code> est plus complet que le précédent (gestion des salons, 
+                facilité d'encapsulation de messages, etc.). Il nécessite une bibliothèque idoine 
+                côté client. </li>
+                <li><code>uWebSocket</code> est l'option à privilégier pour des applications ayant 
+                de gros besoins de performances. </li>
+            </ul>
+        </block>
+
     </slide>    
         
               
