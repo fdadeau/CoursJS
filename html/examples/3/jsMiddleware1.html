@@ -12,7 +12,7 @@
 <body>
 <noscript>
 function logger(req, res, next) {
-    console.log(req.mathod, req.path);      // traitement (log)
+    console.log(req.method, req.path);      // traitement (log)
     next();     // passe au suivant
 }
 
