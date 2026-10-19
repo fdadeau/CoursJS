@@ -982,7 +982,7 @@
         <block title="Requête HTTP et traitement côté serveur avec Express">
         <row>
         <code class="codeblock">
-            POST /events HTTP/1.1<br>
+            POST /stations HTTP/1.1<br>
         Host: localhost:3000<br>
         Authorization: Bearer eyJhbGc...<br>
         Content-Type: application/json<br>
@@ -1810,7 +1810,7 @@
                 <tr><td>201</td><td>Created</td><td>Ressource créée</td></tr>
                 <tr><td>204</td><td>No Content</td><td>Suppression réussie</td></tr>
                 <tr><td>400</td><td>Bad Request</td><td>Requête invalide</td></tr>
-                <tr><td>401</td><td>Unauthorized</td><td>Authentificataion nécessaire</td></tr>
+                <tr><td>401</td><td>Unauthorized</td><td>Authentification nécessaire</td></tr>
                 <tr><td>403</td><td>Forbidden</td><td>Accès interdit</td></tr>
                 <tr><td>404</td><td>Not Found</td><td>Ressource inexistante</td></tr>
                 <tr><td>500</td><td>Internal Server Error</td><td>Erreur serveur</td></tr>
@@ -1875,7 +1875,7 @@
         <title>OpenAPI et Swagger</title>
 
         <block title="OpenAPI">
-            <p>OpenAPI est une spécification permettant de décrire une API HTTP de manière standardisée. ELle 
+            <p>OpenAPI est une spécification permettant de décrire une API HTTP de manière standardisée. Elle 
                 permet notamment de décrire : 
             </p>
             <ul>
@@ -1902,8 +1902,8 @@
         <title>OpenAPI - décrire un endpoint</title>
 
         <p>La syntaxe complète et de nombreux exemples sont disponibles sur le site d'OpenAPI 
-            <url>https://www.openapis.org</url> qui héberge la spécification d'OpenAPI (
-                OpenAPI Specification ou OAS). 
+            <url>https://www.openapis.org</url> qui héberge la spécification d'OpenAPI 
+            (OpenAPI Specification ou OAS). 
         </p>
 
         <block title="Syntaxe d'une description OpenAPI">
@@ -2134,6 +2134,11 @@
             <p> On parle de <strong>rôle</strong> d'un utilisateur authentifié. 
             </p>
         </block>
+
+        <p style="margin-top: 50px;"><strong>Remarque :</strong> Ces notions sont présentées ici dans le cadre des API REST, mais elles sont 
+            applicables à l'identique dans le cadre d'un contrôle d'accès applicatif plus général 
+            (comme par exemple pour protéger l'accès à certaines pages d'un site). 
+        </p>
 
     </slide>
 
@@ -5373,7 +5378,7 @@
         (côté serveur applicatif, à ne pas exposer - à cacher dans le <code>.env</code>)
         </p>
 
-        <p>La génération d'une paire de clé VAPID peut se faire via le package <code>web-psuh</code> qui 
+        <p>La génération d'une paire de clé VAPID peut se faire via le package <code>web-push</code> qui 
         sera utilisé par le serveur pour réaliser une notification push, avec la commande (dans le terminal) : 
         <code class="indent">npx web-push generate-vapid-keys</code></p>
 
