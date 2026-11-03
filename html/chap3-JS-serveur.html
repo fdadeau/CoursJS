@@ -345,7 +345,7 @@
             <p>Il existe deux catégories de dépendances : </p>
             <ul>
                 <li>celles nécessaires à l'exécution de l'application, définies dans l'entrée <code>dependencies</code> 
-                    (ex. <code>express</code>, <code>moongoose</code>, etc.) </li>
+                    (ex. <code>express</code>, <code>mongoose</code>, etc.) </li>
                 <li>celles nécessaires au développement, définies dans l'entrée <code>devDependencies</code> (ex. tests avec <code>vitest</code> et <code>supertest</code>, linting, etc.)</li>
             </ul>
         </block>
@@ -2129,7 +2129,7 @@
 
         <block title="Autorisation : as-tu le droit de faire cette opération ?">
             <p>Parmi les utilisateurs connus, seuls certains doivent pouvoir effectuer des 
-                actions spécifiques (ex. suppression d'un enregistrement par une administrateur).</p>
+                actions spécifiques (ex. suppression d'un enregistrement par un administrateur).</p>
 
             <p> On parle de <strong>rôle</strong> d'un utilisateur authentifié. 
             </p>
@@ -3243,12 +3243,12 @@
         <block title="Le niveau abstrait : modèle ORM/ODM">
             <p>Les <strong>modèles</strong> ORM (Objet Relational Model) ou ODM (Object Document Model) 
                 abstrait la base et manipule des objets plutôt que des requêtes. </p>
-            <p>ODM est utilisé pour les modèles orientés document (NoSQL comme Moongoose pour MongoDB), tandis 
+            <p>ODM est utilisé pour les modèles orientés document (NoSQL comme Mongoose pour MongoDB), tandis 
                 que ORM concerne traditionnellement les bases de données relationnelles. 
             </p>
         </block>
 
-        <block title="Utilisation d'un modèle de  <code>moongoose</code>">
+        <block title="Utilisation d'un modèle de  <code>mongoose</code>">
             <p>Le développeur manipule un modèle <code>User</code> défini par ailleurs. </p>
             <div class="playground nohtml nocss nooutput h30" data-href="./examples/3/jsBD3.html" data-opened="js"></div>
         </block>
@@ -3848,13 +3848,13 @@
     </slide>
 
     <slide>
-        <title>ODM pour MongoDB avec Moongoose</title>
+        <title>ODM pour MongoDB avec Mongoose</title>
 
-        <p>Moongoose (<url>https://mongoosejs.com</url>) est un ODM (Object-Document Mapping) pour MongoDB. Il ajoute 
+        <p>Mongoose (<url>https://mongoosejs.com</url>) est un ODM (Object-Document Mapping) pour MongoDB. Il ajoute 
         une couche de modélisation au dessus du driver MongoDB. </p>
 
-        <block title="Fonctionnalités de Moongoose">
-            <p>Moongoose permet notamment de : </p>
+        <block title="Fonctionnalités de Mongoose">
+            <p>Mongoose permet notamment de : </p>
             <ul>
                 <li>définir des schémas de document</li>
                 <li>créer des modèles</li>
@@ -3870,9 +3870,9 @@
     </slide>
 
     <slide>
-        <title>Mise en oeuvre de Moongoose</title>
+        <title>Mise en oeuvre de Mongoose</title>
 
-        <p>Moongoose s'installe comme un package Node.js avec : <code>npm install moongoose</code>.</p>
+        <p>Mongoose s'installe comme un package Node.js avec : <code>npm install mongoose</code>.</p>
 
         
 
@@ -3884,7 +3884,7 @@
         </block>
 
         <p>La connexion est généralement initialisée au démarrage de l'application, puis réutilisée 
-            pendant toute la durée de vie de l'application. Comme pour MongoDB, Moongoose gère un 
+            pendant toute la durée de vie de l'application. Comme pour MongoDB, Mongoose gère un 
             pool de connexions de façon transparente pour le développeur. 
         </p>
 
@@ -3893,8 +3893,8 @@
     <slide>
         <title>Schéma, modèle</title>
 
-        <block title="Schéma Moongoose">
-            <p>Un schéma définit la structure et les contraintes des documents manipulés par Moongoose. Par exemple, 
+        <block title="Schéma Mongoose">
+            <p>Un schéma définit la structure et les contraintes des documents manipulés par Mongoose. Par exemple, 
                 pour définir un arrêt de bus : </p>
             <div class="playground nohtml nocss nooutput h20" data-href="./examples/3/jsBD13a.html" data-opened="js"></div>
         </block>
@@ -3906,7 +3906,7 @@
     </slide>
 
     <slide>
-        <title>Quelques API utiles de Moongoose (1/2)</title>
+        <title>Quelques API utiles de Mongoose (1/2)</title>
 
         <block title="Méthodes fréquemment utilisées sur les modèles">
         <table>
@@ -3957,7 +3957,7 @@
     </slide>
 
     <slide>
-        <title>Quelques API utiles de Moongoose (2/2)</title>
+        <title>Quelques API utiles de Mongoose (2/2)</title>
 
         <block title="Quelques API utiles sur les résultats">
             <p>Les résultats renvoyés (par exemple par <code>find(...)</code>) présentent 
@@ -4073,7 +4073,7 @@
         <p>Les opérations d'accès à la base de données sont généralement <strong>asynchrones</strong>, et 
         renvoient des <i>promesses</i>, qu'il faut résoudre pour accéder au résultat. </p>
 
-        <p>Petite nuance : pour <code>knex</code> et <code>moongoose</code>, certaines méthodes ne 
+        <p>Petite nuance : pour <code>knex</code> et <code>mongoose</code>, certaines méthodes ne 
         déclenchent pas nécessairement une promesse, mais un objet requête qui est <i>thenable</i>, 
         c'est-à-dire que son résultat peut être consommé comme une promesse. </p>
 
@@ -5056,11 +5056,14 @@
         <p>Remarque : il est fréquent que l'interface soit hébergée dans le dossier <code>public</code>
         (servi statiquement) de l'environnement Node.js utilisé pour l'API REST. </p>
 
-
     </slide>
 
 
     <section>Communication client &lrarr; serveur</section>
+
+    <slide outline class="no-navigation section currentSection">
+        <title>Plan du chapitre</title>
+    </slide>
 
     <slide>
         <title>Les communications entre client et serveur</title>
