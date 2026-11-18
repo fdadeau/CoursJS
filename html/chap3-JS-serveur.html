@@ -3357,7 +3357,7 @@
                 <code class="indent" style="text-decoration: none;">&#x274C; conn.query(`SELECT * FROM station WHERE id=${req.param.id}`)</code>
             </p>
             <p>À utiliser : <br>
-                <code class="indent">&#x2705; conn.query("SELECT * FROM station WHERE ?", [req.param.id])</code>
+                <code class="indent">&#x2705; conn.query("SELECT * FROM station WHERE id=?", [req.param.id])</code>
             </p>
         </block>
 
@@ -4328,7 +4328,7 @@
         <block title="Apports de Typescript">
             <ul>
                 <li>vérification des types (avec le typechecker)</li>
-                <li>meilleure autocomplétion des les IDE</li>
+                <li>meilleure autocomplétion dans les IDE</li>
                 <li>documentation du code</li>
                 <li>détection précoce de nombreuses erreurs</li>
             </ul>
