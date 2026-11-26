@@ -4430,20 +4430,20 @@
     <slide>
         <title>Le principe de composants React</title>
 
-        <p>React propose de visualiser l'interface graphique client comme un ensemble de composants 
-            potentiellement imbriqués les uns dans les autres, et réutilisables. 
+        <p>React propose de visualiser l'interface graphique client comme un <strong>ensemble de composants</strong>
+            potentiellement <strong>imbriqués</strong> les uns dans les autres, et <strong>réutilisables</strong>. 
         </p>
 
-        <p>Chaque composant est une entité (techniquement, une fonction) qui propose un rendu sous 
-            forme d'éléments (sous-arbre) HTML. 
+        <p>Chaque composant est une entité (techniquement, une <em>fonction</em>) qui propose un rendu sous 
+            forme d'<strong>éléments HTML</strong> (sous-arbre). 
         </p>
 
-        <p>Un composant peut avoir un état qui dépend de valeurs de variables locales ou plus globales. 
-            Le rendu du composant permet de refléter l'état courant de l'objet. 
+        <p>Un composant peut avoir un <strong>état</strong> qui dépend de valeurs de variables locales ou plus globales. 
+            Le rendu du composant permet de <strong>refléter l'état courant</strong> de l'objet. 
         </p>
 
         <p>Lorsque le composant évolue (les valeurs des variables dont il dépend changent), le rendu 
-            du composant doit recalculé pour mettre à jour l'affichage. 
+            du composant doit <strong>recalculé</strong> pour mettre à jour l'affichage. 
         </p>
 
         <p>C'est le genre de principe que l'on applique aux jeux vidéos (cf. TP de Javascript en Web3 
@@ -4453,12 +4453,13 @@
 
     </slide>
 
+    <!---
      <slide>
         <title>Le principe de composants React</title>
 
         <img src="images/react-principes.png" style="width: 60%;">
 
-    </slide>
+    </slide>-->
 
     <slide>
         <title>Le principe de DOM Virtuel</title>
@@ -4466,7 +4467,8 @@
         <p>Dans le paradigme de React, on a : 
             1 composant &rarr; 1 état &rarr; 1 portion de DOM (HTML) </p>
 
-        <p>La mise à jour de l'état d'un composant implique la réécriture complète du DOM. 
+        <p>La <strong>mise à jour de l'état</strong> d'un composant implique la 
+            <strong>réécriture complète</strong> du DOM. 
         Cela peut induire des problèmes de performances dans le cas où de grands pans de 
         l'arbre DOM doivent être changés. Pourtant, on a généralement de petits changements 
         dans certains sous-arbres. 
