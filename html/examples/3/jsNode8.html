@@ -38,7 +38,7 @@ io.on('connection', function (socket) {
         }
     });
     
-    // réception d'un message "disconnect" ()
+    // réception d'un message "disconnect" 
     socket.on("disconnect", function(reason) { 
         socket.broadcast.emit("Un client est parti...");
         if (isFred) {
